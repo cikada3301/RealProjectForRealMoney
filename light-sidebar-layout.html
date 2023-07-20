@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en" class="theme-dark">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+
+    <!-- Required IdeaDESIGN styles -->
+    <link rel="stylesheet" href="https://cdn.ideadrive.su/v2.1.2/css/main.build.min.css">
+
+    <!-- Optional styles -->
+    <!-- <link rel="stylesheet" href="/static/css/main.css" media="all"> -->
+
+    <link id="favicon" rel="shortcut icon" href="/favicon.ico"/>
+
+    <script type="text/javascript" id="app_config">
+        /*<![CDATA[*/
+        window.DRIVE = window.DRIVE || {};
+        DRIVE.language = 'ru';
+        DRIVE.module = 'users';
+        DRIVE.controller = 'usersBalance';
+        DRIVE.action = 'index';
+        DRIVE.csrfKey = 'YII_CSRF_TOKEN';
+        DRIVE.csrfToken = 'N3VzclV0QlkzcGlmWHdFRWtxcUZIZEZIVUlzb0VYa2Vga01Ga0HRCA9HechkNsAj2LkoBblcklNOmXEZx6rcoA==';
+        DRIVE.apiURI = 'https://api.ideadrive.iwl/v1/';
+        DRIVE.broadcast = DRIVE.broadcast || {};
+        DRIVE.broadcast.channelName = 'IdeaDRIVE';
+        DRIVE.fancybox = DRIVE.fancybox || {};
+        DRIVE.fancybox.i18n = {
+            ru: {
+                CLOSE: "Закрыть",
+                NEXT: "Следующий",
+                PREV: "Предыдущий",
+                ERROR: "Запрошенный контент не может быть загружен. <br/> Повторите попытку позже.",
+                PLAY_START: "Начать слайдшоу",
+                PLAY_STOP: "Приостановить слайд-шоу",
+                FULL_SCREEN: "Полноэкранный",
+                THUMBS: "Миниатюры",
+                DOWNLOAD: "Скачать",
+                SHARE: "Поделиться",
+                ZOOM: "Увеличить"
+            }
+        };
+
+        DRIVE.field = DRIVE.field || {};
+        DRIVE.field._datetime_i18n = {
+            "format": "DD.MM.YYYY",
+            "applyLabel": "Подтвердить",
+            "cancelLabel": "Очистить",
+            "fromLabel": "От",
+            "toLabel": "до",
+            "customRangeLabel": "Другой",
+            "weekLabel": "Н",
+            "daysOfWeek": [
+                "Вс",
+                "Пн",
+                "Вт",
+                "Ср",
+                "Чт",
+                "Пт",
+                "Сб"
+            ],
+            "monthNames": [
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь"
+            ],
+            "firstDay": 1
+        };
+
+        DRIVE.fineuploader = DRIVE.fineuploader || {};
+        DRIVE.fineuploader.i18n = {
+            deleteFile: {
+                confirmMessage: 'Вы действительно хотите удалить изображение?',
+                deletingFailedText: 'Ошибка удаления',
+                deletingStatusText: 'Удаление...'
+            },
+            messages: {
+                emptyError: "{file} пуст, выберите файлы еще раз без него.",
+                maxHeightImageError: "Изображение слишком высокое.",
+                maxWidthImageError: "Изображение слишком широкое.",
+                minHeightImageError: "Изображение недостаточно высокое.",
+                minWidthImageError: "Изображение недостаточно широкое.",
+                minSizeError: "{file} слишком мал, минимальный размер файла – {minSizeLimit}.",
+                noFilesError: "Нет файлов для загрузки.",
+                onLeave: "Файлы загружаются, если вы покинете сейчас, загрузка будет отменена.",
+                retryFailTooManyItems: "Повторная попытка не удалась — вы достигли максимального количества файлов.",
+                sizeError: "{file} слишком велик, максимальный размер файла – {sizeLimit}.",
+                tooManyFilesError: "Можно загружать только по 1му файлу.",
+                tooManyItemsError: "Будет загружено слишком много элементов ({netItems}). Ограничение: {itemLimit}.",
+                typeError: "{file} имеет недопустимое расширение. Допустимые расширения: {extensions}.",
+                unsupportedBrowser: "Неисправимая ошибка - этот браузер не разрешает загрузку файлов любого рода.",
+                unsupportedBrowserIos8Safari: "Неисправимая ошибка — этот браузер не разрешает загрузку файлов любого рода из-за серьезных ошибок в iOS8 Safari. Пожалуйста, используйте iOS8 Chrome, пока Apple не исправит эти проблемы."
+            },
+            paste: {
+                namePromptMessage: 'Введите название файла'
+            },
+            retry: {
+                autoRetryNote: 'Повторная попытка {retryNum}/{maxAuto} ...'
+            },
+            text: {
+                defaultResponseError: "Причина сбоя загрузки неизвестна",
+                fileInputTitle: "file input",
+                sizeSymbols: ['kB', 'MB', 'GB', 'TB', 'PB', 'EB'],
+                failUpload: "Загрузка не удалась",
+                formatProgress: "{percent}% из {total_size}",
+                paused: "Приостановлено",
+                waitingForResponse: "Обработка..."
+            }
+        };
+        /*]]>*/
+    </script>
+
+    <title>Empty | IdeaDRIVE design system</title>
+    <style>
+        .theme-light body {
+            --app-logo-company-color: var(--black-100);
+            --app-logo-serice-color: var(--black-100);
+        }
+
+        .theme-dark body {
+            --app-logo-company-color: var(--white-100);
+            --app-logo-serice-color: var(--white-100);
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/init.js"></script>
+</head>
+<body>
+<!--[if lt IE 10]>
+<style>.app-header, .app-aside, .app-main {
+    display: none !important;
+}</style>
+<div class="page-message" role="alert">
+    You are using an
+    <strong>
+        outdated
+    </strong>
+    browser. Please
+    <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a>
+    to improve your experience and security.
+</div>
+<![endif]-->
+
+<header class="app-header ">
+    <div class="top-bar-brand">
+        <button class="btn btn-icon btn-flat btn-s toggle-menu" type="button" data-toggle="aside-menu"
+                aria-label="toggle aside menu">
+            <i class="i i-menu"></i>
+        </button>
+        <a class="logo-link" href="light-sidebar-layout.html">
+            <div class="logo">
+                <span class="company">IWL</span>
+                <span class="service">Marketplace</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="top-bar-list">
+        <div class="container-fluid">
+            <div class="top-bar-item top-bar-item-full">
+                <button class="btn btn-icon btn-flat d-md-none" type="button" data-toggle="aside"
+                        data-target="app-main-menu" aria-label="toggle menu">
+                    <i class="i i-menu"></i>
+                </button>
+                <div class="data">
+                     <span class="primary">
+                         <span class="caption">№ кабинета:</span>
+                         <span class="id">12345</span>
+                     </span>
+                </div>
+                <div class="btn-group d-none d-sm-inline-flex ml-5">
+                    <a href="javascript:;" class="btn btn-icon btn-flat has-notified" data-title="Чат тех. поддержки"
+                       data-toggle="tooltip" data-placement="bottom">
+                        <i class="i i-support-chat"></i>
+                    </a>
+                    <a href="javascript:;" class="btn btn-icon btn-flat" data-title="Сообщения" data-toggle="tooltip"
+                       data-placement="bottom">
+                        <i class="i i-question-circle"></i>
+                    </a>
+                    <a href="javascript:;" class="btn btn-icon btn-flat" data-title="Уведомления" data-toggle="tooltip"
+                       data-placement="bottom">
+                        <i class="i i-notification"></i>
+                    </a>
+                </div>
+                <div style="width: 191px; height: 56px;" class="ml-5">
+                    <ul class="nav nav-tabs nav-tabs-s">
+                        <li class="nav-item">
+                            <a class="nav-link active"
+                               style="border-bottom: 2px solid #272B3A; padding: 19px 8px; font-size: 14px" href="#">Marketplace</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary-blue1" style="padding: 19px 8px; font-size: 14px" href="#">BSS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary-blue1" style="padding: 19px 8px; font-size: 14px" href="#">Billing</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="top-bar-item top-bar-item-right px-0 d-flex">
+                <div class="dropdown">
+                    <button class="btn-account d-flex d-md-none" type="button" data-toggle="aside"
+                            data-target="user-menu" aria-label="toggle user menu">
+                                <span class="user-avatar user-avatar-s">
+                                    <span>K</span>
+                                </span>
+                    </button>
+                    <button class="btn-account d-none d-md-flex dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                                <span class="user-avatar user-avatar-s">
+                                    <span>И</span>
+                                </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-user-menu">
+                        <div class="user-info">
+                            <div class="account-type">Личный аккаунт</div>
+                            <div class="info-card">
+                                        <span class="user-avatar user-avatar-m">
+                                            <span>И</span>
+                                        </span>
+                                <div class="data">
+                                            <span class="primary">
+                                                <span class="caption">№ кабинета:</span>
+                                                <span class="id">12345</span>
+                                            </span>
+                                    <span class="slave">email@mail.com</span>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <span class="slave">Фамилия Имя Отчество</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><i class="i i-support-chat"></i>Чат техподдержки</a>
+                        <a class="dropdown-item" href="#"><i class="i i-question-circle"></i>Вопрос-ответ</a>
+                        <a class="dropdown-item" href="#"><i class="i i-notification"></i>Уведомления</a>
+                        <div class="dropdown-divider"></div>
+                        <p>Баланс:</p>
+                        <a href="javascript:;" class="btn btn-icon-text d-none d-sm-inline-flex">
+                           <i class="i i-dollar"></i>42.20 BYN
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
+                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
+                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside id="app-main-menu" class="app-aside app-aside-left allow-compact">
+    <div class="aside-container">
+        <div class="aside-menu" show-scroll-hover>
+            <div class="top-bar-brand d-block d-md-none">
+                <a class="logo-link" href="light-sidebar-layout.html">
+                    <div class="logo">
+                        <span class="company">IWL</span>
+                        <span class="service">design</span>
+                    </div>
+                </a>
+            </div>
+            <nav class="stacked-menu">
+                <ul class="menu">
+                    <li class="menu-item active ">
+                        <a class="menu-link" href="javascript:;">
+                            <i class="i i-folder"></i> <span class="caption">Каталог</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="javascript:;">
+                            <i class="i i-document-list"></i> <span class="caption">Заказы</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="javascript:;">
+                            <i class="i i-setting"></i> <span class="caption">Настройки</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <footer class="aside-footer">
+            <div class="links">
+                <a href="#"><i class="i i-link"></i><span class="text">Публичный договор</span></a>
+            </div>
+            <div class="dropdown-divider"></div>
+            <span class="copyright hide-compact text-left">Powered by IWL</span>
+            <span class="copyright show-compact text-center">IWL</span>
+        </footer>
+    </div>
+</aside>
+
+<aside id="user-menu" class="app-aside app-aside-right" data-scroll-top="true">
+    <div class="aside-container">
+        <div class="dropdown-menu dropdown-user-menu">
+            <div class="user-info">
+                <div class="account-type">Личный аккаунт</div>
+                <div class="info-card">
+                            <span class="user-avatar user-avatar-m">
+                                <span>K</span>
+                            </span>
+                    <div class="data">
+                                <span class="primary">
+                                    <span class="caption">№ кабинета:</span>
+                                    <span class="id">12345</span>
+                                </span>
+                        <span class="slave">this.is.very.long.user.email.address@example.com</span>
+                    </div>
+                </div>
+                <div class="data">
+                    <span class="primary">ООО Название компании может быть несколько строк </span>
+                    <span class="slave">Фамилия Имя Отчество</span>
+                    <span class="slave">+375291112233</span>
+                </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="javascript:;">
+                <i class="i i-support-chat"></i> Чат техподдержки
+                <span class="ml-auto badge badge-colorful badge-colorful-red badge-s">1</span>
+            </a>
+            <a class="dropdown-item" href="javascript:;">
+                <i class="i i-question-circle"></i> Вопрос - ответ
+            </a>
+            <a class="dropdown-item" href="javascript:;">
+                <i class="i i-notification"></i> Уведомления
+                <span class="ml-auto badge badge-colorful badge-colorful-red badge-s">1</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <p class="dropdown-item-text d-flex align-items-center">Баланс<a href="javascript:;"
+                                                                             class="btn btn-icon-text btn-s ml-auto"><i
+                    class="i i-dollar"></i>42.20</a></p>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="javascript:;"><i class="i i-home"></i>Главная страница сервисов</a>
+            <a class="dropdown-item" href="javascript:;"><i class="i i-setting"></i>Настройки профиля владельца аккаунта</a>
+            <a class="dropdown-item" href="javascript:;"><i class="i i-log-out"></i>Выход из системы</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="javascript:;" data-toggle="theme" data-theme="dark"><i class="i i-moon"></i>Темная
+                тема</a>
+            <a class="dropdown-item" href="javascript:;" data-toggle="theme" data-theme="light"><i class="i i-sun"></i>Светлая
+                тема</a>
+        </div>
+    </div>
+</aside>
+
+<aside id="app-settings-aside" class="app-aside app-aside-right" data-scroll-top="true">
+    <div class="aside-container">
+        <div class="aside-content">
+            <label class="custom-select custom-select-sm" for="language-select">
+                <select data-toggle="select" name="lang" id="language-select">
+                    <option value="ru">Русский</option>
+                    <option value="en" selected>English</option>
+                </select>
+                <span class="placeholder">Language</span>
+                <span class="error-message" aria-live="polite"></span>
+            </label>
+            <div class="dropdown-divider"></div>
+            <div class="custom-switch">
+                <input type="checkbox" name="toggle-sidebar-dark" id="toggle-sidebar-dark">
+                <label for="toggle-sidebar-dark">
+                    <div class="text">
+                        <span class="caption">Dark sidebar</span>
+                        <span class="message"></span>
+                    </div>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div class="btn-group">
+                <a class="btn btn-icon-text btn-flat" href="javascript:;" data-toggle="theme" data-theme="dark"><i
+                        class="i i-moon"></i>Темная тема</a>
+                <a class="btn btn-icon-text btn-flat" href="javascript:;" data-toggle="theme" data-theme="light"><i
+                        class="i i-sun"></i>Светлая тема</a>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div>
+                <button class="btn btn-flat btn-block" id="enable-desktop-notification">Desktop notification</button>
+                <script type="text/javascript">
+                    (function () {
+                        let btn = document.getElementById('enable-desktop-notification');
+                        let allowNotification = !("Notification" in window);
+                        let perm = Notification.permission === "granted";
+
+                        if (!window.isSecureContext || allowNotification || perm) {
+                            btn.disabled = true;
+                            let span = document.createElement('span');
+                            span.classList.add('d-block');
+                            if (perm || allowNotification) {
+                                span.textContent = 'Уже включено';
+                            } else {
+                                span.textContent = 'Недоступно для текущего контекста';
+                            }
+                            btn.parentNode.insertBefore(span, btn.nextSibling);
+                        } else {
+                            btn.addEventListener('click', function () {
+                                DRIVE.desktopNotification.notify('Test');
+                            });
+                        }
+                    })();
+                </script>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<main class="app-main">
+    <div class="content-header">
+        <div class="dropdown">
+            <button class="btn btn-icon-text dropdown-toggle ml-4" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </button>
+            <div class="dropdown-menu dropdown-menu-primary dropdown-menu-xs" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="javascript:;">Action</a>
+                <a class="dropdown-item" href="javascript:;">Another action</a>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <span>Каталог</span>
+        </div>
+
+        <!-- Size SM (40px) -->
+        <div class="custom-field-button-group custom-field-button-group-sm">
+            <label class="custom-field">
+                <input type="text" placeholder="&nbsp;" />
+                <span class="placeholder">Поиск</span>
+            </label>
+            <div class="btn-tooltip help" data-placement="top" data-title="This is input tooltip">
+                <i class="i i-search"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <div class="empty-message">
+                    <div class="icon">
+                        <i class="i i-document-list"></i>
+                    </div>
+                    <div class="text">
+                        <span class="header">Empty page</span>
+                        <span class="description">Тут храняться все денежные операции совершенные Вами в системе IdeaHost.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!--        <footer class="app-footer sticky">-->
+<!--            <div class="container-fluid">-->
+<!--                <div class="links">-->
+<!--                    <ul class="group">-->
+<!--                        <li><a class="d-block" href="javascript:;">Foot link 1</a></li>-->
+<!--                        <li><a class="d-block" href="javascript:;">Foot link 2</a></li>-->
+<!--                        <li><a class="d-block" href="javascript:;">Foot link 3</a></li>-->
+<!--                    </ul>-->
+<!--                    <ul class="group">-->
+<!--                        <li><a class="d-block" href="javascript:;">Foot link 1</a></li>-->
+<!--                        <li><a class="d-block" href="javascript:;">Foot link 2</a></li>-->
+<!--                    </ul>-->
+<!--                    <ul class="group ml-auto">-->
+<!--                        <li><a class="d-block" href="javascript:;">Foot link 1</a></li>-->
+<!--                        <li><a class="d-block" href="javascript:;">Foot link 2</a></li>-->
+<!--                        <li><a class="d-block" href="javascript:;">Foot link 3</a></li>-->
+<!--                        <li><a class="d-block" href="javascript:;">Foot link 4</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <div class="copyright">-->
+<!--                    &copy;<?php echo date('Y'); ?>, IdeaHOST-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </footer>-->
+
+<!-- Required: jQuery and Bootstrap Bundle (includes Popper) -->
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/bootstrap.bundle.min.js"></script>
+<!-- Required: IdeaDESIGN -->
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/prototypes.js"></script>
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/main.js"></script>
+
+<!-- Optional: Your scripts -->
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2.full.min.js"></script>
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2/i18n/en.js"></script>
+<!-- <script type="text/javascript" src="/static/js/main.js?v=1.0.0"></script> -->
+
+<!-- Required -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        DRIVE.init(); // Added after all scripts
+    });
+</script>
+</body>
+</html>
