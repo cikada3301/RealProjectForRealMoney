@@ -192,7 +192,7 @@
                         <i class="i i-notification"></i>
                     </a>
                 </div>
-                <div style="width: 191px; height: 56px;" class="ml-5">
+                <div style="width: 191px; height: 56px;" class="ml-4">
                     <ul class="nav nav-tabs nav-tabs-s">
                         <li class="nav-item">
                             <a class="nav-link active"
@@ -247,7 +247,7 @@
                         <div class="dropdown-divider"></div>
                         <p>Баланс:</p>
                         <a href="javascript:;" class="btn btn-icon-text d-none d-sm-inline-flex">
-                           <i class="i i-dollar"></i>42.20 BYN
+                            <i class="i i-dollar"></i>42.20 BYN
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
@@ -417,71 +417,94 @@
 
 <main class="app-main">
     <div class="content-header">
-        <div class="dropdown">
-            <button class="btn btn-icon-text dropdown-toggle ml-4" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            </button>
-            <div class="dropdown-menu dropdown-menu-primary dropdown-menu-xs" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="javascript:;">Action</a>
-                <a class="dropdown-item" href="javascript:;">Another action</a>
+        <div class="container-fluid">
+            <div class="dropdown" style="width: 208px">
+                <button class="btn btn-icon-text dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </button>
+                <span class="ml-3">Каталог</span>
+                <div class="dropdown-menu dropdown-menu-primary dropdown-menu-xs" aria-labelledby="dropdownMenuButton">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 col-md-3 col-lg-3">
+                                <h6 class="dropdown-header">Категории</h6>
+                                <button class="btn btn-flat-primary btn-icon-text dropdown-toggle" type="button"
+                                        id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false"> Label
+                                </button>
+                                <button class="btn btn-flat-primary btn-icon-text dropdown-toggle" type="button"
+                                        id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false"> Label
+                                </button>
+                                <button class="btn btn-flat-primary btn-icon-text dropdown-toggle" type="button"
+                                        id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false"> Label
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-field-button-group inbox custom-field-button-group-sm ml-5" style="width: 448px">
+                <label class="custom-field">
+                    <input type="text" placeholder="&nbsp;"/>
+                    <span class="placeholder">Поиск</span>
+                </label>
+                <div class="btn btn-flat btn-icon" data-title="This is input tooltip">
+                    <i class="i i-search"></i>
+                </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <span>Каталог</span>
+        <div class="dropdown-divider"></div>
+        <div class="top-bar-item top-bar-item-right mr-5">
+            <a class="btn btn-icon btn-s" href="javascript:;"><i class="i i-heart"></i>0</a>
+            <a class="btn btn-icon btn-s mr-2" href="javascript:;"><i class="i i-shopping-cart"></i>0</a>
         </div>
+    </div>
+    <div class="dropdown-divider"></div>
 
-        <!-- Size SM (40px) -->
-        <div class="custom-field-button-group custom-field-button-group-sm">
-            <label class="custom-field">
-                <input type="text" placeholder="&nbsp;" />
-                <span class="placeholder">Поиск</span>
+    <div class="container-fluid" style="height: 56px">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:;">Каталог</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Страница</li>
+            </ol>
+        </nav>
+        <div class="d-flex" style="width: 688px;">
+            <label class="custom-select custom-select-sm" for="select2" style="width: 208px">
+                <select data-toggle="select" name="select2" id="select2">
+                    <option>Выберите</option>
+                </select>
+                <span class="placeholder">Сортировать</span>
+                <span class="error-message" aria-live="polite"></span>
             </label>
-            <div class="btn-tooltip help" data-placement="top" data-title="This is input tooltip">
-                <i class="i i-search"></i>
+            <div class="d-flex ml-auto" style="gap: 0.5rem">
+            <a class="btn btn-icon" href="javascript:;"><i class="i i-grid"></i></a>
+            <a class="btn btn-icon" href="javascript:;"><i class="i i-server"></i></a>
             </div>
         </div>
     </div>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 mb-3">
-                <div class="empty-message">
-                    <div class="icon">
-                        <i class="i i-document-list"></i>
-                    </div>
-                    <div class="text">
-                        <span class="header">Empty page</span>
-                        <span class="description">Тут храняться все денежные операции совершенные Вами в системе IdeaHost.</span>
+            <div class="col-9 mb-3">
+                <div class="card" style="width: 229.33px; height: 332px">
+                    <img src="img/Rectangle%203.png"  alt="..." width="208px" height="208px">
+                    <div class="overlay">
+                        <p class="product-code">Артикул: 12345</p>
+                        <a href="#" class="add-to-favorites"><i class="fa fa-heart"></i></a>
+                    <div class="card-body">
+                        <p class="card-text" style="font-size: 12px; line-height: 14px; height: 42px">Продукт творожный  "Десертный" МСП с ванилином и изюмом, контейнер 400г</p>
+                        <div class="amount amount-l">
+                            <span class="price">42,00</span>
+                            <span class="currency">BYN</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
-
-<!--        <footer class="app-footer sticky">-->
-<!--            <div class="container-fluid">-->
-<!--                <div class="links">-->
-<!--                    <ul class="group">-->
-<!--                        <li><a class="d-block" href="javascript:;">Foot link 1</a></li>-->
-<!--                        <li><a class="d-block" href="javascript:;">Foot link 2</a></li>-->
-<!--                        <li><a class="d-block" href="javascript:;">Foot link 3</a></li>-->
-<!--                    </ul>-->
-<!--                    <ul class="group">-->
-<!--                        <li><a class="d-block" href="javascript:;">Foot link 1</a></li>-->
-<!--                        <li><a class="d-block" href="javascript:;">Foot link 2</a></li>-->
-<!--                    </ul>-->
-<!--                    <ul class="group ml-auto">-->
-<!--                        <li><a class="d-block" href="javascript:;">Foot link 1</a></li>-->
-<!--                        <li><a class="d-block" href="javascript:;">Foot link 2</a></li>-->
-<!--                        <li><a class="d-block" href="javascript:;">Foot link 3</a></li>-->
-<!--                        <li><a class="d-block" href="javascript:;">Foot link 4</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--                <div class="copyright">-->
-<!--                    &copy;<?php echo date('Y'); ?>, IdeaHOST-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </footer>-->
 
 <!-- Required: jQuery and Bootstrap Bundle (includes Popper) -->
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/jquery-3.6.0.min.js"></script>
