@@ -232,6 +232,10 @@
             padding-bottom: 14px;
         }
 
+        .mobile-top-bar {
+            display: none;
+        }
+
         @media (max-width: 767.98px) {
             .filter-button {
                 display: block;
@@ -266,6 +270,18 @@
             .cards > .product {
                 margin-bottom: 3px;
             }
+
+            .top-bar-list {
+                background-color: #e7edfb;
+            }
+
+            .top-bar-item-full>div {
+                display: none !important;
+            }
+
+            .mobile-top-bar {
+                display: block;
+            }
         }
     </style>
     <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/init.js"></script>
@@ -292,7 +308,7 @@
                 aria-label="toggle aside menu">
             <i class="i i-menu"></i>
         </button>
-        <a class="logo-link" href="light-sidebar-layout.html">
+        <a class="logo-link" href="catalog.html">
             <div class="logo">
                 <span class="company">IWL</span>
                 <span class="service">Marketplace</span>
@@ -343,6 +359,10 @@
                 </div>
             </div>
             <div class="top-bar-item top-bar-item-right px-0 d-flex">
+                <a href="javascript:;" class="btn btn-icon btn-flat d-flex justify-content-end mobile-top-bar" data-title="Чат тех. поддержки"
+                   data-toggle="tooltip" data-placement="bottom">
+                    <i class="i i-grid"></i>
+                </a>
                 <div class="dropdown">
                     <button class="btn-account d-flex d-md-none" type="button" data-toggle="aside"
                             data-target="user-menu" aria-label="toggle user menu">
@@ -380,14 +400,8 @@
                         <a class="dropdown-item" href="#"><i class="i i-question-circle"></i>Вопрос-ответ</a>
                         <a class="dropdown-item" href="#"><i class="i i-notification"></i>Уведомления</a>
                         <div class="dropdown-divider"></div>
-                        <div class="d-flex justify-content-between">
-                            <div class="dropdown-item">Баланс</div>
-                            <a href="javascript:;" class="btn btn-icon-text d-none d-sm-inline-flex mr-3"> <i
-                                    class="i i-dollar left"></i>
-                                <div class="amount amount-s"><span class="price">42,00</span>
-                                    <span class="currency">BYN</span></div>
-                            </a>
-                        </div>
+                        <p class="dropdown-item-text d-flex align-items-center">Баланс<a href="javascript:;" class="btn btn-icon-text btn-s ml-auto">
+                            <i class="i i-dollar"></i>42.20</a></p>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
                         <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
@@ -403,7 +417,7 @@
     <div class="aside-container">
         <div class="aside-menu">
             <div class="top-bar-brand d-block d-md-none">
-                <a class="logo-link" href="light-sidebar-layout.html">
+                <a class="logo-link" href="catalog.html">
                     <div class="logo">
                         <span class="company">IWL</span>
                         <span class="service">design</span>
@@ -448,48 +462,32 @@
             <div class="user-info">
                 <div class="account-type">Личный аккаунт</div>
                 <div class="info-card">
-                            <span class="user-avatar user-avatar-m">
-                                <span>K</span>
-                            </span>
+                                        <span class="user-avatar user-avatar-m">
+                                            <span>И</span>
+                                        </span>
                     <div class="data">
-                                <span class="primary">
-                                    <span class="caption">№ кабинета:</span>
-                                    <span class="id">12345</span>
-                                </span>
-                        <span class="slave">this.is.very.long.user.email.address@example.com</span>
+                                            <span class="primary">
+                                                <span class="caption">№ кабинета:</span>
+                                                <span class="id">12345</span>
+                                            </span>
+                        <span class="slave">email@mail.com</span>
                     </div>
                 </div>
                 <div class="data">
-                    <span class="primary">ООО Название компании может быть несколько строк </span>
                     <span class="slave">Фамилия Имя Отчество</span>
-                    <span class="slave">+375291112233</span>
                 </div>
             </div>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="javascript:;">
-                <i class="i i-support-chat"></i> Чат техподдержки
-                <span class="ml-auto badge badge-colorful badge-colorful-red badge-s">1</span>
-            </a>
-            <a class="dropdown-item" href="javascript:;">
-                <i class="i i-question-circle"></i> Вопрос - ответ
-            </a>
-            <a class="dropdown-item" href="javascript:;">
-                <i class="i i-notification"></i> Уведомления
-                <span class="ml-auto badge badge-colorful badge-colorful-red badge-s">1</span>
-            </a>
+            <a class="dropdown-item" href="#"><i class="i i-support-chat"></i>Чат техподдержки</a>
+            <a class="dropdown-item" href="#"><i class="i i-question-circle"></i>Вопрос-ответ</a>
+            <a class="dropdown-item" href="#"><i class="i i-notification"></i>Уведомления</a>
             <div class="dropdown-divider"></div>
-            <p class="dropdown-item-text d-flex align-items-center">Баланс<a href="javascript:;"
-                                                                             class="btn btn-icon-text btn-s ml-auto"><i
-                    class="i i-dollar"></i>42.20</a></p>
+            <p class="dropdown-item-text d-flex align-items-center">Баланс<a href="javascript:;" class="btn btn-icon-text btn-s ml-auto">
+                <i class="i i-dollar"></i>42.20</a></p>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="javascript:;"><i class="i i-home"></i>Главная страница сервисов</a>
-            <a class="dropdown-item" href="javascript:;"><i class="i i-setting"></i>Настройки профиля владельца аккаунта</a>
-            <a class="dropdown-item" href="javascript:;"><i class="i i-log-out"></i>Выход из системы</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="javascript:;" data-toggle="theme" data-theme="dark"><i class="i i-moon"></i>Темная
-                тема</a>
-            <a class="dropdown-item" href="javascript:;" data-toggle="theme" data-theme="light"><i class="i i-sun"></i>Светлая
-                тема</a>
+            <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
+            <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
+            <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
         </div>
     </div>
 </aside>
