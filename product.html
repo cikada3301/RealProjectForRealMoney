@@ -133,6 +133,10 @@
             --app-logo-serice-color: var(--white-100);
         }
 
+        .search-item-hover:hover {
+            background-color: #E7EDFB;
+        }
+
         .subcategories {
             display: none;
             width: 750px;
@@ -501,7 +505,7 @@
 <main class="app-main mb-5">
     <div class="content-header">
         <div class="container-fluid">
-            <div class="dropdown">
+            <div class="dropdown text-nowrap">
                 <button class="btn btn-icon-text dropdown-toggle text-nowrap" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                 <span class="ml-2">Каталог</span>
@@ -566,11 +570,13 @@
                     </div>
                 </div>
             </div>
-            <div class="custom-field-button-group inbox custom-field-button-group-sm m-auto w-50 search-field">
+            <div class="custom-field-button-group inbox custom-field-button-group-sm w-50 m-auto search-field">
                 <label class="custom-field">
-                    <input type="text" placeholder="&nbsp;"/>
+                    <input type="text" placeholder="&nbsp;" class="form-control search-input"/>
                     <span class="placeholder">Поиск</span>
                 </label>
+                <div class="search-results mt-5" style="background-color: white; display: none;">
+                </div>
                 <button class="btn btn-flat btn-icon" data-title="This is input tooltip">
                     <i class="i i-search"></i>
                 </button>
@@ -578,9 +584,39 @@
         </div>
         <div class="dropdown-divider"></div>
         <div class="top-bar-item top-bar-item-right pl-3">
-            <a class="btn btn-icon search" href="javascript:;">
+            <a class="btn btn-icon search" href="javascript:;" data-toggle="modal"
+               data-target="#searchModal">
                 <i class="i i-search"></i>
             </a>
+            <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title" id="searchModalLabel">
+                                <span class="title">Поиск товара</span>
+                            </div>
+                            <button class="close-modal btn btn-icon btn-flat btn-xs" data-dismiss="modal"
+                                    aria-label="Close">
+                                <i class="i i-cross"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="custom-field-button-group inbox">
+                                <label class="custom-field">
+                                    <input type="text" placeholder="&nbsp;" class="form-control search-input"/>
+                                    <span class="placeholder">Поиск</span>
+                                </label>
+                                <button class="btn btn-flat btn-icon" data-title="This is input tooltip">
+                                    <i class="i i-search"></i>
+                                </button>
+                            </div>
+                            <div class="search-results-mb mt-3" style="background-color: white; display: none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <a class="btn btn-icon counter-likes" href="javascript:;">
                 <i class="i i-heart"></i>1
             </a>
@@ -879,8 +915,8 @@
 <script type="text/javascript" src="js/popup.js"></script>
 <script type="text/javascript" src="js/likeCounter.js"></script>
 <script type="text/javascript" src="js/cartCounter.js"></script>
-<script type="text/javascript" src="js/layout.js"></script>
 <script type="text/javascript" src="js/scroll.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
 
 <!-- <script type="text/javascript" src="/static/js/main.js?v=1.0.0"></script> -->
 

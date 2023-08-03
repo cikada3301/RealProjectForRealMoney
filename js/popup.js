@@ -5,6 +5,3 @@ categoryBtn.addEventListener("mouseenter", () => {
     subcategories.style.display = "block";
 });
 
-categoryBtn.addEventListener("mouseleave", () => {
-    subcategories.style.display = "none";
-});

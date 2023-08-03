@@ -8,6 +8,8 @@
 
     <!-- Required IdeaDESIGN styles -->
     <link rel="stylesheet" href="https://cdn.ideadrive.su/v2.1.2/css/main.build.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 
     <!-- Optional styles -->
     <!-- <link rel="stylesheet" href="/static/css/main.css" media="all"> -->
@@ -146,6 +148,10 @@
         .scroll-menu {
             overflow: auto;
             white-space: nowrap;
+        }
+
+        .show-point-of-issue {
+            display: none;
         }
 
         .scroll-menu img {
@@ -501,7 +507,7 @@
 <main class="app-main mb-5">
     <div class="content-header">
         <div class="container-fluid">
-            <div class="dropdown">
+            <div class="dropdown text-nowrap">
                 <button class="btn btn-icon-text dropdown-toggle text-nowrap" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                 <span class="ml-2">Каталог</span>
@@ -568,9 +574,11 @@
             </div>
             <div class="custom-field-button-group inbox custom-field-button-group-sm m-auto w-50 search-field">
                 <label class="custom-field">
-                    <input type="text" placeholder="&nbsp;"/>
+                    <input type="text" placeholder="&nbsp;" class="form-control search-input"/>
                     <span class="placeholder">Поиск</span>
                 </label>
+                <div class="search-results mt-5" style="background-color: white; display: none;">
+                </div>
                 <button class="btn btn-flat btn-icon" data-title="This is input tooltip">
                     <i class="i i-search"></i>
                 </button>
@@ -578,9 +586,39 @@
         </div>
         <div class="dropdown-divider"></div>
         <div class="top-bar-item top-bar-item-right pl-3">
-            <a class="btn btn-icon search" href="javascript:;">
+            <a class="btn btn-icon search" href="javascript:;" data-toggle="modal"
+               data-target="#searchModal">
                 <i class="i i-search"></i>
             </a>
+            <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title" id="searchModalLabel">
+                                <span class="title">Поиск товара</span>
+                            </div>
+                            <button class="close-modal btn btn-icon btn-flat btn-xs" data-dismiss="modal"
+                                    aria-label="Close">
+                                <i class="i i-cross"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="custom-field-button-group inbox">
+                                <label class="custom-field">
+                                    <input type="text" placeholder="&nbsp;" class="form-control search-input"/>
+                                    <span class="placeholder">Поиск</span>
+                                </label>
+                                <button class="btn btn-flat btn-icon" data-title="This is input tooltip">
+                                    <i class="i i-search"></i>
+                                </button>
+                            </div>
+                            <div class="search-results-mb mt-3" style="background-color: white; display: none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <a class="btn btn-icon counter-likes" href="javascript:;">
                 <i class="i i-heart"></i>1
             </a>
@@ -615,9 +653,33 @@
                             <p class="text-muted mb-0">Компания:</p>
                             <span class="h5">Домочай</span>
                         </div>
-                        <button class="btn btn-xs">
-                            <i class="i i-trash-2"></i> Удалить заказ
+                        <button class="btn btn-xs" data-toggle="modal" data-target="#exampleModal">
+                            <i class="i i-trash-2"></i> Очистить корзину
                         </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="modal-title" id="exampleModalLabel">
+                                            <span class="title">Очистка корзины</span>
+                                        </div>
+                                        <button class="close-modal btn btn-icon btn-flat btn-xs" data-dismiss="modal"
+                                                aria-label="Close">
+                                            <i class="i i-cross"></i>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="description">Вы собираетесь удалить все товары из корзины. Это
+                                            действие нельзя будет отменить.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger">Очистить</button>
+                                        <button type="button" class="btn ml-auto" data-dismiss="modal">Отмена</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body border-top">
                         <p>Товары в корзине</p>
@@ -769,6 +831,7 @@
                                         <select data-toggle="select" name="select1" id="select1">
                                             <optgroup label="Выберите">
                                                 <option value="1">Доставка по адресу</option>
+                                                <option value="2">Самовывоз</option>
                                             </optgroup>
                                         </select>
                                         <span class="placeholder">Способ доставки</span>
@@ -782,8 +845,106 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                <span class="mb-0 pr-2" style="font-size: 13px;">Требуется добавить</span>
-                                <button class="btn btn-warning">адрес доставки</button>
+                                <div class="address-delivery">
+                                    <span class="mb-0 pr-2" style="font-size: 13px;">Требуется добавить</span>
+                                    <button class="btn btn-warning address-btn" data-toggle="modal"
+                                            data-target="#addressModal">адрес доставки
+                                    </button>
+                                    <div class="modal fade" id="addressModal" tabindex="-1"
+                                         aria-labelledby="addressModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog w-25">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="modal-title" id="addressModalLabel">
+                                                        <p class="title">Добавление адреса достаки</p>
+                                                    </div>
+                                                    <button class="close-modal btn btn-icon btn-flat btn-xs"
+                                                            data-dismiss="modal" aria-label="Close">
+                                                        <i class="i i-cross"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <label class="custom-select custom-select-sm pb-3" for="select1">
+                                                        <select data-toggle="select" name="select1" id="select11">
+                                                            <optgroup label="Выберите">
+                                                                <option value="1">Магазин №1</option>
+                                                            </optgroup>
+                                                        </select>
+                                                        <span class="placeholder">Название</span>
+                                                        <span class="error-message" aria-live="polite"></span>
+                                                    </label>
+                                                    <label class="custom-select custom-select-sm pb-3" for="select1">
+                                                        <select data-toggle="select" name="select1" id="select12">
+                                                            <option data-select2-id="2">Выберите</option>
+                                                            <optgroup label="Выберите">
+                                                                <option value="1">Беларусь</option>
+                                                            </optgroup>
+                                                        </select>
+                                                        <span class="placeholder">Страна</span>
+                                                        <span class="error-message" aria-live="polite"></span>
+                                                    </label>
+                                                    <label class="custom-select custom-select-sm pb-3" for="select1">
+                                                        <select data-toggle="select" name="select1" id="select13">
+                                                            <option data-select2-id="2">Выберите</option>
+                                                            <optgroup label="Выберите">
+                                                                <option value="1">Магазин №1</option>
+                                                            </optgroup>
+                                                        </select>
+                                                        <span class="placeholder">Регион</span>
+                                                        <span class="error-message" aria-live="polite"></span>
+                                                    </label>
+                                                    <label class="custom-select custom-select-sm pb-3" for="select1">
+                                                        <select data-toggle="select" name="select1" id="select14">
+                                                            <option data-select2-id="2">Выберите</option>
+                                                            <optgroup label="Выберите">
+                                                                <option value="1">Магазин №1</option>
+                                                            </optgroup>
+                                                        </select>
+                                                        <span class="placeholder">Город</span>
+                                                        <span class="error-message" aria-live="polite"></span>
+                                                    </label>
+                                                    <label class="custom-field custom-field-sm w-25 pb-3">
+                                                        <input type="text" placeholder="&nbsp;"/>
+                                                        <span class="placeholder">Улица</span>
+                                                        <span class="error-message" aria-live="polite"></span>
+                                                    </label>
+                                                    <label class="custom-field custom-field-sm w-25 pb-3">
+                                                        <input type="text" placeholder="&nbsp;"/>
+                                                        <span class="placeholder">Дом / Строение</span>
+                                                        <span class="error-message" aria-live="polite"></span>
+                                                    </label>
+                                                    <label class="custom-field custom-field-sm w-25 pb-3">
+                                                        <input type="text" placeholder="&nbsp;"/>
+                                                        <span class="placeholder">Офис</span>
+                                                        <span class="error-message" aria-live="polite"></span>
+                                                    </label>
+                                                    <label class="custom-field custom-field-sm">
+                                                        <textarea placeholder="&nbsp;"></textarea>
+                                                        <span class="placeholder">Комментарий</span>
+                                                        <span class="error-message" aria-live="polite"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary">Добавить</button>
+                                                    <button type="button" class="btn ml-auto" data-dismiss="modal">
+                                                        Отмена
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label class="custom-select custom-select-sm pb-3 show-point-of-issue" for="select1">
+                                    <select data-toggle="select" name="select1" id="select4">
+                                        <optgroup label="Выберите">
+                                            <option value="1">Беларусь, Могилёвская область, Могилёв, ул. Подгорная,
+                                                д.1, оф.112
+                                            </option>
+                                        </optgroup>
+                                    </select>
+                                    <span class="placeholder">Пункт выдачи</span>
+                                    <span class="error-message" aria-live="polite"></span>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -803,13 +964,14 @@
                                     <select data-toggle="select" name="select1" id="select2">
                                         <optgroup label="Выберите">
                                             <option value="1">Наличный расчёт</option>
+                                            <option value="2">Безналичный расчёт</option>
                                         </optgroup>
                                     </select>
                                     <span class="placeholder">Метод оплаты</span>
                                     <span class="error-message" aria-live="polite"></span>
                                 </label>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 payment-type">
                                 <label class="custom-select custom-select-sm pb-3" for="select1">
                                     <select data-toggle="select" name="select1" id="select3">
                                         <optgroup label="Выберите">
@@ -834,7 +996,7 @@
                         <p>Отправка</p>
                     </div>
                     <div class="card-body">
-                        <div class="col-12 pl-2" style="font-size: 13px;">
+                        <div class="col-12 pl-2 order" style="font-size: 13px;">
                             <div class="row py-2">
                                 <div class="col-2 border-top">
                                     Товаров
@@ -847,7 +1009,7 @@
                                 <div class="col-2 border-top">
                                     Способ доставки
                                 </div>
-                                <div class="col-6 border-top text-right">
+                                <div class="col-6 border-top text-right delivery-method-value">
                                     Доставка по адресу
                                 </div>
                             </div>
@@ -855,7 +1017,7 @@
                                 <div class="col-2 border-top">
                                     Метод оплаты
                                 </div>
-                                <div class="col-6 border-top text-right">
+                                <div class="col-6 border-top text-right payment-value">
                                     Наличный расчёт
                                 </div>
                             </div>
@@ -871,9 +1033,10 @@
                                 <div class="col-2 border-top border-bottom" style="background-color: #FFF8DE">
                                     Итого
                                 </div>
-                                <div class="col-6 border-top border-bottom text-right" style="background-color: #FFF8DE; font-size: 16px;">
-                                        <span class="fw-bold">1&nbsp;512,00</span>
-                                        <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
+                                <div class="col-6 border-top border-bottom text-right"
+                                     style="background-color: #FFF8DE; font-size: 16px;">
+                                    <span class="fw-bold">1&nbsp;512,00</span>
+                                    <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
                                 </div>
                             </div>
                         </div>
@@ -888,8 +1051,93 @@
                                         </label>
                                     </div>
                                     <div class="col-2 pl-4">
-                                        <button class="btn btn-icon btn-l btn-primary disabled"><i class="i i-send"></i><span
+                                        <button class="btn btn-icon btn-l btn-primary disabled" data-toggle="modal"
+                                                data-target="#orderModal"><i class="i i-send"></i><span
                                                 style="font-size: 14px;">Отправить</span></button>
+                                        <div class="modal fade" id="orderModal" tabindex="-1"
+                                             aria-labelledby="orderModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <div class="modal-title" id="orderModalLabel">
+                                                            <span class="title">Подтверждение заказа</span>
+                                                        </div>
+                                                        <button class="close-modal btn btn-icon btn-flat btn-xs"
+                                                                data-dismiss="modal" aria-label="Close">
+                                                            <i class="i i-cross"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col-12 pl-2 order" style="font-size: 13px;">
+                                                            <div class="row py-2">
+                                                                <div class="col-3 border-top">
+                                                                    Товаров
+                                                                </div>
+                                                                <div class="col-9 border-top text-right">
+                                                                    36 шт.
+                                                                </div>
+                                                            </div>
+                                                            <div class="row py-2">
+                                                                <div class="col-3 border-top">
+                                                                    Способ доставки
+                                                                </div>
+                                                                <div class="col-9 border-top text-right delivery-method-value">
+                                                                    Самовывоз
+                                                                </div>
+                                                            </div>
+                                                            <div class="row py-2">
+                                                                <div class="col-3 border-top">
+                                                                    Адрес пункта выдачи:
+                                                                </div>
+                                                                <div class="col-9 border-top text-right address-value">
+                                                                    Беларусь, Могилёвская область, Могилёв, ул.
+                                                                    Подгорная, д.1, оф.112
+                                                                </div>
+                                                            </div>
+                                                            <div class="row py-2">
+                                                                <div class="col-3 border-top">
+                                                                    Метод оплаты
+                                                                </div>
+                                                                <div class="col-9 border-top text-right payment-value">
+                                                                    Безналичный расчёт
+                                                                </div>
+                                                            </div>
+                                                            <div class="row py-2">
+                                                                <div class="col-3 border-top border-bottom"
+                                                                     style="background-color: #FFF8DE">
+                                                                    Итого
+                                                                </div>
+                                                                <div class="col-9 border-top border-bottom text-right"
+                                                                     style="background-color: #FFF8DE; font-size: 16px;">
+                                                                    <span class="fw-bold">1&nbsp;512,00</span>
+                                                                    <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p>Сейчас будет создан счёт и мы перенаправим вас на страницу
+                                                            пополнения баланса пластиковой картой.</p>
+                                                        <div class="alert alert-info fade show" role="alert">
+                                                            <div class="alert-icon">
+                                                                <i class="i i-info"></i>
+                                                            </div>
+                                                            <div class="alert-content">
+                                                                <div class="alert-title">При нажатии кнопки «Перейти к
+                                                                    оплате» будет сгенерирован счёт и вы будете
+                                                                    перенаправлены на страницу пополнения баланса.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary">Перейти к оплате
+                                                        </button>
+                                                        <button type="button" class="btn ml-auto" data-dismiss="modal">
+                                                            Вернуться в корзину
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -915,11 +1163,9 @@
 <script type="text/javascript" src="js/popup.js"></script>
 <script type="text/javascript" src="js/likeCounter.js"></script>
 <script type="text/javascript" src="js/cartCounter.js"></script>
-<script type="text/javascript" src="js/layout.js"></script>
 <script type="text/javascript" src="js/scroll.js"></script>
-
-<!-- <script type="text/javascript" src="/static/js/main.js?v=1.0.0"></script> -->
-
+<script type="text/javascript" src="js/delivery.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
 
 <!-- Required -->
 <script type="text/javascript">

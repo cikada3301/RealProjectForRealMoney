@@ -48,6 +48,9 @@ cartButtons.forEach(function (button, index) {
         parentElement.children[0].children[1].children[2].remove();
         parentElement.children[0].children[1].innerHTML += newElement;
 
+        let productCount = parseInt(countElement.value);
+        arrayIndexCount.set(index, productCount);
+
         counterCarts.innerHTML = `<i class="i i-shopping-cart"></i> ${arrayIndexCount.size}`;
     });
 });
