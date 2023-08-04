@@ -51,6 +51,8 @@ cartButtons.forEach(function (button, index) {
         let productCount = parseInt(countElement.value);
         arrayIndexCount.set(index, productCount);
 
+        counterCarts.classList.add('btn-primary')
+
         counterCarts.innerHTML = `<i class="i i-shopping-cart"></i> ${arrayIndexCount.size}`;
     });
 });

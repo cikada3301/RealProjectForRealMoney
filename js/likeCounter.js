@@ -10,10 +10,15 @@ arrayLikes.forEach(like => {
         if (parent.classList.contains('btn-danger')) {
             count -= 1;
             counter.innerHTML = `<i class="i i-heart"></i> ${count}`;
+            if (parseInt(counter.textContent) === 0) {
+                counter.classList.remove('btn-danger');
+            }
             parent.classList.remove('btn-danger');
+
         } else {
             count += 1;
             counter.innerHTML = `<i class="i i-heart"></i> ${count}`;
+            counter.classList.add('btn-danger')
             parent.classList.add('btn-danger');
         }
     })

@@ -189,7 +189,71 @@
             display: none;
         }
 
+        .amount {
+            display: flex;
+            padding: 2px 0;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .subcategories {
+            display: none;
+            width: 750px;
+            height: 540px;
+            position: absolute;
+            background-color: white;
+            top: 0;
+            left: 225px;
+        }
+
+        .search {
+            display: none;
+        }
+
+        .scroll-menu img {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .scroll-menu a:hover img {
+            border: 1px solid gray;
+        }
+
+        .grid-header {
+            display: none;
+        }
+
+        .product-h {
+            display: none;
+        }
+
+        .sm {
+            display: none;
+        }
+
+        .delivery-mobile {
+            display: none;
+        }
+
+        @media (max-width: 991.98px) {
+            .top-bar-item-full > div {
+                display: none !important;
+            }
+
+            .grid-header {
+                display: block;
+            }
+
+            .top-bar-list {
+                background: #E7EDFB;
+            }
+        }
+
         @media (max-width: 767.98px) {
+            .breadcrumb {
+                display: none;
+            }
+
             .search-field {
                 display: none;
             }
@@ -198,38 +262,28 @@
                 display: block;
             }
 
-            .characteristic-2 {
+            .table-responsive {
+                display: none;
+            }
+
+            .product-h {
                 display: block;
-            }
-
-            .characteristic-1 {
-                display: none;
-            }
-
-            .group-1 {
-                display: none;
-            }
-
-            .group-2 {
-                display: none;
             }
         }
 
-        @media (max-width: 991.98px) {
-            .card {
-                margin-left: 5px;
+        @media (max-width: 575.98px) {
+            .mobile {
+                padding-top: 1rem;
+            }
+        }
+
+        @media (min-width: 767.98px) {
+            .delete-order {
+                text-align: right;
             }
 
-            .top-bar-list {
-                background-color: #e7edfb;
-            }
-
-            .top-bar-item-full > div {
-                display: none !important;
-            }
-
-            .mobile-top-bar {
-                display: block;
+            .laptop {
+                width: 75%;
             }
         }
     </style>
@@ -308,7 +362,8 @@
                 </div>
             </div>
             <div class="top-bar-item top-bar-item-right px-0 d-flex">
-                <a href="javascript:;" class="btn btn-icon btn-flat d-flex justify-content-end mobile-top-bar"
+                <a href="javascript:;"
+                   class="btn btn-icon btn-flat d-flex justify-content-end mobile-top-bar grid-header"
                    data-title="Чат тех. поддержки"
                    data-toggle="tooltip" data-placement="bottom">
                     <i class="i i-grid"></i>
@@ -574,7 +629,7 @@
             </div>
             <div class="custom-field-button-group inbox custom-field-button-group-sm m-auto w-50 search-field">
                 <label class="custom-field">
-                    <input type="text" placeholder="&nbsp;" class="form-control search-input"/>
+                    <input type="text" placeholder="&nbsp;" class="search-input"/>
                     <span class="placeholder">Поиск</span>
                 </label>
                 <div class="search-results mt-5" style="background-color: white; display: none;">
@@ -606,7 +661,7 @@
                         <div class="modal-body">
                             <div class="custom-field-button-group inbox">
                                 <label class="custom-field">
-                                    <input type="text" placeholder="&nbsp;" class="form-control search-input"/>
+                                    <input type="text" placeholder="&nbsp;" class="search-input"/>
                                     <span class="placeholder">Поиск</span>
                                 </label>
                                 <button class="btn btn-flat btn-icon" data-title="This is input tooltip">
@@ -619,11 +674,11 @@
                     </div>
                 </div>
             </div>
-            <a class="btn btn-icon counter-likes" href="javascript:;">
+            <a class="btn btn-icon btn-danger counter-likes" href="javascript:;">
                 <i class="i i-heart"></i>1
             </a>
-            <a class="btn btn-icon counter-carts" href="javascript:;">
-                <i class="i i-shopping-cart"></i>0
+            <a class="btn btn-icon btn-primary counter-carts" href="javascript:;">
+                <i class="i i-shopping-cart"></i>1
             </a>
         </div>
     </div>
@@ -634,229 +689,35 @@
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb" show-scroll-hover>
-                        <li class="breadcrumb-item"><a href="javascript:;">Каталог</a></li>
+                        <li class="breadcrumb-item"><a href="./catalog.html">Каталог</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Корзина</li>
                     </ol>
                 </nav>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <h4 class="mb-4">Корзина</h4>
+            <div class="col-12 pb-3">
+                <div class="fw-bold">Корзина</div>
             </div>
-        </div>
-        <div class="row">
             <div class="col-12">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <div>
-                            <p class="text-muted mb-0">Компания:</p>
-                            <span class="h5">Домочай</span>
-                        </div>
-                        <button class="btn btn-xs" data-toggle="modal" data-target="#exampleModal">
-                            <i class="i i-trash-2"></i> Очистить корзину
-                        </button>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                             aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <div class="modal-title" id="exampleModalLabel">
-                                            <span class="title">Очистка корзины</span>
-                                        </div>
-                                        <button class="close-modal btn btn-icon btn-flat btn-xs" data-dismiss="modal"
-                                                aria-label="Close">
-                                            <i class="i i-cross"></i>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p class="description">Вы собираетесь удалить все товары из корзины. Это
-                                            действие нельзя будет отменить.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger">Очистить</button>
-                                        <button type="button" class="btn ml-auto" data-dismiss="modal">Отмена</button>
+                <div class="card p-3">
+                    <div class="row">
+                        <div class="col-12 border-bottom pb-3">
+                            <div class="row">
+                                <div class="col-12 col-md-8 col-lg-9">
+                                    <div class="row">
+                                        <div>Компания:</div>
+                                        <div class="fw-bold">Домочай</div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body border-top">
-                        <p>Товары в корзине</p>
-                        <table class="table table-bordered">
-                            <thead>
-                            <tr>
-                                <th>Фото</th>
-                                <th>Товар</th>
-                                <th class="text-center">Цена за ед.</th>
-                                <th class="text-center">Кол-во, шт</th>
-                                <th class="text-center">Сумма</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="p-0"><img class="w-50 h-50" src="img/Rectangle3.png" alt=""/></td>
-                                <td style="word-wrap: break-word">
-                                    <p class="card-title">Продукт творожный "Десертный" МСП с ванилином и изюмом,
-                                        контейнер 400г</p>
-                                    <p class="card-text">
-                                        <span class="fw-bold">100090757</span>
-                                        <span class="text-muted">5637657</span>
-                                    </p>
-                                </td>
-                                <td class="text-center">
-                                    <div class="amount amount-s">
-                                        <span class="price">42,00</span>
-                                        <span class="currency">BYN</span>
-                                    </div>
-                                </td>
-                                <td class="text-center">
-                                    <div class="col-12 col-lg-12 px-0">
-                                        <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
-                                                class="i i-minus"></i></a>
-                                        <input class="w-25 text-center countElement" style="height: 32px;" type="text"
-                                               value="12"/>
-                                        <a class="btn btn-icon btn-s add-btn" href="javascript:;">
-                                            <i class="i i-plus"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                                <td class="text-center">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="amount amount-s pr-3">
-                                            <span class="price">504,00</span>
-                                            <span class="currency">BYN</span>
-                                        </div>
-                                        <button class="btn btn-s">
-                                            <i class="i i-trash-2"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="p-0"><img class="w-50 h-50" src="img/Rectangle3.png" alt=""/></td>
-                                <td style="word-wrap: break-word">
-                                    <p class="card-title">Продукт творожный "Десертный" МСП с ванилином и изюмом,
-                                        контейнер 400г</p>
-                                    <p class="card-text">
-                                        <span class="fw-bold">100090757</span>
-                                        <span class="text-muted">5637657</span>
-                                    </p>
-                                </td>
-                                <td class="text-center">
-                                    <div class="amount amount-s">
-                                        <span class="price">42,00</span>
-                                        <span class="currency">BYN</span>
-                                    </div>
-                                </td>
-                                <td class="text-center">
-                                    <div class="col-12 col-lg-12 px-0">
-                                        <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
-                                                class="i i-minus"></i></a>
-                                        <input class="w-25 text-center countElement" style="height: 32px;" type="text"
-                                               value="12"/>
-                                        <a class="btn btn-icon btn-s add-btn" href="javascript:;">
-                                            <i class="i i-plus"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                                <td class="text-center">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="amount amount-s pr-3">
-                                            <span class="price">504,00</span>
-                                            <span class="currency">BYN</span>
-                                        </div>
-                                        <button class="btn btn-s">
-                                            <i class="i i-trash-2"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="p-0"><img class="w-50 h-50" src="img/Rectangle3.png" alt=""/></td>
-                                <td style="word-wrap: break-word">
-                                    <p class="card-title">Продукт творожный "Десертный" МСП с ванилином и изюмом,
-                                        контейнер 400г</p>
-                                    <p class="card-text">
-                                        <span class="fw-bold">100090757</span>
-                                        <span class="text-muted">5637657</span>
-                                    </p>
-                                </td>
-                                <td class="text-center">
-                                    <div class="amount amount-s">
-                                        <span class="price">42,00</span>
-                                        <span class="currency">BYN</span>
-                                    </div>
-                                </td>
-                                <td class="text-center">
-                                    <div class="col-12 col-lg-12 px-0">
-                                        <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
-                                                class="i i-minus"></i></a>
-                                        <input class="w-25 text-center countElement" style="height: 32px;" type="text"
-                                               value="12"/>
-                                        <a class="btn btn-icon btn-s add-btn" href="javascript:;">
-                                            <i class="i i-plus"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                                <td class="text-center">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="amount amount-s pr-3">
-                                            <span class="price">504,00</span>
-                                            <span class="currency">BYN</span>
-                                        </div>
-                                        <button class="btn btn-s">
-                                            <i class="i i-trash-2"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <p>Доставка</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-group">
-                                    <label class="custom-select custom-select-sm pb-3" for="select1">
-                                        <select data-toggle="select" name="select1" id="select1">
-                                            <optgroup label="Выберите">
-                                                <option value="1">Доставка по адресу</option>
-                                                <option value="2">Самовывоз</option>
-                                            </optgroup>
-                                        </select>
-                                        <span class="placeholder">Способ доставки</span>
-                                        <span class="error-message" aria-live="polite"></span>
-                                    </label>
-                                    <label class="custom-field custom-field-icon date custom-field-sm">
-                                        <input type="text" placeholder="&nbsp;" autocomplete="off"/>
-                                        <span class="placeholder">Date</span>
-                                        <span class="error-message" aria-live="polite"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="address-delivery">
-                                    <span class="mb-0 pr-2" style="font-size: 13px;">Требуется добавить</span>
-                                    <button class="btn btn-warning address-btn" data-toggle="modal"
-                                            data-target="#addressModal">адрес доставки
-                                    </button>
-                                    <div class="modal fade" id="addressModal" tabindex="-1"
-                                         aria-labelledby="addressModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog w-25">
+                                <div class="col-12 col-md-4 col-lg-2 pt-3 delete-order">
+                                    <a class="btn btn-icon-text btn-xs" data-toggle="modal" data-target="#deleteOrder"
+                                       href="javascript:;"><i class="i i-trash-2"></i>Очистить корзину</a>
+                                    <div class="modal fade" id="deleteOrder" tabindex="-1"
+                                         aria-labelledby="deleteOrderLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <div class="modal-title" id="addressModalLabel">
-                                                        <p class="title">Добавление адреса достаки</p>
+                                                    <div class="modal-title" id="deleteOrderLabel">
+                                                        <span class="title">Очистка корзины</span>
                                                     </div>
                                                     <button class="close-modal btn btn-icon btn-flat btn-xs"
                                                             data-dismiss="modal" aria-label="Close">
@@ -864,65 +725,382 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <label class="custom-select custom-select-sm pb-3" for="select1">
-                                                        <select data-toggle="select" name="select1" id="select11">
-                                                            <optgroup label="Выберите">
-                                                                <option value="1">Магазин №1</option>
-                                                            </optgroup>
-                                                        </select>
-                                                        <span class="placeholder">Название</span>
-                                                        <span class="error-message" aria-live="polite"></span>
-                                                    </label>
-                                                    <label class="custom-select custom-select-sm pb-3" for="select1">
-                                                        <select data-toggle="select" name="select1" id="select12">
-                                                            <option data-select2-id="2">Выберите</option>
-                                                            <optgroup label="Выберите">
-                                                                <option value="1">Беларусь</option>
-                                                            </optgroup>
-                                                        </select>
-                                                        <span class="placeholder">Страна</span>
-                                                        <span class="error-message" aria-live="polite"></span>
-                                                    </label>
-                                                    <label class="custom-select custom-select-sm pb-3" for="select1">
-                                                        <select data-toggle="select" name="select1" id="select13">
-                                                            <option data-select2-id="2">Выберите</option>
-                                                            <optgroup label="Выберите">
-                                                                <option value="1">Магазин №1</option>
-                                                            </optgroup>
-                                                        </select>
-                                                        <span class="placeholder">Регион</span>
-                                                        <span class="error-message" aria-live="polite"></span>
-                                                    </label>
-                                                    <label class="custom-select custom-select-sm pb-3" for="select1">
-                                                        <select data-toggle="select" name="select1" id="select14">
-                                                            <option data-select2-id="2">Выберите</option>
-                                                            <optgroup label="Выберите">
-                                                                <option value="1">Магазин №1</option>
-                                                            </optgroup>
-                                                        </select>
-                                                        <span class="placeholder">Город</span>
-                                                        <span class="error-message" aria-live="polite"></span>
-                                                    </label>
-                                                    <label class="custom-field custom-field-sm w-25 pb-3">
-                                                        <input type="text" placeholder="&nbsp;"/>
-                                                        <span class="placeholder">Улица</span>
-                                                        <span class="error-message" aria-live="polite"></span>
-                                                    </label>
-                                                    <label class="custom-field custom-field-sm w-25 pb-3">
-                                                        <input type="text" placeholder="&nbsp;"/>
-                                                        <span class="placeholder">Дом / Строение</span>
-                                                        <span class="error-message" aria-live="polite"></span>
-                                                    </label>
-                                                    <label class="custom-field custom-field-sm w-25 pb-3">
-                                                        <input type="text" placeholder="&nbsp;"/>
-                                                        <span class="placeholder">Офис</span>
-                                                        <span class="error-message" aria-live="polite"></span>
-                                                    </label>
-                                                    <label class="custom-field custom-field-sm">
-                                                        <textarea placeholder="&nbsp;"></textarea>
-                                                        <span class="placeholder">Комментарий</span>
-                                                        <span class="error-message" aria-live="polite"></span>
-                                                    </label>
+                                                    Вы собираетесь удалить все товары из корзины. Это действие нельзя
+                                                    будет отменить.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger">Очистить</button>
+                                                    <button type="button" class="btn ml-auto" data-dismiss="modal">
+                                                        Отмена
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 border-bottom p-3">
+                            <div class="pb-3 sm">Товары в корзине</div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Фото</th>
+                                        <th scope="col">Товар</th>
+                                        <th scope="col" class="px-1">Цена за ед.</th>
+                                        <th scope="col">Кол-во, шт.</th>
+                                        <th scope="col">Сумма</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="p-0">
+                                            <img src="img/Rectangle3.png" alt="product" class="w-50 img-fluid">
+                                        </td>
+                                        <td>
+                                            <div class="pb-3">Продукт творожный "Десертный" МСП с ванилином и изюмом,
+                                                контейнер 400г
+                                            </div>
+                                            <span class="fw-bold">100090757&nbsp;</span>
+                                            <span>5637657</span>
+                                        </td>
+                                        <td>
+                                            <div class="amount amount-xs">
+                                                <span class="price">42,00</span>
+                                                <span class="currency">BYN</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <a class="btn btn-icon btn-xs subtract-btn" href="javascript:;"><i
+                                                        class="i i-minus"></i></a>
+                                                <input class="text-center countElement" style="width: 40px;" type="text"
+                                                       value="12"/>
+                                                <a class="btn btn-icon btn-xs add-btn" href="javascript:;">
+                                                    <i class="i i-plus"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex justify-content-between">
+                                                <div class="amount amount-xs pr-2">
+                                                    <span class="price">504,00</span>
+                                                    <span class="currency">BYN</span>
+                                                </div>
+                                                <div>
+                                                    <a class="btn btn-icon btn-xs" href="javascript:;">
+                                                        <i class="i i-trash-2"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-0">
+                                            <img src="img/Rectangle3.png" alt="product" class="w-50 img-fluid">
+                                        </td>
+                                        <td>
+                                            <div class="pb-3">Продукт творожный "Десертный" МСП с ванилином и изюмом,
+                                                контейнер 400г
+                                            </div>
+                                            <span class="fw-bold">100090757&nbsp;</span>
+                                            <span>5637657</span>
+                                        </td>
+                                        <td>
+                                            <div class="amount amount-xs">
+                                                <span class="price">42,00</span>
+                                                <span class="currency">BYN</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <a class="btn btn-icon btn-xs subtract-btn" href="javascript:;"><i
+                                                        class="i i-minus"></i></a>
+                                                <input class="text-center countElement" style="width: 40px;" type="text"
+                                                       value="12"/>
+                                                <a class="btn btn-icon btn-xs add-btn" href="javascript:;">
+                                                    <i class="i i-plus"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex justify-content-between">
+                                                <div class="amount amount-xs pr-2">
+                                                    <span class="price">504,00</span>
+                                                    <span class="currency">BYN</span>
+                                                </div>
+                                                <div>
+                                                    <a class="btn btn-icon btn-xs" href="javascript:;">
+                                                        <i class="i i-trash-2"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-0">
+                                            <img src="img/Rectangle3.png" alt="product" class="w-50 img-fluid">
+                                        </td>
+                                        <td>
+                                            <div class="pb-3">Продукт творожный "Десертный" МСП с ванилином и изюмом,
+                                                контейнер 400г
+                                            </div>
+                                            <span class="fw-bold">100090757&nbsp;</span>
+                                            <span>5637657</span>
+                                        </td>
+                                        <td>
+                                            <div class="amount amount-xs">
+                                                <span class="price">42,00</span>
+                                                <span class="currency">BYN</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <a class="btn btn-icon btn-xs subtract-btn" href="javascript:;"><i
+                                                        class="i i-minus"></i></a>
+                                                <input class="text-center countElement" style="width: 40px;" type="text"
+                                                       value="12"/>
+                                                <a class="btn btn-icon btn-xs add-btn" href="javascript:;">
+                                                    <i class="i i-plus"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex justify-content-between">
+                                                <div class="amount amount-xs pr-2">
+                                                    <span class="price">504,00</span>
+                                                    <span class="currency">BYN</span>
+                                                </div>
+                                                <div>
+                                                    <a class="btn btn-icon btn-xs" href="javascript:;">
+                                                        <i class="i i-trash-2"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-12 product-h border-bottom py-3">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="card-img position-relative">
+                                            <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
+                                        </div>
+                                    </div>
+                                    <div class="col-8 position-relative">
+                                        <p class="card-title card-description">Продукт творожный "Десертный" МСП с
+                                            ванилином и изюмом, контейнер 400г</p>
+                                        <span class="fw-bold">100090757</span><span>&nbsp; 5637657</span>
+                                        <div class="row">
+                                            <div class="col-12 counter text-nowrap py-3">
+                                                <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
+                                                        class="i i-minus"></i></a>
+                                                <input class="w-25 text-center countElement" type="text" value="1"/>
+                                                <a class="btn btn-icon btn-s" href="javascript:;"><i
+                                                        class="i i-plus add-btn"></i></a>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="amount amount-s">
+                                                    <span class="price">42,00</span>
+                                                    <span class="currency">BYN</span>
+                                                </div>
+                                                <a class="btn btn-icon-text btn-xs" href="javascript:;"
+                                                   style="position: absolute; bottom: 0px;right: 10px">
+                                                    <i class="i i-trash-2"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 product-h border-bottom py-3">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="card-img position-relative">
+                                            <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
+                                        </div>
+                                    </div>
+                                    <div class="col-8 position-relative">
+                                        <p class="card-title card-description">Продукт творожный "Десертный" МСП с
+                                            ванилином и изюмом, контейнер 400г</p>
+                                        <span class="fw-bold">100090757</span><span>&nbsp; 5637657</span>
+                                        <div class="row">
+                                            <div class="col-12 counter text-nowrap py-3">
+                                                <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
+                                                        class="i i-minus"></i></a>
+                                                <input class="w-25 text-center countElement" type="text" value="1"/>
+                                                <a class="btn btn-icon btn-s" href="javascript:;"><i
+                                                        class="i i-plus add-btn"></i></a>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="amount amount-s">
+                                                    <span class="price">42,00</span>
+                                                    <span class="currency">BYN</span>
+                                                </div>
+                                                <a class="btn btn-icon-text btn-xs" href="javascript:;"
+                                                   style="position: absolute; bottom: 0px;right: 10px">
+                                                    <i class="i i-trash-2"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 product-h border-bottom py-3">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="card-img position-relative">
+                                            <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
+                                        </div>
+                                    </div>
+                                    <div class="col-8 position-relative">
+                                        <p class="card-title card-description">Продукт творожный "Десертный" МСП с
+                                            ванилином и изюмом, контейнер 400г</p>
+                                        <span class="fw-bold">100090757</span><span>&nbsp; 5637657</span>
+                                        <div class="row">
+                                            <div class="col-12 counter text-nowrap py-3">
+                                                <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
+                                                        class="i i-minus"></i></a>
+                                                <input class="w-25 text-center countElement" type="text" value="1"/>
+                                                <a class="btn btn-icon btn-s" href="javascript:;"><i
+                                                        class="i i-plus add-btn"></i></a>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="amount amount-s">
+                                                    <span class="price">42,00</span>
+                                                    <span class="currency">BYN</span>
+                                                </div>
+                                                <a class="btn btn-icon-text btn-xs" href="javascript:;"
+                                                   style="position: absolute; bottom: 0px;right: 10px">
+                                                    <i class="i i-trash-2"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 border-bottom p-3 laptop">
+                            <div class="pb-3">Доставка</div>
+                            <div class="row pb-3">
+                                <div class="col-12 col-sm-6">
+                                    <label class="custom-select custom-select-sm mr-4" for="select1">
+                                        <select data-toggle="select" name="select1" id="select1">
+                                            <optgroup label="Выберите">
+                                                <option value="1">Доставка по адресу</option>
+                                                <option value="2">Доставка до пункта выдачи</option>
+                                            </optgroup>
+                                        </select>
+                                        <span class="placeholder">Способ доставки</span>
+                                        <span class="error-message" aria-live="polite"></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-sm-6 mobile text-nowrap">
+                                    <div class="address-delivery">
+                                        <span class="align-self-center">Требуется добавить&nbsp;</span>
+                                        <a class="btn btn-warning" href="javascript:;" data-toggle="modal"
+                                           data-target="#addAddress">Адрес доставки</a>
+                                    </div>
+                                    <label class="custom-select custom-select-sm pb-3 show-point-of-issue"
+                                           for="select1">
+                                        <select data-toggle="select" name="select1" id="select41">
+                                            <optgroup label="Выберите">
+                                                <option value="1">Беларусь, Могилёвская область, Могилёв, ул. Подгорная,
+                                                    д.1, оф.112
+                                                </option>
+                                            </optgroup>
+                                        </select>
+                                        <span class="placeholder">Пункт выдачи</span>
+                                        <span class="error-message" aria-live="polite"></span>
+                                    </label>
+                                    <div class="modal fade" id="addAddress" tabindex="-1"
+                                         aria-labelledby="addAddressLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="modal-title" id="addAddressLabel">
+                                                        <span class="title">Добавление адреса достаки</span>
+                                                    </div>
+                                                    <button class="close-modal btn btn-icon btn-flat btn-xs"
+                                                            data-dismiss="modal" aria-label="Close">
+                                                        <i class="i i-cross"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <label class="custom-select custom-select pb-3"
+                                                                   for="select4">
+                                                                <select data-toggle="select" name="select4"
+                                                                        id="select4">
+                                                                    <optgroup label="Выберите">
+                                                                        <option value="1">Магазин №1</option>
+                                                                        <option value="2">Магазин №2</option>
+                                                                        <option value="3">Магазин №3</option>
+                                                                    </optgroup>
+                                                                </select>
+                                                                <span class="placeholder">Название</span>
+                                                                <span class="error-message" aria-live="polite"></span>
+                                                            </label>
+                                                            <label class="custom-select custom-select pb-3"
+                                                                   for="select5">
+                                                                <select data-toggle="select" name="select5"
+                                                                        id="select5">
+                                                                    <optgroup label="Выберите">
+                                                                        <option value="1">Выберите</option>
+                                                                    </optgroup>
+                                                                </select>
+                                                                <span class="placeholder">Страна</span>
+                                                                <span class="error-message" aria-live="polite"></span>
+                                                            </label>
+                                                            <label class="custom-select custom-select pb-3"
+                                                                   for="select6">
+                                                                <select data-toggle="select" name="select6"
+                                                                        id="select6">
+                                                                    <optgroup label="Выберите">
+                                                                        <option value="1">Выберите</option>
+                                                                    </optgroup>
+                                                                </select>
+                                                                <span class="placeholder">Регион</span>
+                                                                <span class="error-message" aria-live="polite"></span>
+                                                            </label>
+                                                            <label class="custom-select custom-select pb-3"
+                                                                   for="select7">
+                                                                <select data-toggle="select" name="select7"
+                                                                        id="select7">
+                                                                    <optgroup label="Выберите">
+                                                                        <option value="1">Выберите</option>
+                                                                    </optgroup>
+                                                                </select>
+                                                                <span class="placeholder">Город</span>
+                                                                <span class="error-message" aria-live="polite"></span>
+                                                            </label>
+                                                            <label class="custom-field pb-3">
+                                                                <input type="email" placeholder="&nbsp;"/>
+                                                                <span class="placeholder">Улица</span>
+                                                                <span class="error-message" aria-live="polite"></span>
+                                                            </label>
+                                                            <label class="custom-field pb-3">
+                                                                <input type="email" placeholder="&nbsp;"/>
+                                                                <span class="placeholder">Дом / Строение</span>
+                                                                <span class="error-message" aria-live="polite"></span>
+                                                            </label>
+                                                            <label class="custom-field pb-3">
+                                                                <input type="email" placeholder="&nbsp;"/>
+                                                                <span class="placeholder">Офис</span>
+                                                                <span class="error-message" aria-live="polite"></span>
+                                                            </label>
+                                                            <label class="custom-field">
+                                                                <textarea placeholder="&nbsp;"></textarea>
+                                                                <span class="placeholder">Комментарий</span>
+                                                                <span class="error-message" aria-live="polite"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-primary">Добавить</button>
@@ -934,207 +1112,161 @@
                                         </div>
                                     </div>
                                 </div>
-                                <label class="custom-select custom-select-sm pb-3 show-point-of-issue" for="select1">
-                                    <select data-toggle="select" name="select1" id="select4">
-                                        <optgroup label="Выберите">
-                                            <option value="1">Беларусь, Могилёвская область, Могилёв, ул. Подгорная,
-                                                д.1, оф.112
-                                            </option>
-                                        </optgroup>
-                                    </select>
-                                    <span class="placeholder">Пункт выдачи</span>
-                                    <span class="error-message" aria-live="polite"></span>
-                                </label>
                             </div>
+                            <label class="custom-field custom-field-icon date custom-field-sm w-25">
+                                <input type="text" placeholder="&nbsp;" autocomplete="off"/>
+                                <span class="placeholder">Дата доставки</span>
+                                <span class="error-message" aria-live="polite"></span>
+                            </label>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <p>Способ оплаты</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-4">
-                                <label class="custom-select custom-select-sm pb-3" for="select1">
-                                    <select data-toggle="select" name="select1" id="select2">
-                                        <optgroup label="Выберите">
-                                            <option value="1">Наличный расчёт</option>
-                                            <option value="2">Безналичный расчёт</option>
-                                        </optgroup>
-                                    </select>
-                                    <span class="placeholder">Метод оплаты</span>
-                                    <span class="error-message" aria-live="polite"></span>
-                                </label>
-                            </div>
-                            <div class="col-4 payment-type">
-                                <label class="custom-select custom-select-sm pb-3" for="select1">
-                                    <select data-toggle="select" name="select1" id="select3">
-                                        <optgroup label="Выберите">
-                                            <option value="1">Наличные</option>
-                                            <option value="2">Оплата картой в пункте выдачи</option>
-                                            <option value="3">Оплата картой на сайте</option>
-                                        </optgroup>
-                                    </select>
-                                    <span class="placeholder">Вид оплаты</span>
-                                    <span class="error-message" aria-live="polite"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <p>Отправка</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="col-12 pl-2 order" style="font-size: 13px;">
-                            <div class="row py-2">
-                                <div class="col-2 border-top">
-                                    Товаров
+                        <div class="col-12 border-bottom p-3 laptop">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="pb-3">Способ оплаты</div>
                                 </div>
-                                <div class="col-6 border-top text-right">
-                                    36 шт.
+                                <div class="col-12 col-sm-6">
+                                    <label class="custom-select custom-select-sm mr-3" for="select2">
+                                        <select data-toggle="select" name="select2" id="select2">
+                                            <optgroup label="Выберите">
+                                                <option value="1">Наличный расчёт</option>
+                                                <option value="2">Безналичный расчёт</option>
+                                            </optgroup>
+                                        </select>
+                                        <span class="placeholder">Метод оплаты</span>
+                                        <span class="error-message" aria-live="polite"></span>
+                                    </label>
                                 </div>
-                            </div>
-                            <div class="row py-2">
-                                <div class="col-2 border-top">
-                                    Способ доставки
-                                </div>
-                                <div class="col-6 border-top text-right delivery-method-value">
-                                    Доставка по адресу
-                                </div>
-                            </div>
-                            <div class="row py-2">
-                                <div class="col-2 border-top">
-                                    Метод оплаты
-                                </div>
-                                <div class="col-6 border-top text-right payment-value">
-                                    Наличный расчёт
-                                </div>
-                            </div>
-                            <div class="row py-2">
-                                <div class="col-2 border-top">
-                                    Вид оплаты
-                                </div>
-                                <div class="col-6 border-top text-right">
-                                    Наличные
-                                </div>
-                            </div>
-                            <div class="row py-2">
-                                <div class="col-2 border-top border-bottom" style="background-color: #FFF8DE">
-                                    Итого
-                                </div>
-                                <div class="col-6 border-top border-bottom text-right"
-                                     style="background-color: #FFF8DE; font-size: 16px;">
-                                    <span class="fw-bold">1&nbsp;512,00</span>
-                                    <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
+                                <div class="col-12 col-sm-6 mobile payment-type">
+                                    <label class="custom-select custom-select-sm w-25 mr-4" for="select3">
+                                        <select data-toggle="select" name="select3" id="select3">
+                                            <optgroup label="Выберите">
+                                                <option value="1">Наличные</option>
+                                                <option value="2">Оплата картой в пункте выдачи</option>
+                                                <option value="3">Оплата картой на сайте</option>
+                                            </optgroup>
+                                        </select>
+                                        <span class="placeholder">Вид оплаты</span>
+                                        <span class="error-message" aria-live="polite"></span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <label class="custom-field">
-                                            <textarea placeholder="&nbsp;"></textarea>
-                                            <span class="placeholder">Комментарий</span>
-                                            <span class="error-message" aria-live="polite"></span>
-                                        </label>
-                                    </div>
-                                    <div class="col-2 pl-4">
-                                        <button class="btn btn-icon btn-l btn-primary disabled" data-toggle="modal"
-                                                data-target="#orderModal"><i class="i i-send"></i><span
-                                                style="font-size: 14px;">Отправить</span></button>
-                                        <div class="modal fade" id="orderModal" tabindex="-1"
-                                             aria-labelledby="orderModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <div class="modal-title" id="orderModalLabel">
-                                                            <span class="title">Подтверждение заказа</span>
-                                                        </div>
-                                                        <button class="close-modal btn btn-icon btn-flat btn-xs"
-                                                                data-dismiss="modal" aria-label="Close">
-                                                            <i class="i i-cross"></i>
-                                                        </button>
+                        <div class="col-12 p-3 laptop">
+                            <div class="pb-3">Отправка</div>
+                            <div class="table-responsive border-top">
+                                <table class="table">
+                                    <tbody class="order">
+                                    <tr>
+                                        <th scope="row">Товаров:</th>
+                                        <td class="text-right">36 шт.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Способ доставки:</th>
+                                        <td class="text-right delivery-method-value">Доставка по адресу</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Метод оплаты:</th>
+                                        <td class="text-right payment-value">Наличный расчёт</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Вид оплаты:</th>
+                                        <td class="text-right">Наличные</td>
+                                    </tr>
+                                    <tr style="background-color: #FFF8DE; font-size: 16px;">
+                                        <th scope="row">Итого:</th>
+                                        <td class="text-right">
+                                            <span class="fw-bold">1&nbsp;512,00</span>
+                                            <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-9 col-md-8 col-lg-9">
+                                    <label class="custom-field mr-4">
+                                        <textarea placeholder="&nbsp;"></textarea>
+                                        <span class="placeholder">Комментарий</span>
+                                        <span class="error-message" aria-live="polite"></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-sm-3 col-md-4 col-lg-3 mobile">
+                                    <button class="btn btn-icon btn-l btn-primary disabled align-self-start"
+                                            data-toggle="modal" data-target="#acceptOrder">
+                                        <i class="i i-send"></i>
+                                        <span style="font-size: 14px;">Отправить</span>
+                                    </button>
+                                    <div class="modal fade" id="acceptOrder" tabindex="-1"
+                                         aria-labelledby="acceptOrderLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="modal-title" id="acceptOrderLabel">
+                                                        <span class="title">Подтверждение заказа</span>
                                                     </div>
-                                                    <div class="modal-body">
-                                                        <div class="col-12 pl-2 order" style="font-size: 13px;">
-                                                            <div class="row py-2">
-                                                                <div class="col-3 border-top">
-                                                                    Товаров
-                                                                </div>
-                                                                <div class="col-9 border-top text-right">
-                                                                    36 шт.
-                                                                </div>
-                                                            </div>
-                                                            <div class="row py-2">
-                                                                <div class="col-3 border-top">
-                                                                    Способ доставки
-                                                                </div>
-                                                                <div class="col-9 border-top text-right delivery-method-value">
-                                                                    Самовывоз
-                                                                </div>
-                                                            </div>
-                                                            <div class="row py-2">
-                                                                <div class="col-3 border-top">
-                                                                    Адрес пункта выдачи:
-                                                                </div>
-                                                                <div class="col-9 border-top text-right address-value">
-                                                                    Беларусь, Могилёвская область, Могилёв, ул.
+                                                    <button class="close-modal btn btn-icon btn-flat btn-xs"
+                                                            data-dismiss="modal" aria-label="Close">
+                                                        <i class="i i-cross"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="table-responsive border-top">
+                                                        <table class="table">
+                                                            <tbody>
+                                                            <tr>
+                                                                <th scope="row">Товаров:</th>
+                                                                <td class="text-right">36 шт.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">Способ доставки:</th>
+                                                                <td class="text-right">Самовывоз</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">Адрес пункта выдачи:</th>
+                                                                <td class="text-right">Беларусь, Могилёвская область,
+                                                                    Могилёв, ул.
                                                                     Подгорная, д.1, оф.112
-                                                                </div>
-                                                            </div>
-                                                            <div class="row py-2">
-                                                                <div class="col-3 border-top">
-                                                                    Метод оплаты
-                                                                </div>
-                                                                <div class="col-9 border-top text-right payment-value">
-                                                                    Безналичный расчёт
-                                                                </div>
-                                                            </div>
-                                                            <div class="row py-2">
-                                                                <div class="col-3 border-top border-bottom"
-                                                                     style="background-color: #FFF8DE">
-                                                                    Итого
-                                                                </div>
-                                                                <div class="col-9 border-top border-bottom text-right"
-                                                                     style="background-color: #FFF8DE; font-size: 16px;">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">Дата доставки:</th>
+                                                                <td class="text-right">16.02.2024</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">Метод оплаты:</th>
+                                                                <td class="text-right">Безналичный расчёт</td>
+                                                            </tr>
+                                                            <tr style="background-color: #FFF8DE; font-size: 16px;">
+                                                                <th scope="row">Итого:</th>
+                                                                <td class="text-right">
                                                                     <span class="fw-bold">1&nbsp;512,00</span>
                                                                     <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
-                                                                </div>
-                                                            </div>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="pb-3">Сейчас будет создан счёт и мы перенаправим вас на
+                                                        страницу пополнения баланса пластиковой картой.
+                                                    </div>
+                                                    <div class="alert alert-info fade show" role="alert">
+                                                        <div class="alert-icon">
+                                                            <i class="i i-info"></i>
                                                         </div>
-                                                        <p>Сейчас будет создан счёт и мы перенаправим вас на страницу
-                                                            пополнения баланса пластиковой картой.</p>
-                                                        <div class="alert alert-info fade show" role="alert">
-                                                            <div class="alert-icon">
-                                                                <i class="i i-info"></i>
-                                                            </div>
-                                                            <div class="alert-content">
-                                                                <div class="alert-title">При нажатии кнопки «Перейти к
-                                                                    оплате» будет сгенерирован счёт и вы будете
-                                                                    перенаправлены на страницу пополнения баланса.
-                                                                </div>
+                                                        <div class="alert-content">
+                                                            <div class="alert-title">При нажатии кнопки «Перейти к
+                                                                оплате» будет сгенерирован счёт и вы будете
+                                                                перенаправлены на страницу пополнения баланса.
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-primary">Перейти к оплате
-                                                        </button>
-                                                        <button type="button" class="btn ml-auto" data-dismiss="modal">
-                                                            Вернуться в корзину
-                                                        </button>
-                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary">Перейти к оплате
+                                                    </button>
+                                                    <button type="button" class="btn ml-auto" data-dismiss="modal">
+                                                        Вернуться в корзину
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>

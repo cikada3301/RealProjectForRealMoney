@@ -6,41 +6,50 @@ const paymentType = document.querySelector('.payment-type')
 
 select.on('change', function() {
     const value = $(this).val();
+    const parent = addressDelivery.parentElement;
+    const $firstOption = $('#select2 option:first');
+    if (value === '1') {
+        addressDelivery.style.display = 'block';
+        paymentType.style.display = 'block';
+        pointOfIssue.style.display = 'none';
+        $("#select2").val('1').change();
+        $firstOption.attr('disabled', false);
+        document.querySelector('.payment-value').innerHTML = 'Наличный расчёт';
+        document.querySelector('.delivery-method-value').innerHTML = 'Доставка по адресу';
+        document.querySelector('.order').children[4].remove()
+
+        const parentElement =  document.querySelector('.order').children[3];
+
+        parentElement.innerHTML = `<th scope="row">Вид оплаты:</th>
+                                        <td class="text-right">Наличные</td>`
+
+    }
     if (value === '2') {
-        const parent = addressDelivery.parentElement;
-        parent.classList.remove('col-4')
-        parent.classList.add('col-8')
         addressDelivery.style.display = 'none';
         paymentType.style.display = 'none';
         pointOfIssue.style.display = 'block';
         $("#select2").val('2').change();
-        $('#select2 option[value="1"]').remove();
+        $firstOption.attr('disabled', true);
         document.querySelector('.payment-value').innerHTML = 'Безналичный расчёт';
         document.querySelector('.delivery-method-value').innerHTML = 'Самовывоз';
-        document.querySelector('.order').children[3].remove();
 
-        const parentElement = document.querySelector('.delivery-method-value').parentElement;
-        const addressElement = document.createElement('div');
+        const parentElement = document.querySelector('.order').children[3];
 
-        addressElement.classList.add('row', 'py-2');
-        addressElement.innerHTML = `<div class="col-2 border-top">
+        parentElement.innerHTML = `<th scope="row">
                                     Адрес пункта выдачи:
-                                </div>
-                                <div class="col-6 border-top text-right address-value">
+                                </th>
+                                <td class="text-right address-value">
                                     Пункт 1, Беларусь, Могилёвская область, Могилёв, ул. Подгорная, д.1, оф.112
-                                </div>`
-
-        parentElement.insertAdjacentElement('afterend',addressElement);
+                                </td>`
 
         const parentElementOfPayment = document.querySelector('.address-value').parentElement;
-        const dateElement = document.createElement('div');
-        dateElement.classList.add('row', 'py-2');
-        dateElement.innerHTML = `<div class="col-2 border-top">
+        const dateElement = document.createElement('tr');
+        dateElement.innerHTML = `<th scope="row">
                                     Дата доставки:
-                                </div>
-                                <div class="col-6 border-top text-right">
+                                </th>
+                                <td class="text-right">
                                     16.02.2024
-                                </div>`
+                                </td>`
 
         parentElementOfPayment.insertAdjacentElement('afterend',dateElement);
     }
