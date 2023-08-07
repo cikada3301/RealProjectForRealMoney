@@ -1,0 +1,967 @@
+<!doctype html>
+<html lang="en" class="theme-dark">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+
+    <!-- Required IdeaDESIGN styles -->
+    <link rel="stylesheet" href="https://cdn.ideadrive.su/v2.1.2/css/main.build.min.css">
+
+    <!-- Optional styles -->
+    <!-- <link rel="stylesheet" href="/static/css/main.css" media="all"> -->
+
+    <link id="favicon" rel="shortcut icon" href="/favicon.ico"/>
+
+    <script type="text/javascript" id="app_config">
+        /*<![CDATA[*/
+        window.DRIVE = window.DRIVE || {};
+        DRIVE.language = 'ru';
+        DRIVE.module = 'users';
+        DRIVE.controller = 'usersBalance';
+        DRIVE.action = 'index';
+        DRIVE.csrfKey = 'YII_CSRF_TOKEN';
+        DRIVE.csrfToken = 'N3VzclV0QlkzcGlmWHdFRWtxcUZIZEZIVUlzb0VYa2Vga01Ga0HRCA9HechkNsAj2LkoBblcklNOmXEZx6rcoA==';
+        DRIVE.apiURI = 'https://api.ideadrive.iwl/v1/';
+        DRIVE.broadcast = DRIVE.broadcast || {};
+        DRIVE.broadcast.channelName = 'IdeaDRIVE';
+        DRIVE.fancybox = DRIVE.fancybox || {};
+        DRIVE.fancybox.i18n = {
+            ru: {
+                CLOSE: "Закрыть",
+                NEXT: "Следующий",
+                PREV: "Предыдущий",
+                ERROR: "Запрошенный контент не может быть загружен. <br/> Повторите попытку позже.",
+                PLAY_START: "Начать слайдшоу",
+                PLAY_STOP: "Приостановить слайд-шоу",
+                FULL_SCREEN: "Полноэкранный",
+                THUMBS: "Миниатюры",
+                DOWNLOAD: "Скачать",
+                SHARE: "Поделиться",
+                ZOOM: "Увеличить"
+            }
+        };
+
+        DRIVE.field = DRIVE.field || {};
+        DRIVE.field._datetime_i18n = {
+            "format": "DD.MM.YYYY",
+            "applyLabel": "Подтвердить",
+            "cancelLabel": "Очистить",
+            "fromLabel": "От",
+            "toLabel": "до",
+            "customRangeLabel": "Другой",
+            "weekLabel": "Н",
+            "daysOfWeek": [
+                "Вс",
+                "Пн",
+                "Вт",
+                "Ср",
+                "Чт",
+                "Пт",
+                "Сб"
+            ],
+            "monthNames": [
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь"
+            ],
+            "firstDay": 1
+        };
+
+        DRIVE.fineuploader = DRIVE.fineuploader || {};
+        DRIVE.fineuploader.i18n = {
+            deleteFile: {
+                confirmMessage: 'Вы действительно хотите удалить изображение?',
+                deletingFailedText: 'Ошибка удаления',
+                deletingStatusText: 'Удаление...'
+            },
+            messages: {
+                emptyError: "{file} пуст, выберите файлы еще раз без него.",
+                maxHeightImageError: "Изображение слишком высокое.",
+                maxWidthImageError: "Изображение слишком широкое.",
+                minHeightImageError: "Изображение недостаточно высокое.",
+                minWidthImageError: "Изображение недостаточно широкое.",
+                minSizeError: "{file} слишком мал, минимальный размер файла – {minSizeLimit}.",
+                noFilesError: "Нет файлов для загрузки.",
+                onLeave: "Файлы загружаются, если вы покинете сейчас, загрузка будет отменена.",
+                retryFailTooManyItems: "Повторная попытка не удалась — вы достигли максимального количества файлов.",
+                sizeError: "{file} слишком велик, максимальный размер файла – {sizeLimit}.",
+                tooManyFilesError: "Можно загружать только по 1му файлу.",
+                tooManyItemsError: "Будет загружено слишком много элементов ({netItems}). Ограничение: {itemLimit}.",
+                typeError: "{file} имеет недопустимое расширение. Допустимые расширения: {extensions}.",
+                unsupportedBrowser: "Неисправимая ошибка - этот браузер не разрешает загрузку файлов любого рода.",
+                unsupportedBrowserIos8Safari: "Неисправимая ошибка — этот браузер не разрешает загрузку файлов любого рода из-за серьезных ошибок в iOS8 Safari. Пожалуйста, используйте iOS8 Chrome, пока Apple не исправит эти проблемы."
+            },
+            paste: {
+                namePromptMessage: 'Введите название файла'
+            },
+            retry: {
+                autoRetryNote: 'Повторная попытка {retryNum}/{maxAuto} ...'
+            },
+            text: {
+                defaultResponseError: "Причина сбоя загрузки неизвестна",
+                fileInputTitle: "file input",
+                sizeSymbols: ['kB', 'MB', 'GB', 'TB', 'PB', 'EB'],
+                failUpload: "Загрузка не удалась",
+                formatProgress: "{percent}% из {total_size}",
+                paused: "Приостановлено",
+                waitingForResponse: "Обработка..."
+            }
+        };
+        /*]]>*/
+    </script>
+
+    <title>Empty | IdeaDRIVE design system</title>
+    <style>
+        .theme-light body {
+            --app-logo-company-color: var(--black-100);
+            --app-logo-serice-color: var(--black-100);
+        }
+
+        .theme-dark body {
+            --app-logo-company-color: var(--white-100);
+            --app-logo-serice-color: var(--white-100);
+        }
+
+        .scroll-menu img {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .scroll-menu a:hover img {
+            border: 1px solid gray;
+        }
+
+        .card-v:hover .show-hover {
+            position: absolute;
+            z-index: 1;
+            display: block;
+        }
+
+        .mobile-top-bar {
+            display: none;
+        }
+
+        .mobile {
+            display: none;
+        }
+
+        .table-mobile {
+            display: flex;
+        }
+
+        .column-names {
+            width: 30%; /* задаем ширину */
+        }
+
+        .column-names div {
+            padding: 5px;
+            border-top: 1px solid #ccc;
+        }
+
+        .column-values {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .column-values div {
+            padding: 5px;
+            border-top: 1px solid #ccc;
+        }
+
+        @media (max-width: 991.98px) {
+            .top-bar-list {
+                background-color: #e7edfb;
+            }
+
+            .top-bar-item-full > div {
+                display: none !important;
+            }
+
+            .mobile-top-bar {
+                display: block;
+            }
+
+            .desktop {
+                display: none;
+            }
+
+            .mobile {
+                display: block;
+            }
+        }
+
+    </style>
+    <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/init.js"></script>
+</head>
+<body>
+<!--[if lt IE 10]>
+<style>.app-header, .app-aside, .app-main {
+    display: none !important;
+}</style>
+<div class="page-message" role="alert">
+    You are using an
+    <strong>
+        outdated
+    </strong>
+    browser. Please
+    <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a>
+    to improve your experience and security.
+</div>
+<![endif]-->
+
+<header class="app-header ">
+    <div class="top-bar-brand">
+        <button class="btn btn-icon btn-flat btn-s toggle-menu" type="button" data-toggle="aside-menu"
+                aria-label="toggle aside menu">
+            <i class="i i-menu"></i>
+        </button>
+        <a class="logo-link" href="catalog.html">
+            <div class="logo">
+                <span class="company">IWL</span>
+                <span class="service">Marketplace</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="top-bar-list">
+        <div class="container-fluid ml-0">
+            <div class="top-bar-item top-bar-item-full">
+                <button class="btn btn-icon btn-flat d-md-none" type="button" data-toggle="aside"
+                        data-target="app-main-menu" aria-label="toggle menu">
+                    <i class="i i-menu"></i>
+                </button>
+                <div class="data">
+                     <span class="primary">
+                         <span class="caption" style="font-size: 14px; color: rgba(39, 43, 58, 0.6);">№ кабинета:</span>
+                         <span class="id" style="font-size: 14px; font-weight: 700;">12345</span>
+                     </span>
+                </div>
+                <div class="btn-group d-none d-sm-inline-flex ml-4">
+                    <a href="javascript:;" class="btn btn-icon btn-flat has-notified" data-title="Чат тех. поддержки"
+                       data-toggle="tooltip" data-placement="bottom">
+                        <i class="i i-support-chat"></i>
+                    </a>
+                    <a href="javascript:;" class="btn btn-icon btn-flat" data-title="Сообщения" data-toggle="tooltip"
+                       data-placement="bottom">
+                        <i class="i i-question-circle"></i>
+                    </a>
+                    <a href="javascript:;" class="btn btn-icon btn-flat" data-title="Уведомления" data-toggle="tooltip"
+                       data-placement="bottom">
+                        <i class="i i-notification"></i>
+                    </a>
+                </div>
+                <div style="width: 191px; height: 56px;" class="ml-4">
+                    <ul class="nav nav-tabs nav-tabs-s">
+                        <li class="nav-item">
+                            <a class="nav-link active"
+                               style="border-bottom: 2px solid #272B3A; padding: 19px 8px; font-size: 14px" href="#">Marketplace</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary-blue1" style="padding: 19px 8px; font-size: 14px" href="#">BSS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary-blue1" style="padding: 19px 8px; font-size: 14px" href="#">Billing</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="top-bar-item top-bar-item-right px-0 d-flex">
+                <a href="javascript:;" class="btn btn-icon btn-flat d-flex justify-content-end mobile-top-bar"
+                   data-title="Чат тех. поддержки"
+                   data-toggle="tooltip" data-placement="bottom">
+                    <i class="i i-grid"></i>
+                </a>
+                <div class="dropdown">
+                    <button class="btn-account d-flex d-md-none" type="button" data-toggle="aside"
+                            data-target="user-menu" aria-label="toggle user menu">
+                                <span class="user-avatar user-avatar-s">
+                                    <span>И</span>
+                                </span>
+                    </button>
+                    <button class="btn-account d-none d-md-flex dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                                <span class="user-avatar user-avatar-s">
+                                    <span>И</span>
+                                </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-user-menu">
+                        <div class="user-info">
+                            <div class="account-type">Личный аккаунт</div>
+                            <div class="info-card">
+                                        <span class="user-avatar user-avatar-m">
+                                            <span>И</span>
+                                        </span>
+                                <div class="data">
+                                            <span class="primary">
+                                                <span class="caption">№ кабинета:</span>
+                                                <span class="id">12345</span>
+                                            </span>
+                                    <span class="slave">email@mail.com</span>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <span class="slave">Фамилия Имя Отчество</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><i class="i i-support-chat"></i>Чат техподдержки</a>
+                        <a class="dropdown-item" href="#"><i class="i i-question-circle"></i>Вопрос-ответ</a>
+                        <a class="dropdown-item" href="#"><i class="i i-notification"></i>Уведомления</a>
+                        <div class="dropdown-divider"></div>
+                        <p class="dropdown-item-text d-flex align-items-center">Баланс<a href="javascript:;"
+                                                                                         class="btn btn-icon-text btn-s ml-auto">
+                            <i class="i i-dollar"></i>42.20</a></p>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
+                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
+                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<aside id="app-main-menu" class="app-aside app-aside-left allow-compact">
+    <div class="aside-container">
+        <div class="aside-menu">
+            <div class="top-bar-brand d-block d-md-none">
+                <a class="logo-link" href="catalog.html">
+                    <div class="logo">
+                        <span class="company">IWL</span>
+                        <span class="service">design</span>
+                    </div>
+                </a>
+            </div>
+            <nav class="stacked-menu">
+                <ul class="menu">
+                    <li class="menu-item active ">
+                        <a class="menu-link" href="javascript:;">
+                            <i class="i i-folder"></i> <span class="caption">Каталог</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="javascript:;">
+                            <i class="i i-document-list"></i> <span class="caption">Заказы</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="javascript:;">
+                            <i class="i i-setting"></i> <span class="caption">Настройки</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <footer class="aside-footer">
+            <div class="links">
+                <a href="#"><i class="i i-link"></i><span class="text">Публичный договор</span></a>
+            </div>
+            <div class="dropdown-divider"></div>
+            <span class="copyright hide-compact text-left">Powered by IWL</span>
+            <span class="copyright show-compact text-center">IWL</span>
+        </footer>
+    </div>
+</aside>
+
+<aside id="user-menu" class="app-aside app-aside-right" data-scroll-top="true">
+    <div class="aside-container">
+        <div class="dropdown-menu dropdown-user-menu">
+            <div class="user-info">
+                <div class="account-type">Личный аккаунт</div>
+                <div class="info-card">
+                                        <span class="user-avatar user-avatar-m">
+                                            <span>И</span>
+                                        </span>
+                    <div class="data">
+                                            <span class="primary">
+                                                <span class="caption">№ кабинета:</span>
+                                                <span class="id">12345</span>
+                                            </span>
+                        <span class="slave">email@mail.com</span>
+                    </div>
+                </div>
+                <div class="data">
+                    <span class="slave">Фамилия Имя Отчество</span>
+                </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#"><i class="i i-support-chat"></i>Чат техподдержки</a>
+            <a class="dropdown-item" href="#"><i class="i i-question-circle"></i>Вопрос-ответ</a>
+            <a class="dropdown-item" href="#"><i class="i i-notification"></i>Уведомления</a>
+            <div class="dropdown-divider"></div>
+            <p class="dropdown-item-text d-flex align-items-center">Баланс<a href="javascript:;"
+                                                                             class="btn btn-icon-text btn-s ml-auto">
+                <i class="i i-dollar"></i>42.20</a></p>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
+            <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
+            <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
+        </div>
+    </div>
+</aside>
+
+<aside id="app-settings-aside" class="app-aside app-aside-right" data-scroll-top="true">
+    <div class="aside-container">
+        <div class="aside-content">
+            <label class="custom-select custom-select-sm" for="language-select">
+                <select data-toggle="select" name="lang" id="language-select">
+                    <option value="ru">Русский</option>
+                    <option value="en" selected>English</option>
+                </select>
+                <span class="placeholder">Language</span>
+                <span class="error-message" aria-live="polite"></span>
+            </label>
+            <div class="dropdown-divider"></div>
+            <div class="custom-switch">
+                <input type="checkbox" name="toggle-sidebar-dark" id="toggle-sidebar-dark">
+                <label for="toggle-sidebar-dark">
+                    <div class="text">
+                        <span class="caption">Dark sidebar</span>
+                        <span class="message"></span>
+                    </div>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div class="btn-group">
+                <a class="btn btn-icon-text btn-flat" href="javascript:;" data-toggle="theme" data-theme="dark"><i
+                        class="i i-moon"></i>Темная тема</a>
+                <a class="btn btn-icon-text btn-flat" href="javascript:;" data-toggle="theme" data-theme="light"><i
+                        class="i i-sun"></i>Светлая тема</a>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div>
+                <button class="btn btn-flat btn-block" id="enable-desktop-notification">Desktop notification</button>
+                <script type="text/javascript">
+                    (function () {
+                        let btn = document.getElementById('enable-desktop-notification');
+                        let allowNotification = !("Notification" in window);
+                        let perm = Notification.permission === "granted";
+
+                        if (!window.isSecureContext || allowNotification || perm) {
+                            btn.disabled = true;
+                            let span = document.createElement('span');
+                            span.classList.add('d-block');
+                            if (perm || allowNotification) {
+                                span.textContent = 'Уже включено';
+                            } else {
+                                span.textContent = 'Недоступно для текущего контекста';
+                            }
+                            btn.parentNode.insertBefore(span, btn.nextSibling);
+                        } else {
+                            btn.addEventListener('click', function () {
+                                DRIVE.desktopNotification.notify('Test');
+                            });
+                        }
+                    })();
+                </script>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<main class="app-main mb-5">
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="dropdown text-nowrap">
+                <a class="btn btn-icon-text btn-flat-primary" href="javascript:;"><i class="i i-arrow-left"></i></a>
+                <span>Адреса доставки</span>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown-divider"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-auto">
+                <div class="fw-bold" style="font-size: 20px;">Список адресов</div>
+            </div>
+            <div class="col-12 col-lg">
+                <a class="btn btn-icon-text btn-primary" href="javascript:;"
+                   style="font-size: 14px;"
+                   data-toggle="modal" data-target="#addAddress"><i class="i i-plus"></i>Добавить адрес</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 pt-3 desktop">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="p-2" scope="col">По умолчанию</th>
+                            <th class="p-2 w-25" scope="col">Название</th>
+                            <th class="p-2" scope="col">Адрес</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="p-2">
+                                <div class="custom-radio">
+                                    <input type="radio" name="c1" id="c1" checked>
+                                    <label for="c1">
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="p-2">
+                                <span>Магазин №1</span>
+                            </td>
+                            <td class="p-2">
+                                <div class="d-flex justify-content-between">
+                                    <span>Беларусь, Могилёвская область, Могилёв, ул. Пионерская, д. 1, офис 600 </span>
+                                    <div class="dropdown">
+                                        <button class="btn btn-icon-text btn-xs dropdown-toggle"
+                                                type="button"
+                                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                data-dismiss="alert"
+                                                onclick="openDropDowns()"
+                                                aria-expanded="false">
+                                            <i class="i i-menu"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="javascript:;" data-toggle="modal"
+                                               data-target="#updateAddress">Редактировать</a>
+                                            <a class="dropdown-item" href="javascript:;" data-toggle="modal"
+                                               data-target="#deleteAddressModal">Удалить</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">
+                                <div class="custom-radio">
+                                    <input type="radio" name="c2" id="c2">
+                                    <label for="c2"></label>
+                                </div>
+                            </td>
+                            <td class="p-2">
+                                <span>Магазин №2</span>
+                            </td>
+                            <td class="p-2">
+                                <div class="d-flex justify-content-between">
+                                    <span>Беларусь, Могилёвская область, Могилёв, ул. Пионерская, д. 1, офис 600 </span>
+                                    <div class="dropdown">
+                                        <button class="btn btn-icon-text btn-xs dropdown-toggle"
+                                                type="button"
+                                                id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true"
+                                                data-dismiss="alert"
+                                                onclick="openDropDowns()"
+                                                aria-expanded="false">
+                                            <i class="i i-menu"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                            <a class="dropdown-item" href="javascript:;" data-toggle="modal"
+                                               data-target="#updateAddress">Редактировать</a>
+                                            <a class="dropdown-item" href="javascript:;" data-toggle="modal"
+                                               data-target="#deleteAddressModal">Удалить</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="modal fade" id="deleteAddressModal" tabindex="-1"
+                         aria-labelledby="deleteAddressModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="modal-title" id="deleteAddressModalLabel">
+                                        <strong class="title">Удаление адреса</strong>
+                                    </div>
+                                    <button class="close-modal btn btn-icon btn-flat btn-xs" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <i class="i i-cross"></i>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Вы пытаетесь удалить адрес доставки. Всё равно продолжить?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger">Удалить</button>
+                                    <button type="button" class="btn ml-auto" data-dismiss="modal">Отмена</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="addAddress" tabindex="-1"
+                         aria-labelledby="addAddressLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="modal-title" id="addAddressLabel">
+                                        <strong class="title">Добавление адреса достаки</strong>
+                                    </div>
+                                    <button class="close-modal btn btn-icon btn-flat btn-xs"
+                                            data-dismiss="modal" aria-label="Close">
+                                        <i class="i i-cross"></i>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label class="custom-select custom-select pb-3"
+                                                   for="select4">
+                                                <select data-toggle="select" name="select4"
+                                                        id="select4">
+                                                    <optgroup label="Выберите">
+                                                        <option value="1">Магазин №1</option>
+                                                        <option value="2">Магазин №2</option>
+                                                        <option value="3">Магазин №3</option>
+                                                    </optgroup>
+                                                </select>
+                                                <span class="placeholder">Название</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-select custom-select pb-3"
+                                                   for="select5">
+                                                <select data-toggle="select" name="select5"
+                                                        id="select5">
+                                                    <optgroup label="Выберите">
+                                                        <option value="1">Выберите</option>
+                                                    </optgroup>
+                                                </select>
+                                                <span class="placeholder">Страна</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-select custom-select pb-3"
+                                                   for="select6">
+                                                <select data-toggle="select" name="select6"
+                                                        id="select6">
+                                                    <optgroup label="Выберите">
+                                                        <option value="1">Выберите</option>
+                                                    </optgroup>
+                                                </select>
+                                                <span class="placeholder">Регион</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-select custom-select pb-3"
+                                                   for="select7">
+                                                <select data-toggle="select" name="select7"
+                                                        id="select7">
+                                                    <optgroup label="Выберите">
+                                                        <option value="1">Выберите</option>
+                                                    </optgroup>
+                                                </select>
+                                                <span class="placeholder">Город</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-field pb-3">
+                                                <input type="text" placeholder="&nbsp;"/>
+                                                <span class="placeholder">Улица</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-field pb-3 w-50">
+                                                <input type="text" placeholder="&nbsp;"/>
+                                                <span class="placeholder">Дом / Строение</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-field pb-3 w-50">
+                                                <input type="text" placeholder="&nbsp;"/>
+                                                <span class="placeholder">Этаж</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-field pb-3 w-50">
+                                                <input type="text" placeholder="&nbsp;"/>
+                                                <span class="placeholder">Квартира</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-field">
+                                                <textarea placeholder="&nbsp;"></textarea>
+                                                <span class="placeholder">Комментарий</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Добавить</button>
+                                    <button type="button" class="btn ml-auto" data-dismiss="modal">
+                                        Отмена
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="updateAddress" tabindex="-1"
+                         aria-labelledby="addAddressLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="modal-title" id="updateAddressLabel">
+                                        <strong class="title">Редактирование адреса достаки</strong>
+                                    </div>
+                                    <button class="close-modal btn btn-icon btn-flat btn-xs"
+                                            data-dismiss="modal" aria-label="Close">
+                                        <i class="i i-cross"></i>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label class="custom-select custom-select pb-3"
+                                                   for="select41">
+                                                <select data-toggle="select" name="select4"
+                                                        id="select41">
+                                                    <optgroup label="Выберите">
+                                                        <option value="1">Магазин №1</option>
+                                                        <option value="2">Магазин №2</option>
+                                                        <option value="3">Магазин №3</option>
+                                                    </optgroup>
+                                                </select>
+                                                <span class="placeholder">Название</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-select custom-select pb-3"
+                                                   for="select51">
+                                                <select data-toggle="select" name="select5"
+                                                        id="select51">
+                                                    <optgroup label="Выберите">
+                                                        <option value="1">Беларусь</option>
+                                                    </optgroup>
+                                                </select>
+                                                <span class="placeholder">Страна</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-select custom-select pb-3"
+                                                   for="select61">
+                                                <select data-toggle="select" name="select6"
+                                                        id="select61">
+                                                    <optgroup label="Выберите">
+                                                        <option value="1">Могилёвская область</option>
+                                                    </optgroup>
+                                                </select>
+                                                <span class="placeholder">Регион</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-select custom-select pb-3"
+                                                   for="select71">
+                                                <select data-toggle="select" name="select7"
+                                                        id="select71">
+                                                    <optgroup label="Выберите">
+                                                        <option value="1">Могилёв</option>
+                                                    </optgroup>
+                                                </select>
+                                                <span class="placeholder">Город</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-field pb-3">
+                                                <input type="text" placeholder="&nbsp;" value="Пионерская"/>
+                                                <span class="placeholder">Улица</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-field pb-3 w-50">
+                                                <input type="text" placeholder="&nbsp;" value="1"/>
+                                                <span class="placeholder">Дом / Строение</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-field pb-3 w-50">
+                                                <input type="text" placeholder="&nbsp;" value="3"/>
+                                                <span class="placeholder">Этаж</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-field pb-3 w-50">
+                                                <input type="text" placeholder="&nbsp;" value="600"/>
+                                                <span class="placeholder">Квартира</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                            <label class="custom-field">
+                                                <textarea placeholder="&nbsp;">Текст</textarea>
+                                                <span class="placeholder">Комментарий</span>
+                                                <span class="error-message" aria-live="polite"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Добавить</button>
+                                    <button type="button" class="btn ml-auto" data-dismiss="modal">
+                                        Отмена
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 pt-3 mobile">
+                <div class="table-mobile">
+                    <div class="column-names">
+                        <div>По умолчанию</div>
+                        <div>Название</div>
+                        <div>Адрес</div>
+                        <div></div>
+                    </div>
+
+                    <div class="column-values">
+                        <div class="custom-radio">
+                            <input type="radio" name="c3" id="c3" checked>
+                            <label for="c3">
+                            </label>
+                        </div>
+                        <div>Магазин №1</div>
+                        <div class="d-flex justify-content-between">
+                            <span>Беларусь, Могилёвская область, Могилёв, ул. Пионерская, д. 1, офис 600 </span>
+                        </div>
+                        <div style="text-align: right">
+                            <div class="dropdown">
+                                <button class="btn btn-icon-text btn-xs dropdown-toggle"
+                                        type="button"
+                                        id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true"
+                                        data-dismiss="alert"
+                                        onclick="openDropDowns()"
+                                        aria-expanded="false">
+                                    <i class="i i-menu"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="javascript:;" data-toggle="modal"
+                                       data-target="#updateAddress">Редактировать</a>
+                                    <a class="dropdown-item" href="javascript:;" data-toggle="modal"
+                                       data-target="#deleteAddressModal">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--                <div class="table-responsive">-->
+                <!--                    <table class="table">-->
+                <!--                        <thead>-->
+                <!--                        <tr>-->
+                <!--                            <th class="p-2" scope="col">По умолчанию</th>-->
+                <!--                            <th class="p-2 w-25" scope="col">Название</th>-->
+                <!--                            <th class="p-2" scope="col">Адрес</th>-->
+                <!--                        </tr>-->
+                <!--                        </thead>-->
+                <!--                        <tbody>-->
+                <!--                        <tr>-->
+                <!--                            <td class="p-2">-->
+                <!--                                <div class="custom-radio">-->
+                <!--                                    <input type="radio" name="c3" id="c3" checked>-->
+                <!--                                    <label for="c3">-->
+                <!--                                    </label>-->
+                <!--                                </div>-->
+                <!--                            </td>-->
+                <!--                            <td class="p-2">-->
+                <!--                                <span>Магазин №1</span>-->
+                <!--                            </td>-->
+                <!--                            <td class="p-2">-->
+                <!--                                <div class="d-flex justify-content-between">-->
+                <!--                                    <span>Беларусь, Могилёвская область, Могилёв, ул. Пионерская, д. 1, офис 600 </span>-->
+                <!--                                    <div class="dropdown">-->
+                <!--                                        <button class="btn btn-icon-text btn-xs dropdown-toggle"-->
+                <!--                                                type="button"-->
+                <!--                                                id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true"-->
+                <!--                                                data-dismiss="alert"-->
+                <!--                                                onclick="openDropDowns()"-->
+                <!--                                                aria-expanded="false">-->
+                <!--                                            <i class="i i-menu"></i>-->
+                <!--                                        </button>-->
+                <!--                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+                <!--                                            <a class="dropdown-item" href="javascript:;" data-toggle="modal"-->
+                <!--                                               data-target="#updateAddress">Редактировать</a>-->
+                <!--                                            <a class="dropdown-item" href="javascript:;" data-toggle="modal"-->
+                <!--                                               data-target="#deleteAddressModal">Удалить</a>-->
+                <!--                                        </div>-->
+                <!--                                    </div>-->
+                <!--                                </div>-->
+                <!--                            </td>-->
+                <!--                        </tr>-->
+                <!--                        <tr>-->
+                <!--                            <td class="p-2">-->
+                <!--                                <div class="custom-radio">-->
+                <!--                                    <input type="radio" name="c4" id="c4">-->
+                <!--                                    <label for="c4"></label>-->
+                <!--                                </div>-->
+                <!--                            </td>-->
+                <!--                            <td class="p-2">-->
+                <!--                                <span>Магазин №2</span>-->
+                <!--                            </td>-->
+                <!--                            <td class="p-2">-->
+                <!--                                <div class="d-flex justify-content-between">-->
+                <!--                                    <span>Беларусь, Могилёвская область, Могилёв, ул. Пионерская, д. 1, офис 600 </span>-->
+                <!--                                    <div class="dropdown">-->
+                <!--                                        <button class="btn btn-icon-text btn-xs dropdown-toggle"-->
+                <!--                                                type="button"-->
+                <!--                                                id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true"-->
+                <!--                                                data-dismiss="alert"-->
+                <!--                                                onclick="openDropDowns()"-->
+                <!--                                                aria-expanded="false">-->
+                <!--                                            <i class="i i-menu"></i>-->
+                <!--                                        </button>-->
+                <!--                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">-->
+                <!--                                            <a class="dropdown-item" href="javascript:;" data-toggle="modal"-->
+                <!--                                               data-target="#updateAddress">Редактировать</a>-->
+                <!--                                            <a class="dropdown-item" href="javascript:;" data-toggle="modal"-->
+                <!--                                               data-target="#deleteAddressModal">Удалить</a>-->
+                <!--                                        </div>-->
+                <!--                                    </div>-->
+                <!--                                </div>-->
+                <!--                            </td>-->
+                <!--                        </tr>-->
+                <!--                        </tbody>-->
+                <!--                    </table>-->
+                <!--                </div>-->
+            </div>
+        </div>
+    </div>
+    <div class="alert" role="alert"
+         style="display: none; position: absolute; bottom: 0; right: 24px; background-color: #272B3ACC;">
+        <div class="alert-content">
+            <div class="alert-buttons">
+                <div class="row justify-content-between">
+                    <div class="col-6">
+                        <a class="btn btn-icon-text btn-success btn-l" href="javascript:;"
+                           onclick="clickOnButtonAlert()"
+                           style="font-size: 14px; width: 140px;">Сохранить</a>
+                    </div>
+                    <div class="col-6">
+                        <a class="btn btn-icon-text btn-outline btn-l" href="javascript:;"
+                           onclick="clickOnButtonAlert()"
+                           style="font-size: 14px; width: 140px; color: white; border-color: grey;">Отмена</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Required: jQuery and Bootstrap Bundle (includes Popper) -->
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/bootstrap.bundle.min.js"></script>
+<!-- Required: IdeaDESIGN -->
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/prototypes.js"></script>
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/main.js"></script>
+
+<!-- Optional: Your scripts -->
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2.full.min.js"></script>
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2/i18n/en.js"></script>
+<script type="text/javascript" src="js/scroll.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
+<script type="text/javascript" src="js/notification.js"></script>
+
+<!-- <script type="text/javascript" src="/static/js/main.js?v=1.0.0"></script> -->
+
+<!-- Required -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        DRIVE.init(); // Added after all scripts
+    });
+</script>
+</body>
+</html>
