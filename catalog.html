@@ -139,7 +139,7 @@
             position: absolute;
             background-color: white;
             top: 0px;
-            left: 225px; /* Выравниваем справа */
+            left: 230px;
         }
 
         .search-item-hover:hover {
@@ -242,10 +242,22 @@
             text-align: right;
         }
 
+        .category-mobile {
+            display: none;
+        }
+
 
         @media (max-width: 767.98px) {
             .counter {
                 text-align: left;
+            }
+
+            .category-mobile {
+                display: block;
+            }
+
+            .category-desktop {
+                display: none;
             }
         }
 
@@ -445,18 +457,18 @@
             </div>
             <nav class="stacked-menu">
                 <ul class="menu">
-                    <li class="menu-item active ">
+                    <li class="menu-item active">
                         <a class="menu-link" href="javascript:;">
                             <i class="i i-folder"></i> <span class="caption">Каталог</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a class="menu-link" href="javascript:;">
+                        <a class="menu-link" href="./orders.html">
                             <i class="i i-document-list"></i> <span class="caption">Заказы</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a class="menu-link" href="javascript:;">
+                        <a class="menu-link" href="./settings.html">
                             <i class="i i-setting"></i> <span class="caption">Настройки</span>
                         </a>
                     </li>
@@ -579,95 +591,123 @@
                 <button class="btn btn-icon-text dropdown-toggle text-nowrap" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                 <span class="ml-2">Каталог</span>
-                <div class="dropdown-menu dropdown-menu-primary dropdown-menu-xs" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-menu keep-open-on-click dropdown-menu-primary dropdown-menu-xs"
+                     aria-labelledby="dropdownMenuButton">
                     <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 col-md-3 col-lg-3 category-popup">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <div class="p-2">
-                                                <h6 class="text-dark">Категории</h6>
-                                            </div>
-                                            <div class="p-2">
-                                                <a class="btn btn-flat-primary btn-icon-text category-child"
-                                                   id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true"
-                                                   aria-expanded="false">
-                                                    Label
-                                                    <i class="i i-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                            <div class="p-2">
-                                                <a class="btn btn-flat-primary btn-icon-text category-child"
-                                                   id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true"
-                                                   aria-expanded="false"> Label
-                                                </a>
-                                            </div>
-                                            <div class="p-2">
-                                                <a class="btn btn-flat-primary btn-icon-text category-child"
-                                                   id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true"
-                                                   aria-expanded="false"> Label
-                                                </a>
-                                            </div>
+                        <div class="container px-0">
+                            <div class="category-mobile">
+                                <div class="name-category pb-1">
+                                    <h6>Категории</h6>
+                                </div>
+                                <ul class="pl-0 mobile-category" style="list-style-type: none;">
+                                    <li class="category-first-level">
+                                        <div class="d-flex justify-content-between">
+                                            <span class="py-2 " style="font-size: 14px;">Label</span>
+                                            <button type="button"
+                                                    class="btn btn-flat-primary btn-icon-text pl-0">
+                                                <i class="i i-chevron-right"></i>
+                                            </button>
                                         </div>
-                                        <div class="col-9">
-                                            <div class="subcategories">
-                                                <div class="container">
-                                                    <div class="row" style="color: black">
-                                                        <div class="col-4">
-                                                            <h6 class="mt-3 mb-3 ml-3">Хлеб и сдоба</h6>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                        </div>
-                                                        <div class="col-4">
-                                                            <h6 class="mt-3 mb-3 ml-3">Кондитерские изделия</h6>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                        </div>
-                                                        <div class="col-4">
-                                                            <h6 class="mt-3 mb-3 ml-3">Сухари, сушки</h6>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row" style="color: black">
-                                                        <div class="col-4">
-                                                            <h6 class="mt-3 mb-3 ml-3">Хлеб и сдоба</h6>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                        </div>
-                                                        <div class="col-4">
-                                                            <h6 class="mt-3 mb-3 ml-3">Кондитерские изделия</h6>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                        </div>
-                                                        <div class="col-4">
-                                                            <h6 class="mt-3 mb-3 ml-3">Сухари, сушки</h6>
-                                                            <p class="category-label">Label</p>
-                                                            <p class="category-label">Label</p>
-                                                        </div>
-                                                    </div>
+                                    </li>
+                                    <li class="category-first-level">
+                                        <div class="d-flex justify-content-between">
+                                            <span class="py-2 " style="font-size: 14px;">Label</span>
+                                            <button type="button"
+                                                    class="btn btn-flat-primary btn-icon-text pl-0">
+                                                <i class="i i-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li class="category-first-level">
+                                        <div class="d-flex justify-content-between">
+                                            <span class="py-2 " style="font-size: 14px;">Label</span>
+                                            <button type="button"
+                                                    class="btn btn-flat-primary btn-icon-text pl-0">
+                                                <i class="i i-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="row category-desktop">
+                                <div class="p-2">
+                                    <h6 class="text-dark">Категории</h6>
+                                </div>
+                                <div class="p-2">
+                                    <div class="d-flex justify-content-between category-child">
+                                        <span class="py-2 " style="font-size: 14px;">Label</span>
+                                        <button type="button"
+                                                class="btn btn-flat-primary btn-icon-text pl-0">
+                                            <i class="i i-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-2">
+                                    <div class="d-flex">
+                                        <span class="py-2 " style="font-size: 14px;">Label</span>
+                                    </div>
+                                </div>
+                                <div class="p-2">
+                                    <div class="d-flex">
+                                        <span class="py-2 " style="font-size: 14px;">Label</span>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="subcategories">
+                                        <div class="container">
+                                            <div class="row" style="color: black">
+                                                <div class="col-4">
+                                                    <h6 class="mt-3 mb-3 ml-3">Хлеб и сдоба</h6>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <h6 class="mt-3 mb-3 ml-3">Кондитерские изделия</h6>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <h6 class="mt-3 mb-3 ml-3">Сухари, сушки</h6>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="color: black">
+                                                <div class="col-4">
+                                                    <h6 class="mt-3 mb-3 ml-3">Хлеб и сдоба</h6>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <h6 class="mt-3 mb-3 ml-3">Кондитерские изделия</h6>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <h6 class="mt-3 mb-3 ml-3">Сухари, сушки</h6>
+                                                    <p class="category-label">Label</p>
+                                                    <p class="category-label">Label</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -783,7 +823,8 @@
                             <div class="card card-v h-100">
                                 <div class="m-2" style="position: relative;">
                                     <div class="embed-responsive embed-responsive-1by1">
-                                        <img src="img/Rectangle3.png" class="embed-responsive-item" alt="product" onclick="window.location.href = 'product.html';">
+                                        <img src="img/Rectangle3.png" class="embed-responsive-item" alt="product"
+                                             onclick="window.location.href = 'product.html';">
                                     </div>
                                     <a class="btn btn-icon btn-xs position-absolute" href="javascript:;"
                                        style="position: absolute; top: 0px; right: 0px;"><i class="i i-heart"></i></a>
@@ -1269,8 +1310,8 @@
             <div class="col-9">
                 <div class="pagination">
                     <nav aria-label="Page navigation">
-                        <a class="btn btn-flat btn-icon disabled" href="javascript:;"><i
-                                class="i i-chevron-left"></i></a>
+                        <a class="btn btn-flat btn-icon disabled" href="javascript:;">
+                            <i class="i i-chevron-left"></i></a>
                         <a class="btn btn-flat disabled" href="javascript:;">1</a> <a class="btn btn-flat"
                                                                                       href="javascript:;">2</a>
                         <a class="btn btn-flat" href="javascript:;">3</a> <a class="btn btn-flat"
@@ -1292,7 +1333,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </main>
 
@@ -1302,7 +1342,6 @@
 <!-- Required: IdeaDESIGN -->
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/prototypes.js"></script>
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/main.js"></script>
-
 <!-- Optional: Your scripts -->
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2.full.min.js"></script>
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2/i18n/en.js"></script>
@@ -1312,10 +1351,8 @@
 <script type="text/javascript" src="js/cartCounter.js"></script>
 <script type="text/javascript" src="js/layout.js"></script>
 <script type="text/javascript" src="js/search.js"></script>
-
+<script type="text/javascript" src="js/category.js"></script>
 <!-- <script type="text/javascript" src="/static/js/main.js?v=1.0.0"></script> -->
-
-
 <!-- Required -->
 <script type="text/javascript">
     $(document).ready(function () {
