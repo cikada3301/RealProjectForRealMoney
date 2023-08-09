@@ -172,10 +172,54 @@
             display: none;
         }
 
-        .filter-fields {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+        .tag {
+            border-radius: 4px;
+            color: #272B3A;
+            background: #F4F4F5;
+            gap: 4px;
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+
+        .fixed-tag {
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+        }
+
+        .card-description {
+            align-self: stretch;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 14px;
+        }
+
+        .heart {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+
+        .card-name {
+            font-size: 12px;
+            padding-left: 4px;
+            padding-right: 4px;
+            padding-top: 4px;
+            height: 24px;
+            text-align: center;
+            color: white;
+            line-height: 14px;
+            background: rgba(39, 43, 58, 0.60);
+            position: absolute;
+            border-radius: 4px;
+            top: 5px;
+            left: 5px;
+        }
+
+
+        .card-img {
+            position: relative;
         }
 
         .search {
@@ -202,30 +246,10 @@
             word-wrap: break-word;
         }
 
-        .description {
-            font-size: 12px;
-            padding-left: 4px;
-            padding-top: 4px;
-            height: 24px;
-            text-align: center;
-            color: white;
-            line-weight: 400;
-            line-height: 14px;
-            background: rgba(39, 43, 58, 0.60);
-            position: absolute;
-            border-radius: 4px;
-            top: 5px;
-            left: 5px;
-        }
-
         .card-title {
             font-size: 12px;
             line-weight: 400;
             line-height: 14px;
-        }
-
-        .in-basket {
-            height: 400px;
         }
 
         .amount {
@@ -889,32 +913,27 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-4 product px-0" style="position: relative">
-                            <div class="card in-basket p-2" style="position: absolute; z-index: 1">
-                                <div style="position: relative">
-                                    <div class="embed-responsive embed-responsive-1by1">
-                                        <img src="img/Rectangle1.png" class="embed-responsive-item" alt="product">
+                        <div class="col-12 col-lg-4 px-0 product">
+                            <div class="card h-100">
+                                <div class="card-img">
+                                    <img src="img/Rectangle1.png" class="card-img-top embed-responsive-item" alt="product">
+                                    <a class="btn btn-icon btn-xs heart" href="javascript:;"><i class="i i-heart"></i></a>
+                                    <label class="tag fixed-tag">5637657</label>
+                                    <div class="card-name">
+                                        ОАО "Домочай
+                                        название...
                                     </div>
-                                    <a class="btn btn-icon btn-xs position-absolute" href="javascript:;"
-                                       style="position: absolute; top: 5px; right: 5px;"><i class="i i-heart"></i></a>
-                                    <label class="article"
-                                           style="position: absolute; color: #272B3A;bottom: 0px; left: 5px;">5637657</label>
-                                    <label class="description">ОАО "Домочай
-                                        название..."</label>
                                 </div>
                                 <div class="card-body pt-2">
-                                    <p class="card-title card-description">Пирожное "Рецепты лучших кофеен" с
-                                        наполнителем "Клубника" на
-                                        вафле
-                                        100г</p>
-                                    <div class="amount amount-l">
+                                    <p class="card-title card-description">Пирожное "Рецепты лучших кофеен" с наполнителем
+                                        "Клубника" на вафле 100г</p>
+                                    <div class="amount amount-s">
                                         <span class="price">42,00</span>
                                         <span class="currency">BYN</span>
                                     </div>
                                     <div class="pt-1">
-                                        <a class="btn btn-icon btn-success btn-s w-100 d-flex justify-content-center py-2 text"
-                                           href="javascript:;"><i class="i i-check-square" style="font-size: 12px;"></i>В
-                                            корзине</a>
+                                        <a class="btn btn-icon btn-success btn-s d-flex justify-content-center text"
+                                           href="javascript:;"><i class="i i-check-square"></i>В корзине</a>
                                     </div>
                                 </div>
                             </div>

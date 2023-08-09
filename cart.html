@@ -8,8 +8,6 @@
 
     <!-- Required IdeaDESIGN styles -->
     <link rel="stylesheet" href="https://cdn.ideadrive.su/v2.1.2/css/main.build.min.css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 
     <!-- Optional styles -->
     <!-- <link rel="stylesheet" href="/static/css/main.css" media="all"> -->
@@ -135,57 +133,7 @@
             --app-logo-serice-color: var(--white-100);
         }
 
-        .subcategories {
-            display: none;
-            width: 750px;
-            height: 540px;
-            position: absolute;
-            background-color: white;
-            top: 0px;
-            left: 225px;
-        }
-
-        .scroll-menu {
-            overflow: auto;
-            white-space: nowrap;
-        }
-
         .show-point-of-issue {
-            display: none;
-        }
-
-        .scroll-menu img {
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .scroll-menu a:hover img {
-            border: 1px solid gray;
-        }
-
-        .card-v:hover .show-hover {
-            position: absolute;
-            z-index: 1;
-            display: block;
-        }
-
-        .category-label {
-            text-align: left;
-            margin-left: 16px;
-            margin-right: 16px;
-        }
-
-        .amount {
-            padding-left: 8px;
-            gap: 2px;
-            padding-bottom: 14px;
-        }
-
-        .characteristic-2 {
-            display: none;
-        }
-
-        .mobile-top-bar {
             display: none;
         }
 
@@ -224,14 +172,6 @@
         }
 
         .product-h {
-            display: none;
-        }
-
-        .sm {
-            display: none;
-        }
-
-        .delivery-mobile {
             display: none;
         }
 
@@ -305,7 +245,7 @@
 </div>
 <![endif]-->
 
-<header class="app-header ">
+<header class="app-header">
     <div class="top-bar-brand">
         <button class="btn btn-icon btn-flat btn-s toggle-menu" type="button" data-toggle="aside-menu"
                 aria-label="toggle aside menu">
@@ -320,65 +260,60 @@
     </div>
 
     <div class="top-bar-list">
-        <div class="container-fluid ml-0">
+        <div class="container-fluid">
             <div class="top-bar-item top-bar-item-full">
                 <button class="btn btn-icon btn-flat d-md-none" type="button" data-toggle="aside"
                         data-target="app-main-menu" aria-label="toggle menu">
                     <i class="i i-menu"></i>
                 </button>
-                <div class="data">
-                     <span class="primary">
-                         <span class="caption" style="font-size: 14px; color: rgba(39, 43, 58, 0.6);">№ кабинета:</span>
-                         <span class="id" style="font-size: 14px; font-weight: 700;">12345</span>
-                     </span>
+                <div class="d-sm-inline-flex pr-4 text-nowrap">
+                    <span class="caption">№ кабинета:</span>
+                    <span class="id">12345</span>
                 </div>
-                <div class="btn-group d-none d-sm-inline-flex ml-4">
+                <div class="btn-group d-none d-sm-inline-flex pr-4">
                     <a href="javascript:;" class="btn btn-icon btn-flat has-notified" data-title="Чат тех. поддержки"
                        data-toggle="tooltip" data-placement="bottom">
                         <i class="i i-support-chat"></i>
                     </a>
-                    <a href="javascript:;" class="btn btn-icon btn-flat" data-title="Сообщения" data-toggle="tooltip"
+                    <a href="javascript:;" class="btn btn-icon btn-flat" data-title="Вопрос - ответ"
+                       data-toggle="tooltip"
                        data-placement="bottom">
-                        <i class="i i-question-circle"></i>
+                        <i class="i i-service-faq"></i>
                     </a>
                     <a href="javascript:;" class="btn btn-icon btn-flat" data-title="Уведомления" data-toggle="tooltip"
                        data-placement="bottom">
                         <i class="i i-notification"></i>
                     </a>
                 </div>
-                <div style="width: 191px; height: 56px;" class="ml-4">
-                    <ul class="nav nav-tabs nav-tabs-s">
+                <div class="btn-group d-none d-sm-inline-flex">
+                    <ul class="nav nav-tabs ">
                         <li class="nav-item">
-                            <a class="nav-link active"
-                               style="border-bottom: 2px solid #272B3A; padding: 19px 8px; font-size: 14px" href="#">Marketplace</a>
+                            <a class="nav-link active" href="#">Marketplace</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary-blue1" style="padding: 19px 8px; font-size: 14px" href="#">BSS</a>
+                            <a class="nav-link" href="#">BSS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary-blue1" style="padding: 19px 8px; font-size: 14px" href="#">Billing</a>
+                            <a class="nav-link" href="#">Billing</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="top-bar-item top-bar-item-right px-0 d-flex">
-                <a href="javascript:;"
-                   class="btn btn-icon btn-flat d-flex justify-content-end mobile-top-bar grid-header"
-                   data-title="Чат тех. поддержки"
-                   data-toggle="tooltip" data-placement="bottom">
-                    <i class="i i-grid"></i>
+                <a class="btn btn-icon btn-flat btn-s grid-header" href="javascript:;"><i
+                        class="i i-grid"></i>
                 </a>
                 <div class="dropdown">
                     <button class="btn-account d-flex d-md-none" type="button" data-toggle="aside"
                             data-target="user-menu" aria-label="toggle user menu">
                                 <span class="user-avatar user-avatar-s">
-                                    <span>И</span>
+                                    <span>K</span>
                                 </span>
                     </button>
                     <button class="btn-account d-none d-md-flex dropdown-toggle" type="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                                 <span class="user-avatar user-avatar-s">
-                                    <span>И</span>
+                                    <span>K</span>
                                 </span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-user-menu">
@@ -386,7 +321,7 @@
                             <div class="account-type">Личный аккаунт</div>
                             <div class="info-card">
                                         <span class="user-avatar user-avatar-m">
-                                            <span>И</span>
+                                            <span>K</span>
                                         </span>
                                 <div class="data">
                                             <span class="primary">
@@ -397,21 +332,28 @@
                                 </div>
                             </div>
                             <div class="data">
-                                <span class="slave">Фамилия Имя Отчество</span>
+                                <span class="primary">Фамилия Имя Отчество</span>
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#"><i class="i i-support-chat"></i>Чат техподдержки</a>
-                        <a class="dropdown-item" href="#"><i class="i i-question-circle"></i>Вопрос-ответ</a>
+                        <a class="dropdown-item" href="#"><i class="i i-service-faq"></i>Вопрос - ответ</a>
                         <a class="dropdown-item" href="#"><i class="i i-notification"></i>Уведомления</a>
                         <div class="dropdown-divider"></div>
-                        <p class="dropdown-item-text d-flex align-items-center">Баланс<a href="javascript:;"
-                                                                                         class="btn btn-icon-text btn-s ml-auto">
-                            <i class="i i-dollar"></i>42.20</a></p>
+                        <div class="d-flex justify-content-between">
+                            <div class="dropdown-item">Баланс</div>
+                            <a href="javascript:;" class="btn btn-icon-text d-none d-sm-inline-flex mr-3">
+                                <i class="i i-dollar left"></i>
+                                <div class="amount amount-s">
+                                    <span class="price">42,00</span>
+                                    <span class="currency">BYN</span>
+                                </div>
+                            </a>
+                        </div>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
-                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
-                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
+                        <a class="dropdown-item" href="#">Label</a>
+                        <a class="dropdown-item" href="#">Label</a>
+                        <a class="dropdown-item" href="#">Label</a>
                     </div>
                 </div>
             </div>
@@ -421,18 +363,18 @@
 
 <aside id="app-main-menu" class="app-aside app-aside-left allow-compact">
     <div class="aside-container">
-        <div class="aside-menu">
+        <div class="aside-menu" show-scroll-hover>
             <div class="top-bar-brand d-block d-md-none">
                 <a class="logo-link" href="catalog.html">
                     <div class="logo">
                         <span class="company">IWL</span>
-                        <span class="service">design</span>
+                        <span class="service">Marketplace</span>
                     </div>
                 </a>
             </div>
             <nav class="stacked-menu">
                 <ul class="menu">
-                    <li class="menu-item active ">
+                    <li class="menu-item active">
                         <a class="menu-link" href="./catalog.html">
                             <i class="i i-folder"></i> <span class="caption">Каталог</span>
                         </a>
@@ -450,6 +392,7 @@
                 </ul>
             </nav>
         </div>
+
         <footer class="aside-footer">
             <div class="links">
                 <a href="#"><i class="i i-link"></i><span class="text">Публичный договор</span></a>
@@ -465,94 +408,43 @@
     <div class="aside-container">
         <div class="dropdown-menu dropdown-user-menu">
             <div class="user-info">
-                <div class="account-type">Личный аккаунт</div>
-                <div class="info-card">
+                <div class="user-info">
+                    <div class="account-type">Личный аккаунт</div>
+                    <div class="info-card">
                                         <span class="user-avatar user-avatar-m">
-                                            <span>И</span>
+                                            <span>K</span>
                                         </span>
-                    <div class="data">
+                        <div class="data">
                                             <span class="primary">
                                                 <span class="caption">№ кабинета:</span>
                                                 <span class="id">12345</span>
                                             </span>
-                        <span class="slave">email@mail.com</span>
+                            <span class="slave">email@mail.com</span>
+                        </div>
+                    </div>
+                    <div class="data">
+                        <span class="primary">Фамилия Имя Отчество</span>
                     </div>
                 </div>
-                <div class="data">
-                    <span class="slave">Фамилия Имя Отчество</span>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"><i class="i i-support-chat"></i>Чат техподдержки</a>
+                <a class="dropdown-item" href="#"><i class="i i-service-faq"></i>Вопрос - ответ</a>
+                <a class="dropdown-item" href="#"><i class="i i-notification"></i>Уведомления</a>
+                <div class="dropdown-divider"></div>
+                <div class="d-flex justify-content-between">
+                    <div class="dropdown-item">Баланс</div>
+                    <a href="javascript:;" class="btn btn-icon-text d-none d-sm-inline-flex mr-3">
+                        <i class="i i-dollar left"></i>
+                        <div class="amount amount-s">
+                            <span class="price">42,00</span>
+                            <span class="currency">BYN</span>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"><i class="i i-support-chat"></i>Чат техподдержки</a>
-            <a class="dropdown-item" href="#"><i class="i i-question-circle"></i>Вопрос-ответ</a>
-            <a class="dropdown-item" href="#"><i class="i i-notification"></i>Уведомления</a>
-            <div class="dropdown-divider"></div>
-            <p class="dropdown-item-text d-flex align-items-center">Баланс
-                <a href="javascript:;" class="btn btn-icon-text btn-s ml-auto">
-                <i class="i i-dollar"></i>42.20</a></p>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
-            <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
-            <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
-        </div>
-    </div>
-</aside>
-
-<aside id="app-settings-aside" class="app-aside app-aside-right" data-scroll-top="true">
-    <div class="aside-container">
-        <div class="aside-content">
-            <label class="custom-select custom-select-sm" for="language-select">
-                <select data-toggle="select" name="lang" id="language-select">
-                    <option value="ru">Русский</option>
-                    <option value="en" selected>English</option>
-                </select>
-                <span class="placeholder">Language</span>
-                <span class="error-message" aria-live="polite"></span>
-            </label>
-            <div class="dropdown-divider"></div>
-            <div class="custom-switch">
-                <input type="checkbox" name="toggle-sidebar-dark" id="toggle-sidebar-dark">
-                <label for="toggle-sidebar-dark">
-                    <div class="text">
-                        <span class="caption">Dark sidebar</span>
-                        <span class="message"></span>
-                    </div>
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="dropdown-divider"></div>
-            <div class="btn-group">
-                <a class="btn btn-icon-text btn-flat" href="javascript:;" data-toggle="theme" data-theme="dark">
-                    <i class="i i-moon"></i>Темная тема</a>
-                <a class="btn btn-icon-text btn-flat" href="javascript:;" data-toggle="theme" data-theme="light">
-                    <i class="i i-sun"></i>Светлая тема</a>
-            </div>
-            <div class="dropdown-divider"></div>
-            <div>
-                <button class="btn btn-flat btn-block" id="enable-desktop-notification">Desktop notification</button>
-                <script type="text/javascript">
-                    (function () {
-                        let btn = document.getElementById('enable-desktop-notification');
-                        let allowNotification = !("Notification" in window);
-                        let perm = Notification.permission === "granted";
-
-                        if (!window.isSecureContext || allowNotification || perm) {
-                            btn.disabled = true;
-                            let span = document.createElement('span');
-                            span.classList.add('d-block');
-                            if (perm || allowNotification) {
-                                span.textContent = 'Уже включено';
-                            } else {
-                                span.textContent = 'Недоступно для текущего контекста';
-                            }
-                            btn.parentNode.insertBefore(span, btn.nextSibling);
-                        } else {
-                            btn.addEventListener('click', function () {
-                                DRIVE.desktopNotification.notify('Test');
-                            });
-                        }
-                    })();
-                </script>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Label</a>
+                <a class="dropdown-item" href="#">Label</a>
+                <a class="dropdown-item" href="#">Label</a>
             </div>
         </div>
     </div>
@@ -568,14 +460,18 @@
                 <div class="dropdown-menu dropdown-menu-primary dropdown-menu-xs" aria-labelledby="dropdownMenuButton">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-12 col-md-3 col-lg-3 category-popup">
+                            <div class="col-12 col-md-3 col-lg-3">
                                 <h6 class="dropdown-header">Категории</h6>
-                                <a class="btn btn-flat-primary btn-icon-text category-child"
-                                   id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    Label
-                                    <i class="i i-arrow-right"></i>
-                                </a>
+                                <div class="d-flex justify-content-between">
+                                    <a class="btn btn-flat-primary btn-icon-text category-child"
+                                       id="dropdownMenuButton2"
+                                       data-toggle="dropdown" aria-haspopup="true"
+                                       aria-expanded="false"> Label
+                                    </a>
+                                    <a class="btn btn-flat-primary d-none">
+                                        <i class="i i-arrow-right"></i>
+                                    </a>
+                                </div>
                                 <div class="subcategories">
                                     <div class="container">
                                         <div class="row" style="color: black">
@@ -600,23 +496,20 @@
                                                 <p class="category-label">Label</p>
                                                 <p class="category-label">Label</p>
                                                 <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                            </div>
-
+                                                <p class="category-label">Label</p></div>
                                             <div class="col-4">
                                                 <h6 class="mt-3 mb-2 ml-3">Сухари, сушки</h6>
                                                 <p class="category-label">Label</p>
                                                 <p class="category-label">Label</p>
                                                 <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                            </div>
+                                                <p class="category-label">Label</p></div>
                                         </div>
                                     </div>
                                 </div>
                                 <a class="btn btn-flat-primary btn-icon-text category-child"
                                    id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true"
                                    aria-expanded="false"> Label
-                                </a>
+                                </a> <br>
                                 <a class="btn btn-flat-primary btn-icon-text category-child"
                                    id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true"
                                    aria-expanded="false"> Label
@@ -626,69 +519,72 @@
                     </div>
                 </div>
             </div>
+
             <div class="custom-field-button-group inbox custom-field-button-group-sm m-auto w-50 search-field">
                 <label class="custom-field">
                     <input type="text" placeholder="&nbsp;" class="search-input"/>
                     <span class="placeholder">Поиск</span>
+                    <span class="error-message" aria-live="polite"></span>
+                    <div class="search-results mt-5" style="background-color: white; display: none;">
+                    </div>
                 </label>
-                <div class="search-results mt-5" style="background-color: white; display: none;">
-                </div>
+
                 <button class="btn btn-flat btn-icon" data-title="This is input tooltip">
                     <i class="i i-search"></i>
                 </button>
             </div>
-        </div>
-        <div class="dropdown-divider"></div>
-        <div class="top-bar-item top-bar-item-right pl-3">
-            <a class="btn btn-icon search" href="javascript:;" data-toggle="modal"
-               data-target="#searchModal">
-                <i class="i i-search"></i>
-            </a>
-            <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <div class="modal-title" id="searchModalLabel">
-                                <span class="title">Поиск товара</span>
-                            </div>
-                            <button class="close-modal btn btn-icon btn-flat btn-xs" data-dismiss="modal"
-                                    aria-label="Close">
-                                <i class="i i-cross"></i>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="custom-field-button-group inbox">
-                                <label class="custom-field">
-                                    <input type="text" placeholder="&nbsp;" class="search-input"/>
-                                    <span class="placeholder">Поиск</span>
-                                </label>
-                                <button class="btn btn-flat btn-icon" data-title="This is input tooltip">
-                                    <i class="i i-search"></i>
+
+            <div class="top-bar-item top-bar-item-right pl-4">
+                <a class="btn btn-icon search" href="javascript:;" data-toggle="modal"
+                   data-target="#searchModal">
+                    <i class="i i-search"></i>
+                </a>
+                <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="modal-title" id="searchModalLabel">
+                                    <span class="title">Поиск товара</span>
+                                </div>
+                                <button class="close-modal btn btn-icon btn-flat btn-xs" data-dismiss="modal"
+                                        aria-label="Close">
+                                    <i class="i i-cross"></i>
                                 </button>
                             </div>
-                            <div class="search-results-mb mt-3" style="background-color: white; display: none;">
+                            <div class="modal-body">
+                                <div class="custom-field-button-group custom-field-button-group-sm inbox">
+                                    <div class="custom-field-button-group inbox">
+                                        <label class="custom-field">
+                                            <input type="text" placeholder="&nbsp;" class="search-input"/>
+                                            <span class="placeholder">Поиск</span>
+                                            <span class="error-message" aria-live="polite"></span>
+                                        </label>
+                                        <button class="btn btn-flat btn-icon"><i class="i i-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="search-results-mb mt-3" style="background-color: white; display: none;">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <a class="btn btn-icon btn-danger counter-likes" href="javascript:;">
+                    <i class="i i-heart"></i>1
+                </a>
+                <a class="btn btn-icon counter-carts" href="javascript:;" onclick="window.location.href = 'basket.html';">
+                    <i class="i i-shopping-cart"></i>0
+                </a>
             </div>
-            <a class="btn btn-icon btn-danger counter-likes" href="javascript:;">
-                <i class="i i-heart"></i>1
-            </a>
-            <a class="btn btn-icon btn-primary counter-carts" href="javascript:;">
-                <i class="i i-shopping-cart"></i>1
-            </a>
         </div>
     </div>
-    <div class="dropdown-divider"></div>
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb" show-scroll-hover>
-                        <li class="breadcrumb-item"><a href="./catalog.html">Каталог</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:;">Каталог</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Корзина</li>
                     </ol>
                 </nav>
@@ -702,36 +598,28 @@
                         <div class="col-12 border-bottom pb-3">
                             <div class="row">
                                 <div class="col-12 col-md-8 col-lg-9">
-                                    <div class="row">
-                                        <div>Компания:</div>
-                                        <div class="fw-bold">Домочай</div>
-                                    </div>
+                                    <div>Компания:</div>
+                                    <div class="fw-bold">Домочай</div>
                                 </div>
-                                <div class="col-12 col-md-4 col-lg-2 pt-3 delete-order">
-                                    <a class="btn btn-icon-text btn-xs" data-toggle="modal" data-target="#deleteOrder"
-                                       href="javascript:;"><i class="i i-trash-2"></i>Очистить корзину</a>
-                                    <div class="modal fade" id="deleteOrder" tabindex="-1"
-                                         aria-labelledby="deleteOrderLabel" aria-hidden="true">
+                                <div class="col-12 col-md-4 col-lg-3 pt-2 delete-order">
+                                    <a class="btn btn-icon-text btn-xs" data-toggle="modal" data-target="#deleteOrder" href="javascript:;"><i class="i i-trash-2"></i>Удалить заказ</a>
+                                    <div class="modal fade" id="deleteOrder" tabindex="-1" aria-labelledby="deleteOrderLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <div class="modal-title" id="deleteOrderLabel">
                                                         <span class="title">Очистка корзины</span>
                                                     </div>
-                                                    <button class="close-modal btn btn-icon btn-flat btn-xs"
-                                                            data-dismiss="modal" aria-label="Close">
+                                                    <button class="close-modal btn btn-icon btn-flat btn-xs" data-dismiss="modal" aria-label="Close">
                                                         <i class="i i-cross"></i>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Вы собираетесь удалить все товары из корзины. Это действие нельзя
-                                                    будет отменить.
+                                                    Вы собираетесь удалить все товары из корзины. Это действие нельзя будет отменить.
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-danger">Очистить</button>
-                                                    <button type="button" class="btn ml-auto" data-dismiss="modal">
-                                                        Отмена
-                                                    </button>
+                                                    <button type="button" class="btn ml-auto" data-dismiss="modal">Отмена</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -740,7 +628,7 @@
                             </div>
                         </div>
                         <div class="col-12 border-bottom p-3">
-                            <div class="pb-3 sm">Товары в корзине</div>
+                            <div class="pb-3 fw-bold">Товары в корзине</div>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
@@ -884,12 +772,12 @@
                             </div>
                             <div class="col-12 product-h border-bottom py-3">
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-12">
                                         <div class="card-img position-relative">
                                             <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
                                         </div>
                                     </div>
-                                    <div class="col-8 position-relative">
+                                    <div class="col-12 position-relative">
                                         <p class="card-title card-description">Продукт творожный "Десертный" МСП с
                                             ванилином и изюмом, контейнер 400г</p>
                                         <span class="fw-bold">100090757</span><span>&nbsp; 5637657</span>
@@ -906,8 +794,7 @@
                                                     <span class="price">42,00</span>
                                                     <span class="currency">BYN</span>
                                                 </div>
-                                                <a class="btn btn-icon-text btn-xs" href="javascript:;"
-                                                   style="position: absolute; bottom: 0px;right: 10px">
+                                                <a class="btn btn-icon-text btn-xs" href="javascript:;" style="position: absolute; bottom: 0px;right: 10px">
                                                     <i class="i i-trash-2"></i>
                                                 </a>
                                             </div>
@@ -917,12 +804,12 @@
                             </div>
                             <div class="col-12 product-h border-bottom py-3">
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-12">
                                         <div class="card-img position-relative">
                                             <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
                                         </div>
                                     </div>
-                                    <div class="col-8 position-relative">
+                                    <div class="col-12 position-relative">
                                         <p class="card-title card-description">Продукт творожный "Десертный" МСП с
                                             ванилином и изюмом, контейнер 400г</p>
                                         <span class="fw-bold">100090757</span><span>&nbsp; 5637657</span>
@@ -939,8 +826,7 @@
                                                     <span class="price">42,00</span>
                                                     <span class="currency">BYN</span>
                                                 </div>
-                                                <a class="btn btn-icon-text btn-xs" href="javascript:;"
-                                                   style="position: absolute; bottom: 0px;right: 10px">
+                                                <a class="btn btn-icon-text btn-xs" href="javascript:;" style="position: absolute; bottom: 0px;right: 10px">
                                                     <i class="i i-trash-2"></i>
                                                 </a>
                                             </div>
@@ -950,12 +836,12 @@
                             </div>
                             <div class="col-12 product-h border-bottom py-3">
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-12">
                                         <div class="card-img position-relative">
                                             <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
                                         </div>
                                     </div>
-                                    <div class="col-8 position-relative">
+                                    <div class="col-12 position-relative">
                                         <p class="card-title card-description">Продукт творожный "Десертный" МСП с
                                             ванилином и изюмом, контейнер 400г</p>
                                         <span class="fw-bold">100090757</span><span>&nbsp; 5637657</span>
@@ -972,8 +858,7 @@
                                                     <span class="price">42,00</span>
                                                     <span class="currency">BYN</span>
                                                 </div>
-                                                <a class="btn btn-icon-text btn-xs" href="javascript:;"
-                                                   style="position: absolute; bottom: 0px;right: 10px">
+                                                <a class="btn btn-icon-text btn-xs" href="javascript:;" style="position: absolute; bottom: 0px;right: 10px">
                                                     <i class="i i-trash-2"></i>
                                                 </a>
                                             </div>
@@ -986,8 +871,8 @@
                             <div class="pb-3">Доставка</div>
                             <div class="row pb-3">
                                 <div class="col-12 col-sm-6">
-                                    <label class="custom-select custom-select-sm mr-4" for="select1">
-                                        <select data-toggle="select" name="select1" id="select1">
+                                    <label class="custom-select custom-select-sm mr-4" for="select10">
+                                        <select data-toggle="select10" name="select1" id="select10">
                                             <optgroup label="Выберите">
                                                 <option value="1">Доставка по адресу</option>
                                                 <option value="2">Доставка до пункта выдачи</option>
@@ -999,43 +884,25 @@
                                 </div>
                                 <div class="col-12 col-sm-6 mobile text-nowrap">
                                     <div class="address-delivery">
-                                        <span class="align-self-center">Требуется добавить&nbsp;</span>
-                                        <a class="btn btn-warning" href="javascript:;" data-toggle="modal"
-                                           data-target="#addAddress">Адрес доставки</a>
+                                        <span class="align-self-center" style="font-size: 13px">Требуется добавить&nbsp;</span>
+                                        <a class="btn btn-warning" href="javascript:;" data-toggle="modal" data-target="#addAddress">адрес доставки</a>
                                     </div>
-                                    <label class="custom-select custom-select-sm pb-3 show-point-of-issue"
-                                           for="select1">
-                                        <select data-toggle="select" name="select1" id="select41">
-                                            <optgroup label="Выберите">
-                                                <option value="1">Беларусь, Могилёвская область, Могилёв, ул. Подгорная,
-                                                    д.1, оф.112
-                                                </option>
-                                            </optgroup>
-                                        </select>
-                                        <span class="placeholder">Пункт выдачи</span>
-                                        <span class="error-message" aria-live="polite"></span>
-                                    </label>
-                                    <div class="modal fade" id="addAddress" tabindex="-1"
-                                         aria-labelledby="addAddressLabel"
-                                         aria-hidden="true">
+                                    <div class="modal fade" id="addAddress" tabindex="-1" aria-labelledby="addAddressLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <div class="modal-title" id="addAddressLabel">
-                                                        <span class="title">Добавление адреса достаки</span>
+                                                    <div class="modal-title" id="addAddressLabel2">
+                                                        <span class="title">Добавление адреса доставки</span>
                                                     </div>
-                                                    <button class="close-modal btn btn-icon btn-flat btn-xs"
-                                                            data-dismiss="modal" aria-label="Close">
+                                                    <button class="close-modal btn btn-icon btn-flat btn-xs" data-dismiss="modal" aria-label="Close">
                                                         <i class="i i-cross"></i>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="row">
                                                         <div class="col-12">
-                                                            <label class="custom-select custom-select pb-3"
-                                                                   for="select4">
-                                                                <select data-toggle="select" name="select4"
-                                                                        id="select4">
+                                                            <label class="custom-select custom-select pb-3" for="select11">
+                                                                <select data-toggle="select" name="select11" id="select11">
                                                                     <optgroup label="Выберите">
                                                                         <option value="1">Магазин №1</option>
                                                                         <option value="2">Магазин №2</option>
@@ -1045,10 +912,8 @@
                                                                 <span class="placeholder">Название</span>
                                                                 <span class="error-message" aria-live="polite"></span>
                                                             </label>
-                                                            <label class="custom-select custom-select pb-3"
-                                                                   for="select5">
-                                                                <select data-toggle="select" name="select5"
-                                                                        id="select5">
+                                                            <label class="custom-select custom-select pb-3" for="select12">
+                                                                <select data-toggle="select12" name="select5" id="select12">
                                                                     <optgroup label="Выберите">
                                                                         <option value="1">Выберите</option>
                                                                     </optgroup>
@@ -1056,10 +921,8 @@
                                                                 <span class="placeholder">Страна</span>
                                                                 <span class="error-message" aria-live="polite"></span>
                                                             </label>
-                                                            <label class="custom-select custom-select pb-3"
-                                                                   for="select6">
-                                                                <select data-toggle="select" name="select6"
-                                                                        id="select6">
+                                                            <label class="custom-select custom-select pb-3" for="select13">
+                                                                <select data-toggle="select" name="select13" id="select13">
                                                                     <optgroup label="Выберите">
                                                                         <option value="1">Выберите</option>
                                                                     </optgroup>
@@ -1067,10 +930,8 @@
                                                                 <span class="placeholder">Регион</span>
                                                                 <span class="error-message" aria-live="polite"></span>
                                                             </label>
-                                                            <label class="custom-select custom-select pb-3"
-                                                                   for="select7">
-                                                                <select data-toggle="select" name="select7"
-                                                                        id="select7">
+                                                            <label class="custom-select custom-select pb-3" for="select14">
+                                                                <select data-toggle="select" name="select14" id="select14">
                                                                     <optgroup label="Выберите">
                                                                         <option value="1">Выберите</option>
                                                                     </optgroup>
@@ -1078,18 +939,18 @@
                                                                 <span class="placeholder">Город</span>
                                                                 <span class="error-message" aria-live="polite"></span>
                                                             </label>
-                                                            <label class="custom-field pb-3 w-50">
-                                                                <input type="text" placeholder="&nbsp;"/>
+                                                            <label class="custom-field pb-3">
+                                                                <input type="email" placeholder="&nbsp;" />
                                                                 <span class="placeholder">Улица</span>
                                                                 <span class="error-message" aria-live="polite"></span>
                                                             </label>
-                                                            <label class="custom-field pb-3 w-50">
-                                                                <input type="text" placeholder="&nbsp;"/>
+                                                            <label class="custom-field pb-3">
+                                                                <input type="email" placeholder="&nbsp;" />
                                                                 <span class="placeholder">Дом / Строение</span>
                                                                 <span class="error-message" aria-live="polite"></span>
                                                             </label>
-                                                            <label class="custom-field pb-3 w-50">
-                                                                <input type="text" placeholder="&nbsp;"/>
+                                                            <label class="custom-field pb-3">
+                                                                <input type="email" placeholder="&nbsp;" />
                                                                 <span class="placeholder">Офис</span>
                                                                 <span class="error-message" aria-live="polite"></span>
                                                             </label>
@@ -1103,20 +964,31 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-primary">Добавить</button>
-                                                    <button type="button" class="btn ml-auto" data-dismiss="modal">
-                                                        Отмена
-                                                    </button>
+                                                    <button type="button" class="btn ml-auto" data-dismiss="modal">Отмена</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <label class="custom-select custom-select-sm pb-3 show-point-of-issue">
+                                        <select data-toggle="select" name="select1" id="select41">
+                                            <optgroup label="Выберите">
+                                                <option value="1">Беларусь, Могилёвская область, Могилёв, ул. Подгорная,
+                                                    д.1, оф.112
+                                                </option>
+                                            </optgroup>
+                                        </select>
+                                        <span class="placeholder">Пункт выдачи</span>
+                                        <span class="error-message" aria-live="polite"></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-sm-6 pt-3">
+                                    <label class="custom-field custom-field-icon date custom-field-sm">
+                                        <input type="text" placeholder="&nbsp;" autocomplete="off"/>
+                                        <span class="placeholder">Дата доставки</span>
+                                        <span class="error-message" aria-live="polite"></span>
+                                    </label>
                                 </div>
                             </div>
-                            <label class="custom-field custom-field-icon date custom-field-sm w-25">
-                                <input type="text" placeholder="&nbsp;" autocomplete="off"/>
-                                <span class="placeholder">Дата доставки</span>
-                                <span class="error-message" aria-live="polite"></span>
-                            </label>
                         </div>
                         <div class="col-12 border-bottom p-3 laptop">
                             <div class="row">
@@ -1136,7 +1008,7 @@
                                     </label>
                                 </div>
                                 <div class="col-12 col-sm-6 mobile payment-type">
-                                    <label class="custom-select custom-select-sm w-25 mr-4" for="select3">
+                                    <label class="custom-select custom-select-sm" for="select3">
                                         <select data-toggle="select" name="select3" id="select3">
                                             <optgroup label="Выберите">
                                                 <option value="1">Наличные</option>
@@ -1190,21 +1062,18 @@
                                     </label>
                                 </div>
                                 <div class="col-12 col-sm-3 col-md-4 col-lg-3 mobile">
-                                    <button class="btn btn-icon btn-l btn-primary disabled align-self-start"
-                                            data-toggle="modal" data-target="#acceptOrder">
+                                    <button class="btn btn-icon btn-l btn-primary disabled align-self-start" data-toggle="modal" data-target="#acceptOrder">
                                         <i class="i i-send"></i>
                                         <span style="font-size: 14px;">Отправить</span>
                                     </button>
-                                    <div class="modal fade" id="acceptOrder" tabindex="-1"
-                                         aria-labelledby="acceptOrderLabel" aria-hidden="true">
+                                    <div class="modal fade" id="acceptOrder" tabindex="-1" aria-labelledby="acceptOrderLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <div class="modal-title" id="acceptOrderLabel">
                                                         <span class="title">Подтверждение заказа</span>
                                                     </div>
-                                                    <button class="close-modal btn btn-icon btn-flat btn-xs"
-                                                            data-dismiss="modal" aria-label="Close">
+                                                    <button class="close-modal btn btn-icon btn-flat btn-xs" data-dismiss="modal" aria-label="Close">
                                                         <i class="i i-cross"></i>
                                                     </button>
                                                 </div>
@@ -1222,8 +1091,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <th scope="row">Адрес пункта выдачи:</th>
-                                                                <td class="text-right">Беларусь, Могилёвская область,
-                                                                    Могилёв, ул.
+                                                                <td class="text-right">Беларусь, Могилёвская область, Могилёв, ул.
                                                                     Подгорная, д.1, оф.112
                                                                 </td>
                                                             </tr>
@@ -1245,27 +1113,19 @@
                                                             </tbody>
                                                         </table>
                                                     </div>
-                                                    <div class="pb-3">Сейчас будет создан счёт и мы перенаправим вас на
-                                                        страницу пополнения баланса пластиковой картой.
-                                                    </div>
+                                                    <div class="pb-3">Сейчас будет создан счёт и мы перенаправим вас на страницу пополнения баланса пластиковой картой.</div>
                                                     <div class="alert alert-info fade show" role="alert">
                                                         <div class="alert-icon">
                                                             <i class="i i-info"></i>
                                                         </div>
                                                         <div class="alert-content">
-                                                            <div class="alert-title">При нажатии кнопки «Перейти к
-                                                                оплате» будет сгенерирован счёт и вы будете
-                                                                перенаправлены на страницу пополнения баланса.
-                                                            </div>
+                                                            <div class="alert-title">При нажатии кнопки «Перейти к оплате» будет сгенерирован счёт и вы будете перенаправлены на страницу пополнения баланса.</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-primary">Перейти к оплате
-                                                    </button>
-                                                    <button type="button" class="btn ml-auto" data-dismiss="modal">
-                                                        Вернуться в корзину
-                                                    </button>
+                                                    <button type="button" class="btn btn-primary">Перейти к оплате</button>
+                                                    <button type="button" class="btn ml-auto" data-dismiss="modal">Вернуться в корзину</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1278,6 +1138,7 @@
             </div>
         </div>
     </div>
+
 </main>
 
 <!-- Required: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -1290,14 +1151,12 @@
 <!-- Optional: Your scripts -->
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2.full.min.js"></script>
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2/i18n/en.js"></script>
-<!--<script type="text/javascript" src="js/items.js"></script>-->
-<script type="text/javascript" src="js/popup.js"></script>
-<script type="text/javascript" src="js/likeCounter.js"></script>
+<!-- <script type="text/javascript" src="/static/js/main.js?v=1.0.0"></script> -->
 <script type="text/javascript" src="js/cartCounter.js"></script>
-<script type="text/javascript" src="js/scroll.js"></script>
+<script type="text/javascript" src="js/likeCounter.js"></script>
+<script type="text/javascript" src="js/popup.js"></script>
 <script type="text/javascript" src="js/delivery.js"></script>
 <script type="text/javascript" src="js/search.js"></script>
-
 <!-- Required -->
 <script type="text/javascript">
     $(document).ready(function () {

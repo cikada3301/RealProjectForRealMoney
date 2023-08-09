@@ -1,4 +1,4 @@
-const select = $('#select1');
+const select = $('#select10');
 
 const addressDelivery = document.querySelector('.address-delivery')
 const pointOfIssue = document.querySelector('.show-point-of-issue')

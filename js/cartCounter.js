@@ -35,18 +35,31 @@ cartButtons.forEach(function (button, index) {
 
         const parentElement = countElement.parentElement.parentElement.parentElement.parentElement.parentElement;
 
-        const newElement = `<div class="pt-3"> <a class="btn btn-icon btn-success btn-s w-100 d-flex justify-content-center py-2 text" href="javascript:;"><i class="i i-check-square" style="font-size: 12px;"></i>В   корзине</a>  </div>`;
+        parentElement.className = 'col-12 col-lg-4 px-0 product';
 
-        parentElement.style.position = "relative";
-        parentElement.children[0].classList.remove("card-v", "px-0")
-        parentElement.children[0].classList.add("in-basket", "p-2")
-        parentElement.children[0].style.position = "absolute";
-        parentElement.children[0].style.zIndex = 1;
-        parentElement.children[0].children[0].classList.remove("m-2")
-        parentElement.children[0].children[1].classList.remove("mt-4", "p-2")
-        parentElement.children[0].children[1].classList.add("pt-2", "px-0")
-        parentElement.children[0].children[1].children[2].remove();
-        parentElement.children[0].children[1].innerHTML += newElement;
+        parentElement.innerHTML = `
+                            <div class="card h-100">
+                                <div class="card-img">
+                                    <img src="${parentElement.querySelector('.embed-responsive-item').src}" class="card-img-top embed-responsive-item" alt="product">
+                                    <a class="btn btn-icon btn-xs heart" href="javascript:;"><i class="i i-heart"></i></a>
+                                    <label class="tag fixed-tag">5637657</label>
+                                    <div class="card-name">
+                                        ОАО "Домочай
+                                        название...
+                                    </div>
+                                </div>
+                                <div class="card-body pt-2">
+                                    <p class="card-title card-description">${parentElement.querySelector('.card-title').textContent}</p>
+                                    <div class="amount amount-s">
+                                        <span class="price">42,00</span>
+                                        <span class="currency">BYN</span>
+                                    </div>
+                                    <div class="pt-1">
+                                        <a class="btn btn-icon btn-success btn-s d-flex justify-content-center text"
+                                           href="javascript:;"><i class="i i-check-square"></i>В корзине</a>
+                                    </div>
+                                </div>
+                            </div>`;
 
         let productCount = parseInt(countElement.value);
         arrayIndexCount.set(index, productCount);

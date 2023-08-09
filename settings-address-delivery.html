@@ -156,7 +156,7 @@
             display: none;
         }
 
-        @media (max-width: 991.98px) {
+        @media (max-width: 767.98px) {
             .top-bar-list {
                 background-color: #e7edfb;
             }
@@ -175,6 +175,10 @@
 
             .mobile {
                 display: block;
+            }
+
+            .btn-add-address {
+                margin-top: 8px;
             }
         }
     </style>
@@ -453,7 +457,7 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="dropdown text-nowrap">
-                <a class="btn btn-icon-text btn-flat-primary" href="javascript:;"><i class="i i-arrow-left"></i></a>
+                <a class="btn btn-icon-text btn-flat-primary" href="./settings.html"><i class="i i-arrow-left"></i></a>
                 <span>Адреса доставки</span>
             </div>
         </div>
@@ -465,10 +469,110 @@
             <div class="col-12 col-lg-auto align-self-center">
                 <div class="fw-bold" style="font-size: 20px;">Список адресов</div>
             </div>
-            <div class="col-12 col-lg">
+            <div class="col-12 col-lg btn-add-address">
                 <a class="btn btn-icon-text btn-primary" href="javascript:;"
                    style="font-size: 14px;"
                    data-toggle="modal" data-target="#addAddress"><i class="i i-plus"></i>Добавить адрес</a>
+                <div class="modal fade" id="addAddress" tabindex="-1"
+                     aria-labelledby="addAddressLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="modal-title" id="addAddressLabel">
+                                    <strong class="title">Добавление адреса достаки</strong>
+                                </div>
+                                <button class="close-modal btn btn-icon btn-flat btn-xs"
+                                        data-dismiss="modal" aria-label="Close">
+                                    <i class="i i-cross"></i>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="custom-select custom-select pb-3"
+                                               for="select4">
+                                            <select data-toggle="select" name="select4"
+                                                    id="select4">
+                                                <optgroup label="Выберите">
+                                                    <option value="1">Магазин №1</option>
+                                                    <option value="2">Магазин №2</option>
+                                                    <option value="3">Магазин №3</option>
+                                                </optgroup>
+                                            </select>
+                                            <span class="placeholder">Название</span>
+                                            <span class="error-message" aria-live="polite"></span>
+                                        </label>
+                                        <label class="custom-select custom-select pb-3"
+                                               for="select5">
+                                            <select data-toggle="select" name="select5"
+                                                    id="select5">
+                                                <optgroup label="Выберите">
+                                                    <option value="1">Выберите</option>
+                                                </optgroup>
+                                            </select>
+                                            <span class="placeholder">Страна</span>
+                                            <span class="error-message" aria-live="polite"></span>
+                                        </label>
+                                        <label class="custom-select custom-select pb-3"
+                                               for="select6">
+                                            <select data-toggle="select" name="select6"
+                                                    id="select6">
+                                                <optgroup label="Выберите">
+                                                    <option value="1">Выберите</option>
+                                                </optgroup>
+                                            </select>
+                                            <span class="placeholder">Регион</span>
+                                            <span class="error-message" aria-live="polite"></span>
+                                        </label>
+                                        <label class="custom-select custom-select pb-3"
+                                               for="select7">
+                                            <select data-toggle="select" name="select7"
+                                                    id="select7">
+                                                <optgroup label="Выберите">
+                                                    <option value="1">Выберите</option>
+                                                </optgroup>
+                                            </select>
+                                            <span class="placeholder">Город</span>
+                                            <span class="error-message" aria-live="polite"></span>
+                                        </label>
+                                        <label class="custom-field pb-3">
+                                            <input type="text" placeholder="&nbsp;"/>
+                                            <span class="placeholder">Улица</span>
+                                            <span class="error-message" aria-live="polite"></span>
+                                        </label>
+                                        <label class="custom-field pb-3 w-50">
+                                            <input type="text" placeholder="&nbsp;"/>
+                                            <span class="placeholder">Дом / Строение</span>
+                                            <span class="error-message" aria-live="polite"></span>
+                                        </label>
+                                        <label class="custom-field pb-3 w-50">
+                                            <input type="text" placeholder="&nbsp;"/>
+                                            <span class="placeholder">Этаж</span>
+                                            <span class="error-message" aria-live="polite"></span>
+                                        </label>
+                                        <label class="custom-field pb-3 w-50">
+                                            <input type="text" placeholder="&nbsp;"/>
+                                            <span class="placeholder">Квартира</span>
+                                            <span class="error-message" aria-live="polite"></span>
+                                        </label>
+                                        <label class="custom-field">
+                                            <textarea placeholder="&nbsp;"></textarea>
+                                            <span class="placeholder">Комментарий</span>
+                                            <span class="error-message" aria-live="polite"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Добавить</button>
+                                <button type="button" class="btn ml-auto" data-dismiss="modal">
+                                    Отмена
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -550,229 +654,6 @@
                         </tr>
                         </tbody>
                     </table>
-                    <div class="modal fade" id="deleteAddressModal" tabindex="-1"
-                         aria-labelledby="deleteAddressModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div class="modal-title" id="deleteAddressModalLabel">
-                                        <strong class="title">Удаление адреса</strong>
-                                    </div>
-                                    <button class="close-modal btn btn-icon btn-flat btn-xs" data-dismiss="modal"
-                                            aria-label="Close">
-                                        <i class="i i-cross"></i>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    Вы пытаетесь удалить адрес доставки. Всё равно продолжить?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger">Удалить</button>
-                                    <button type="button" class="btn ml-auto" data-dismiss="modal">Отмена</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="addAddress" tabindex="-1"
-                         aria-labelledby="addAddressLabel"
-                         aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div class="modal-title" id="addAddressLabel">
-                                        <strong class="title">Добавление адреса достаки</strong>
-                                    </div>
-                                    <button class="close-modal btn btn-icon btn-flat btn-xs"
-                                            data-dismiss="modal" aria-label="Close">
-                                        <i class="i i-cross"></i>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <label class="custom-select custom-select pb-3"
-                                                   for="select4">
-                                                <select data-toggle="select" name="select4"
-                                                        id="select4">
-                                                    <optgroup label="Выберите">
-                                                        <option value="1">Магазин №1</option>
-                                                        <option value="2">Магазин №2</option>
-                                                        <option value="3">Магазин №3</option>
-                                                    </optgroup>
-                                                </select>
-                                                <span class="placeholder">Название</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-select custom-select pb-3"
-                                                   for="select5">
-                                                <select data-toggle="select" name="select5"
-                                                        id="select5">
-                                                    <optgroup label="Выберите">
-                                                        <option value="1">Выберите</option>
-                                                    </optgroup>
-                                                </select>
-                                                <span class="placeholder">Страна</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-select custom-select pb-3"
-                                                   for="select6">
-                                                <select data-toggle="select" name="select6"
-                                                        id="select6">
-                                                    <optgroup label="Выберите">
-                                                        <option value="1">Выберите</option>
-                                                    </optgroup>
-                                                </select>
-                                                <span class="placeholder">Регион</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-select custom-select pb-3"
-                                                   for="select7">
-                                                <select data-toggle="select" name="select7"
-                                                        id="select7">
-                                                    <optgroup label="Выберите">
-                                                        <option value="1">Выберите</option>
-                                                    </optgroup>
-                                                </select>
-                                                <span class="placeholder">Город</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-field pb-3">
-                                                <input type="text" placeholder="&nbsp;"/>
-                                                <span class="placeholder">Улица</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-field pb-3 w-50">
-                                                <input type="text" placeholder="&nbsp;"/>
-                                                <span class="placeholder">Дом / Строение</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-field pb-3 w-50">
-                                                <input type="text" placeholder="&nbsp;"/>
-                                                <span class="placeholder">Этаж</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-field pb-3 w-50">
-                                                <input type="text" placeholder="&nbsp;"/>
-                                                <span class="placeholder">Квартира</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-field">
-                                                <textarea placeholder="&nbsp;"></textarea>
-                                                <span class="placeholder">Комментарий</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary">Добавить</button>
-                                    <button type="button" class="btn ml-auto" data-dismiss="modal">
-                                        Отмена
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="updateAddress" tabindex="-1"
-                         aria-labelledby="addAddressLabel"
-                         aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div class="modal-title" id="updateAddressLabel">
-                                        <strong class="title">Редактирование адреса достаки</strong>
-                                    </div>
-                                    <button class="close-modal btn btn-icon btn-flat btn-xs"
-                                            data-dismiss="modal" aria-label="Close">
-                                        <i class="i i-cross"></i>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <label class="custom-select custom-select pb-3"
-                                                   for="select41">
-                                                <select data-toggle="select" name="select4"
-                                                        id="select41">
-                                                    <optgroup label="Выберите">
-                                                        <option value="1">Магазин №1</option>
-                                                        <option value="2">Магазин №2</option>
-                                                        <option value="3">Магазин №3</option>
-                                                    </optgroup>
-                                                </select>
-                                                <span class="placeholder">Название</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-select custom-select pb-3"
-                                                   for="select51">
-                                                <select data-toggle="select" name="select5"
-                                                        id="select51">
-                                                    <optgroup label="Выберите">
-                                                        <option value="1">Беларусь</option>
-                                                    </optgroup>
-                                                </select>
-                                                <span class="placeholder">Страна</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-select custom-select pb-3"
-                                                   for="select61">
-                                                <select data-toggle="select" name="select6"
-                                                        id="select61">
-                                                    <optgroup label="Выберите">
-                                                        <option value="1">Могилёвская область</option>
-                                                    </optgroup>
-                                                </select>
-                                                <span class="placeholder">Регион</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-select custom-select pb-3"
-                                                   for="select71">
-                                                <select data-toggle="select" name="select7"
-                                                        id="select71">
-                                                    <optgroup label="Выберите">
-                                                        <option value="1">Могилёв</option>
-                                                    </optgroup>
-                                                </select>
-                                                <span class="placeholder">Город</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-field pb-3">
-                                                <input type="text" placeholder="&nbsp;" value="Пионерская"/>
-                                                <span class="placeholder">Улица</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-field pb-3 w-50">
-                                                <input type="text" placeholder="&nbsp;" value="1"/>
-                                                <span class="placeholder">Дом / Строение</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-field pb-3 w-50">
-                                                <input type="text" placeholder="&nbsp;" value="3"/>
-                                                <span class="placeholder">Этаж</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-field pb-3 w-50">
-                                                <input type="text" placeholder="&nbsp;" value="600"/>
-                                                <span class="placeholder">Квартира</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                            <label class="custom-field">
-                                                <textarea placeholder="&nbsp;">Текст</textarea>
-                                                <span class="placeholder">Комментарий</span>
-                                                <span class="error-message" aria-live="polite"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary">Добавить</button>
-                                    <button type="button" class="btn ml-auto" data-dismiss="modal">
-                                        Отмена
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="col-12 pt-3 mobile">
@@ -871,8 +752,131 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="deleteAddressModal" tabindex="-1"
+         aria-labelledby="deleteAddressModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" id="deleteAddressModalLabel">
+                        <strong class="title">Удаление адреса</strong>
+                    </div>
+                    <button class="close-modal btn btn-icon btn-flat btn-xs" data-dismiss="modal"
+                            aria-label="Close">
+                        <i class="i i-cross"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Вы пытаетесь удалить адрес доставки. Всё равно продолжить?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger">Удалить</button>
+                    <button type="button" class="btn ml-auto" data-dismiss="modal">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="updateAddress" tabindex="-1"
+         aria-labelledby="addAddressLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" id="updateAddressLabel">
+                        <strong class="title">Редактирование адреса достаки</strong>
+                    </div>
+                    <button class="close-modal btn btn-icon btn-flat btn-xs"
+                            data-dismiss="modal" aria-label="Close">
+                        <i class="i i-cross"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="custom-select custom-select pb-3"
+                                   for="select41">
+                                <select data-toggle="select" name="select4"
+                                        id="select41">
+                                    <optgroup label="Выберите">
+                                        <option value="1">Магазин №1</option>
+                                        <option value="2">Магазин №2</option>
+                                        <option value="3">Магазин №3</option>
+                                    </optgroup>
+                                </select>
+                                <span class="placeholder">Название</span>
+                                <span class="error-message" aria-live="polite"></span>
+                            </label>
+                            <label class="custom-select custom-select pb-3"
+                                   for="select51">
+                                <select data-toggle="select" name="select5"
+                                        id="select51">
+                                    <optgroup label="Выберите">
+                                        <option value="1">Беларусь</option>
+                                    </optgroup>
+                                </select>
+                                <span class="placeholder">Страна</span>
+                                <span class="error-message" aria-live="polite"></span>
+                            </label>
+                            <label class="custom-select custom-select pb-3"
+                                   for="select61">
+                                <select data-toggle="select" name="select6"
+                                        id="select61">
+                                    <optgroup label="Выберите">
+                                        <option value="1">Могилёвская область</option>
+                                    </optgroup>
+                                </select>
+                                <span class="placeholder">Регион</span>
+                                <span class="error-message" aria-live="polite"></span>
+                            </label>
+                            <label class="custom-select custom-select pb-3"
+                                   for="select71">
+                                <select data-toggle="select" name="select7"
+                                        id="select71">
+                                    <optgroup label="Выберите">
+                                        <option value="1">Могилёв</option>
+                                    </optgroup>
+                                </select>
+                                <span class="placeholder">Город</span>
+                                <span class="error-message" aria-live="polite"></span>
+                            </label>
+                            <label class="custom-field pb-3">
+                                <input type="text" placeholder="&nbsp;" value="Пионерская"/>
+                                <span class="placeholder">Улица</span>
+                                <span class="error-message" aria-live="polite"></span>
+                            </label>
+                            <label class="custom-field pb-3 w-50">
+                                <input type="text" placeholder="&nbsp;" value="1"/>
+                                <span class="placeholder">Дом / Строение</span>
+                                <span class="error-message" aria-live="polite"></span>
+                            </label>
+                            <label class="custom-field pb-3 w-50">
+                                <input type="text" placeholder="&nbsp;" value="3"/>
+                                <span class="placeholder">Этаж</span>
+                                <span class="error-message" aria-live="polite"></span>
+                            </label>
+                            <label class="custom-field pb-3 w-50">
+                                <input type="text" placeholder="&nbsp;" value="600"/>
+                                <span class="placeholder">Квартира</span>
+                                <span class="error-message" aria-live="polite"></span>
+                            </label>
+                            <label class="custom-field">
+                                <textarea placeholder="&nbsp;">Текст</textarea>
+                                <span class="placeholder">Комментарий</span>
+                                <span class="error-message" aria-live="polite"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Добавить</button>
+                    <button type="button" class="btn ml-auto" data-dismiss="modal">
+                        Отмена
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="alert alert-desktop" role="alert"
-         style="display: none; position: absolute; bottom: 0; right: 24px; background-color: #272B3ACC;">
+         style="display: none; position: absolute; bottom: -50px; right: 24px; background-color: #272B3ACC;">
         <div class="alert-content">
             <div class="alert-buttons">
                 <div class="row justify-content-between">
