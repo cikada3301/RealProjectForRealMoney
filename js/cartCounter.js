@@ -35,12 +35,10 @@ cartButtons.forEach(function (button, index) {
 
         const parentElement = countElement.parentElement.parentElement.parentElement.parentElement.parentElement;
 
-        parentElement.className = 'col-12 col-lg-4 px-0 product';
-
         const likeActive = parentElement.querySelector('.btn-danger');
 
         parentElement.innerHTML = `
-                            <div class="card h-100">
+                            <div class="card card-v h-100">
                                 <div class="card-img">
                                     <img src="${parentElement.querySelector('.embed-responsive-item').src}" class="card-img-top embed-responsive-item" alt="product">
                                     <a class="btn btn-icon btn-xs ${likeActive === null ? '' : 'btn-danger'} heart" href="javascript:;"><i class="i i-heart"></i></a>
