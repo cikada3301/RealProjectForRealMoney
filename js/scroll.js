@@ -1,17 +1,21 @@
-const mainImg = document.getElementById('preview-img');
+const scrollImgs = document.querySelectorAll('.scroll-menu img');
+document.getElementById('preview-img').src = scrollImgs[0].src;
 
-const thumbs = document.querySelectorAll('.scroll-menu img');
+scrollImgs.forEach(img => {
+    img.addEventListener('click', selectImg);
+});
 
-thumbs.forEach(thumb => {
+function selectImg(e) {
+    const previewImg = document.getElementById('preview-img');
+    previewImg.src = e.target.src;
+}
 
-    thumb.addEventListener('click', () => {
-
-        const imgSrc = thumb.getAttribute('src');
-
-        const img = new Image();
-        img.onload = () => {
-            mainImg.src = imgSrc;
-        }
-        img.src = imgSrc;
+$("#preview-wrapper").on('click', function() {
+    const previewImg = document.getElementById('preview-img');
+    $.fancybox.open({
+        src  : previewImg.src,
+        buttons : [
+            "close"
+        ]
     });
 });

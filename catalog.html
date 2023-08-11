@@ -157,9 +157,31 @@
         }
 
         .card-v:hover .show-hover {
-            position: absolute;
-            z-index: 1;
             display: block;
+            position: absolute;
+            padding: 8px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .btn-add-to-cart {
+            display: none;
+        }
+
+        .card:hover {
+            height: calc(100% + 15%) !important;
+            box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10), 0px 0px 3px 0px rgba(0, 0, 0, 0.06);
+            z-index: 1;
+        }
+
+        .card:hover .btn-add-to-cart {
+            display: block;
+            position: absolute;
+            padding: 8px;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
 
         .shop-wrapper {
@@ -174,10 +196,12 @@
 
         .tag {
             border-radius: 4px;
-            color: #272B3A;
+            color: rgba(39, 43, 58, 0.60);
             background: #F4F4F5;
             gap: 4px;
+            line-height: 14px;
             padding-left: 4px;
+            font-size: 12px;
             padding-right: 4px;
         }
 
@@ -270,6 +294,9 @@
             display: none;
         }
 
+        .mobile {
+            display: none !important;
+        }
 
         @media (max-width: 767.98px) {
             .counter {
@@ -282,6 +309,13 @@
 
             .category-desktop {
                 display: none;
+            }
+
+            .desktop {
+                display: none !important;
+            }
+            .mobile {
+                display: flex !important;
             }
         }
 
@@ -821,7 +855,7 @@
             </div>
         </div>
         <div class="row mx-0">
-            <div class="col-12 col-md-8 col-lg-9 pr-4 order-1">
+            <div class="col-12 col-md-8 col-lg-9">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 pb-3 px-0">
                         <div class="container-fluid d-flex justify-content-between px-0">
@@ -853,17 +887,17 @@
                                     <a class="btn btn-icon btn-xs position-absolute" href="javascript:;"
                                        style="position: absolute; top: 0px; right: 0px;"><i class="i i-heart"></i></a>
                                     <label class="article"
-                                           style="position: absolute; color: #272B3A;bottom: 0px; left: 5px;">5637657</label>
+                                           style="position: absolute; bottom: 0px;">5637657</label>
                                 </div>
-                                <div class="card-body mt-4 p-2">
+                                <div class="card-body mt-3 p-2">
                                     <p class="card-title">Продукт творожный "Десертный" МСП с ванилином и изюмом,
                                         контейнер
                                         400г</p>
-                                    <div class="amount amount-l">
+                                    <div class="amount amount-l pl-0">
                                         <span class="price">42,00</span>
                                         <span class="currency">BYN</span>
                                     </div>
-                                    <div class="show-hover py-4">
+                                    <div class="show-hover pt-4">
                                         <div class="shop-wrapper d-flex justify-content-between">
                                             <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
                                                     class="i i-minus"></i></a>
@@ -888,17 +922,17 @@
                                     <a class="btn btn-icon btn-danger btn-xs position-absolute" href="javascript:;"
                                        style="position: absolute; top: 0px; right: 0px;"><i class="i i-heart"></i></a>
                                     <label class="article"
-                                           style="position: absolute; color: #272B3A;bottom: 0px; left: 5px;">5637657</label>
+                                           style="position: absolute; bottom: 0px;">5637657</label>
                                 </div>
-                                <div class="card-body mt-4 p-2">
+                                <div class="card-body mt-3 p-2">
                                     <p class="card-title">Продукт творожный "Десертный" МСП с ванилином и изюмом,
                                         контейнер
                                         400г</p>
-                                    <div class="amount amount-l">
+                                    <div class="amount amount-l pl-0">
                                         <span class="price">42,00</span>
                                         <span class="currency">BYN</span>
                                     </div>
-                                    <div class="show-hover py-4">
+                                    <div class="show-hover pt-4">
                                         <div class="shop-wrapper d-flex justify-content-between">
                                             <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
                                                     class="i i-minus"></i></a>
@@ -916,24 +950,28 @@
                         <div class="col-12 col-lg-4 px-0 product">
                             <div class="card h-100">
                                 <div class="card-img">
-                                    <img src="img/Rectangle1.png" class="card-img-top embed-responsive-item" alt="product">
-                                    <a class="btn btn-icon btn-xs heart" href="javascript:;"><i class="i i-heart"></i></a>
+                                    <img src="img/Rectangle1.png" class="card-img-top embed-responsive-item"
+                                         alt="product">
+                                    <a class="btn btn-icon btn-xs heart" href="javascript:;"><i
+                                            class="i i-heart"></i></a>
                                     <label class="tag fixed-tag">5637657</label>
                                     <div class="card-name">
                                         ОАО "Домочай
                                         название...
                                     </div>
                                 </div>
-                                <div class="card-body pt-2">
-                                    <p class="card-title card-description">Пирожное "Рецепты лучших кофеен" с наполнителем
+                                <div class="card-body mt-3 pt-2 pl-3">
+                                    <p class="card-title card-description">Пирожное "Рецепты лучших кофеен" с
+                                        наполнителем
                                         "Клубника" на вафле 100г</p>
-                                    <div class="amount amount-s">
+                                    <div class="amount amount-l pl-0">
                                         <span class="price">42,00</span>
                                         <span class="currency">BYN</span>
                                     </div>
-                                    <div class="pt-1">
-                                        <a class="btn btn-icon btn-success btn-s d-flex justify-content-center text"
-                                           href="javascript:;"><i class="i i-check-square"></i>В корзине</a>
+                                    <div class="btn-add-to-cart">
+                                        <a class="btn btn-icon btn-success btn-icon-text btn-s d-flex justify-content-center text"
+                                           href="javascript:;" style="font-size: 13px;"><i class="i i-check-square"></i>В
+                                            корзине</a>
                                     </div>
                                 </div>
                             </div>
@@ -947,12 +985,12 @@
                                     <a class="btn btn-icon btn-xs position-absolute" href="javascript:;"
                                        style="position: absolute; top: 0px; right: 0px;"><i class="i i-heart"></i></a>
                                     <label class="article"
-                                           style="position: absolute; color: #272B3A;bottom: 0px; left: 5px;">5637657</label>
+                                           style="position: absolute; bottom: 0px;">5637657</label>
                                 </div>
-                                <div class="card-body mt-4 p-2">
+                                <div class="card-body mt-3 p-2">
                                     <p class="card-title">Мороженое "Выросли-поняли" пломбир шоколадный 70г
                                     </p>
-                                    <div class="amount amount-l">
+                                    <div class="amount amount-l pl-0">
                                         <span class="price">42,00</span>
                                         <span class="currency">BYN</span>
                                     </div>
@@ -980,16 +1018,16 @@
                                     <a class="btn btn-icon btn-xs position-absolute" href="javascript:;"
                                        style="position: absolute; top: 0px; right: 0px;"><i class="i i-heart"></i></a>
                                     <label class="article"
-                                           style="position: absolute; color: #272B3A;bottom: 0px; left: 5px;">5637657</label>
+                                           style="position: absolute;bottom: 0px;">5637657</label>
                                 </div>
-                                <div class="card-body mt-4 p-2">
+                                <div class="card-body mt-3 p-2">
                                     <p class="card-title">Мороженое "Выросли-поняли" пломбир ванильный, бумажный пакет
                                         900г</p>
-                                    <div class="amount amount-l">
+                                    <div class="amount amount-l pl-0">
                                         <span class="price">42,00</span>
                                         <span class="currency">BYN</span>
                                     </div>
-                                    <div class="show-hover py-4">
+                                    <div class="show-hover pt-4">
                                         <div class="shop-wrapper d-flex justify-content-between">
                                             <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
                                                     class="i i-minus"></i></a>
@@ -1013,17 +1051,17 @@
                                     <a class="btn btn-icon btn-xs position-absolute" href="javascript:;"
                                        style="position: absolute; top: 0px; right: 0px;"><i class="i i-heart"></i></a>
                                     <label class="article"
-                                           style="position: absolute; color: #272B3A;bottom: 0px; left: 5px;">5637657</label>
+                                           style="position: absolute;bottom: 0px;">5637657</label>
                                 </div>
-                                <div class="card-body mt-4 p-2">
+                                <div class="card-body mt-3 p-2">
                                     <p class="card-title">Продукт творожный "Десертный" МСП с ванилином и изюмом,
                                         контейнер
                                         400г</p>
-                                    <div class="amount amount-l">
+                                    <div class="amount amount-l pl-0">
                                         <span class="price">42,00</span>
                                         <span class="currency">BYN</span>
                                     </div>
-                                    <div class="show-hover py-4">
+                                    <div class="show-hover pt-4">
                                         <div class="shop-wrapper d-flex justify-content-between">
                                             <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
                                                     class="i i-minus"></i></a>
@@ -1043,29 +1081,41 @@
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="card-img position-relative">
-                                            <img src="img/Rectangle3.png"
-                                                 class="img-fluid rounded-start"
-                                                 alt="product">
+                                            <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
+                                            <a class="btn btn-icon btn-xs position-absolute" href="javascript:;"
+                                               style="top: 5px; left: 5px"><i class="i i-heart"></i></a>
                                         </div>
                                     </div>
                                     <div class="col-8">
-                                        <div class="card-body h-100">
+                                        <div class="card-body">
                                             <p class="card-title card-description">Продукт творожный "Десертный" МСП с
-                                                ванилином и изюмом, контейнер 400г</p>                    <label
-                                                class="tag card-text">5637657</label>
-                                            <div class="row">
-                                                <div class="col-12 col-md-4 py-2">
-                                                    <div class="amount amount-s"><span class="price">42,00</span>
-                                                        <span class="currency">BYN</span></div>
+                                                ванилином и изюмом, контейнер 400г</p>
+                                            <div class="d-flex" style="gap: 4px">
+                                                <div class="badge badge-gray">5637657</div>
+                                            </div>
+                                            <div class="row align-items-end mt-5">
+                                                <div class="col-12 col-sm-4">
+                                                    <div class="amount amount-l">
+                                                        <span class="price">42,00</span>
+                                                        <span class="currency">BYN</span>
+                                                    </div>
                                                 </div>
-                                                <div class="col-12 col-md-8 counter text-nowrap">
-                                                    <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
-                                                            class="i i-minus"></i></a>
-                                                    <input class="w-25 text-center countElement" type="text" value="1"/>
-                                                    <a class="btn btn-icon btn-s" href="javascript:;"><i
-                                                            class="i i-plus add-btn"></i></a> <a
-                                                        class="btn btn-icon btn-s btn-primary add-to-cart-btn"
-                                                        href="javascript:;"><i class="i i-shopping-cart"></i></a>
+                                                <div class="col-12 col-sm-8 counter text-nowrap">
+                                                    <div class="custom-field-group custom-field-group-sm"
+                                                         style="gap: 5px">
+                                                        <a class="btn btn-icon btn-s subtract-btn"
+                                                           href="javascript:;">
+                                                            <i class="i i-minus"></i>
+                                                        </a>
+                                                        <input class="w-25 text-center countElement" type="text"
+                                                               value="1"
+                                                               style="display: flex; border-radius: 4px; border: 1px solid var(--black-25, rgba(39, 43, 58, 0.25)); background: var(--white-100, #FFF);"/>
+                                                        <a class="btn btn-icon btn-s" href="javascript:;">
+                                                            <i class="i i-plus add-btn"></i></a>
+                                                        <a class="btn btn-icon btn-s btn-primary add-to-cart-btn"
+                                                           href="javascript:;">
+                                                            <i class="i i-shopping-cart"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1078,29 +1128,41 @@
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="card-img position-relative">
-                                            <img src="img/Rectangle3.png"
-                                                 class="img-fluid rounded-start"
-                                                 alt="product">
+                                            <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
+                                            <a class="btn btn-icon btn-xs position-absolute" href="javascript:;"
+                                               style="top: 5px; left: 5px"><i class="i i-heart"></i></a>
                                         </div>
                                     </div>
                                     <div class="col-8">
-                                        <div class="card-body h-100">
+                                        <div class="card-body">
                                             <p class="card-title card-description">Продукт творожный "Десертный" МСП с
-                                                ванилином и изюмом, контейнер 400г</p>                    <label
-                                                class="tag card-text">5637657</label>
-                                            <div class="row">
-                                                <div class="col-12 col-md-4 py-2">
-                                                    <div class="amount amount-s"><span class="price">42,00</span>
-                                                        <span class="currency">BYN</span></div>
+                                                ванилином и изюмом, контейнер 400г</p>
+                                            <div class="d-flex" style="gap: 4px">
+                                                <div class="badge badge-gray">5637657</div>
+                                            </div>
+                                            <div class="row align-items-end mt-5">
+                                                <div class="col-12 col-sm-4">
+                                                    <div class="amount amount-l">
+                                                        <span class="price">42,00</span>
+                                                        <span class="currency">BYN</span>
+                                                    </div>
                                                 </div>
-                                                <div class="col-12 col-md-8 counter text-nowrap">
-                                                    <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
-                                                            class="i i-minus"></i></a>
-                                                    <input class="w-25 text-center countElement" type="text" value="1"/>
-                                                    <a class="btn btn-icon btn-s" href="javascript:;"><i
-                                                            class="i i-plus add-btn"></i></a> <a
-                                                        class="btn btn-icon btn-s btn-primary add-to-cart-btn"
-                                                        href="javascript:;"><i class="i i-shopping-cart"></i></a>
+                                                <div class="col-12 col-sm-8 counter text-nowrap">
+                                                    <div class="custom-field-group custom-field-group-sm"
+                                                         style="gap: 5px">
+                                                        <a class="btn btn-icon btn-s subtract-btn"
+                                                           href="javascript:;">
+                                                            <i class="i i-minus"></i>
+                                                        </a>
+                                                        <input class="w-25 text-center countElement" type="text"
+                                                               value="1"
+                                                               style="display: flex; border-radius: 4px; border: 1px solid var(--black-25, rgba(39, 43, 58, 0.25)); background: var(--white-100, #FFF);"/>
+                                                        <a class="btn btn-icon btn-s" href="javascript:;">
+                                                            <i class="i i-plus add-btn"></i></a>
+                                                        <a class="btn btn-icon btn-s btn-primary add-to-cart-btn"
+                                                           href="javascript:;">
+                                                            <i class="i i-shopping-cart"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1113,29 +1175,41 @@
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="card-img position-relative">
-                                            <img src="img/Rectangle3.png"
-                                                 class="img-fluid rounded-start"
-                                                 alt="product">
+                                            <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
+                                            <a class="btn btn-icon btn-xs position-absolute" href="javascript:;"
+                                               style="top: 5px; left: 5px"><i class="i i-heart"></i></a>
                                         </div>
                                     </div>
                                     <div class="col-8">
-                                        <div class="card-body h-100">
+                                        <div class="card-body">
                                             <p class="card-title card-description">Продукт творожный "Десертный" МСП с
-                                                ванилином и изюмом, контейнер 400г</p>                    <label
-                                                class="tag card-text">5637657</label>
-                                            <div class="row">
-                                                <div class="col-12 col-md-4 py-2">
-                                                    <div class="amount amount-s"><span class="price">42,00</span>
-                                                        <span class="currency">BYN</span></div>
+                                                ванилином и изюмом, контейнер 400г</p>
+                                            <div class="d-flex" style="gap: 4px">
+                                                <div class="badge badge-gray">5637657</div>
+                                            </div>
+                                            <div class="row align-items-end mt-5">
+                                                <div class="col-12 col-sm-4">
+                                                    <div class="amount amount-l">
+                                                        <span class="price">42,00</span>
+                                                        <span class="currency">BYN</span>
+                                                    </div>
                                                 </div>
-                                                <div class="col-12 col-md-8 counter text-nowrap">
-                                                    <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
-                                                            class="i i-minus"></i></a>
-                                                    <input class="w-25 text-center countElement" type="text" value="1"/>
-                                                    <a class="btn btn-icon btn-s" href="javascript:;"><i
-                                                            class="i i-plus add-btn"></i></a> <a
-                                                        class="btn btn-icon btn-s btn-primary add-to-cart-btn"
-                                                        href="javascript:;"><i class="i i-shopping-cart"></i></a>
+                                                <div class="col-12 col-sm-8 counter text-nowrap">
+                                                    <div class="custom-field-group custom-field-group-sm"
+                                                         style="gap: 5px">
+                                                        <a class="btn btn-icon btn-s subtract-btn"
+                                                           href="javascript:;">
+                                                            <i class="i i-minus"></i>
+                                                        </a>
+                                                        <input class="w-25 text-center countElement" type="text"
+                                                               value="1"
+                                                               style="display: flex; border-radius: 4px; border: 1px solid var(--black-25, rgba(39, 43, 58, 0.25)); background: var(--white-100, #FFF);"/>
+                                                        <a class="btn btn-icon btn-s" href="javascript:;">
+                                                            <i class="i i-plus add-btn"></i></a>
+                                                        <a class="btn btn-icon btn-s btn-primary add-to-cart-btn"
+                                                           href="javascript:;">
+                                                            <i class="i i-shopping-cart"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1148,29 +1222,41 @@
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="card-img position-relative">
-                                            <img src="img/Rectangle3.png"
-                                                 class="img-fluid rounded-start"
-                                                 alt="product">
+                                            <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
+                                            <a class="btn btn-icon btn-xs position-absolute" href="javascript:;"
+                                               style="top: 5px; left: 5px"><i class="i i-heart"></i></a>
                                         </div>
                                     </div>
                                     <div class="col-8">
-                                        <div class="card-body h-100">
+                                        <div class="card-body">
                                             <p class="card-title card-description">Продукт творожный "Десертный" МСП с
-                                                ванилином и изюмом, контейнер 400г</p>                    <label
-                                                class="tag card-text">5637657</label>
-                                            <div class="row">
-                                                <div class="col-12 col-md-4 py-2">
-                                                    <div class="amount amount-s"><span class="price">42,00</span>
-                                                        <span class="currency">BYN</span></div>
+                                                ванилином и изюмом, контейнер 400г</p>
+                                            <div class="d-flex" style="gap: 4px">
+                                                <div class="badge badge-gray">5637657</div>
+                                            </div>
+                                            <div class="row align-items-end mt-5">
+                                                <div class="col-12 col-sm-4">
+                                                    <div class="amount amount-l">
+                                                        <span class="price">42,00</span>
+                                                        <span class="currency">BYN</span>
+                                                    </div>
                                                 </div>
-                                                <div class="col-12 col-md-8 counter text-nowrap">
-                                                    <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
-                                                            class="i i-minus"></i></a>
-                                                    <input class="w-25 text-center countElement" type="text" value="1"/>
-                                                    <a class="btn btn-icon btn-s" href="javascript:;"><i
-                                                            class="i i-plus add-btn"></i></a> <a
-                                                        class="btn btn-icon btn-s btn-primary add-to-cart-btn"
-                                                        href="javascript:;"><i class="i i-shopping-cart"></i></a>
+                                                <div class="col-12 col-sm-8 counter text-nowrap">
+                                                    <div class="custom-field-group custom-field-group-sm"
+                                                         style="gap: 5px">
+                                                        <a class="btn btn-icon btn-s subtract-btn"
+                                                           href="javascript:;">
+                                                            <i class="i i-minus"></i>
+                                                        </a>
+                                                        <input class="w-25 text-center countElement" type="text"
+                                                               value="1"
+                                                               style="display: flex; border-radius: 4px; border: 1px solid var(--black-25, rgba(39, 43, 58, 0.25)); background: var(--white-100, #FFF);"/>
+                                                        <a class="btn btn-icon btn-s" href="javascript:;">
+                                                            <i class="i i-plus add-btn"></i></a>
+                                                        <a class="btn btn-icon btn-s btn-primary add-to-cart-btn"
+                                                           href="javascript:;">
+                                                            <i class="i i-shopping-cart"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1183,29 +1269,41 @@
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="card-img position-relative">
-                                            <img src="img/Rectangle3.png"
-                                                 class="img-fluid rounded-start"
-                                                 alt="product">
+                                            <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
+                                            <a class="btn btn-icon btn-xs position-absolute" href="javascript:;"
+                                               style="top: 5px; left: 5px"><i class="i i-heart"></i></a>
                                         </div>
                                     </div>
                                     <div class="col-8">
-                                        <div class="card-body h-100">
+                                        <div class="card-body">
                                             <p class="card-title card-description">Продукт творожный "Десертный" МСП с
-                                                ванилином и изюмом, контейнер 400г</p>                    <label
-                                                class="tag card-text">5637657</label>
-                                            <div class="row">
-                                                <div class="col-12 col-md-4 py-2">
-                                                    <div class="amount amount-s"><span class="price">42,00</span>
-                                                        <span class="currency">BYN</span></div>
+                                                ванилином и изюмом, контейнер 400г</p>
+                                            <div class="d-flex" style="gap: 4px">
+                                                <div class="badge badge-gray">5637657</div>
+                                            </div>
+                                            <div class="row align-items-end mt-5">
+                                                <div class="col-12 col-sm-4">
+                                                    <div class="amount amount-l">
+                                                        <span class="price">42,00</span>
+                                                        <span class="currency">BYN</span>
+                                                    </div>
                                                 </div>
-                                                <div class="col-12 col-md-8 counter text-nowrap">
-                                                    <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
-                                                            class="i i-minus"></i></a>
-                                                    <input class="w-25 text-center countElement" type="text" value="1"/>
-                                                    <a class="btn btn-icon btn-s" href="javascript:;"><i
-                                                            class="i i-plus add-btn"></i></a> <a
-                                                        class="btn btn-icon btn-s btn-primary add-to-cart-btn"
-                                                        href="javascript:;"><i class="i i-shopping-cart"></i></a>
+                                                <div class="col-12 col-sm-8 counter text-nowrap">
+                                                    <div class="custom-field-group custom-field-group-sm"
+                                                         style="gap: 5px">
+                                                        <a class="btn btn-icon btn-s subtract-btn"
+                                                           href="javascript:;">
+                                                            <i class="i i-minus"></i>
+                                                        </a>
+                                                        <input class="w-25 text-center countElement" type="text"
+                                                               value="1"
+                                                               style="display: flex; border-radius: 4px; border: 1px solid var(--black-25, rgba(39, 43, 58, 0.25)); background: var(--white-100, #FFF);"/>
+                                                        <a class="btn btn-icon btn-s" href="javascript:;">
+                                                            <i class="i i-plus add-btn"></i></a>
+                                                        <a class="btn btn-icon btn-s btn-primary add-to-cart-btn"
+                                                           href="javascript:;">
+                                                            <i class="i i-shopping-cart"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1218,29 +1316,41 @@
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="card-img position-relative">
-                                            <img src="img/Rectangle3.png"
-                                                 class="img-fluid rounded-start"
-                                                 alt="product">
+                                            <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
+                                            <a class="btn btn-icon btn-xs position-absolute" href="javascript:;"
+                                               style="top: 5px; left: 5px"><i class="i i-heart"></i></a>
                                         </div>
                                     </div>
                                     <div class="col-8">
-                                        <div class="card-body h-100">
+                                        <div class="card-body">
                                             <p class="card-title card-description">Продукт творожный "Десертный" МСП с
-                                                ванилином и изюмом, контейнер 400г</p>                    <label
-                                                class="tag card-text">5637657</label>
-                                            <div class="row">
-                                                <div class="col-12 col-md-4 py-2">
-                                                    <div class="amount amount-s"><span class="price">42,00</span>
-                                                        <span class="currency">BYN</span></div>
+                                                ванилином и изюмом, контейнер 400г</p>
+                                            <div class="d-flex" style="gap: 4px">
+                                                <div class="badge badge-gray">5637657</div>
+                                            </div>
+                                            <div class="row align-items-end mt-5">
+                                                <div class="col-12 col-sm-4">
+                                                    <div class="amount amount-l">
+                                                        <span class="price">42,00</span>
+                                                        <span class="currency">BYN</span>
+                                                    </div>
                                                 </div>
-                                                <div class="col-12 col-md-8 counter text-nowrap">
-                                                    <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
-                                                            class="i i-minus"></i></a>
-                                                    <input class="w-25 text-center countElement" type="text" value="1"/>
-                                                    <a class="btn btn-icon btn-s" href="javascript:;"><i
-                                                            class="i i-plus add-btn"></i></a> <a
-                                                        class="btn btn-icon btn-s btn-primary add-to-cart-btn"
-                                                        href="javascript:;"><i class="i i-shopping-cart"></i></a>
+                                                <div class="col-12 col-sm-8 counter text-nowrap">
+                                                    <div class="custom-field-group custom-field-group-sm"
+                                                         style="gap: 5px">
+                                                        <a class="btn btn-icon btn-s subtract-btn"
+                                                           href="javascript:;">
+                                                            <i class="i i-minus"></i>
+                                                        </a>
+                                                        <input class="w-25 text-center countElement" type="text"
+                                                               value="1"
+                                                               style="display: flex; border-radius: 4px; border: 1px solid var(--black-25, rgba(39, 43, 58, 0.25)); background: var(--white-100, #FFF);"/>
+                                                        <a class="btn btn-icon btn-s" href="javascript:;">
+                                                            <i class="i i-plus add-btn"></i></a>
+                                                        <a class="btn btn-icon btn-s btn-primary add-to-cart-btn"
+                                                           href="javascript:;">
+                                                            <i class="i i-shopping-cart"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1251,7 +1361,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 col-lg-3 order-2 pt-2 filter-bar">
+            <div class="col-12 col-md-4 col-lg-3 filter-bar">
                 <div class="row">
                     <div class="col-12" style="gap: 16px;">
                         <div class="filter-field">
@@ -1324,34 +1434,50 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row mt-5">
             <div class="col-9">
-                <div class="pagination">
-                    <nav aria-label="Page navigation">
-                        <a class="btn btn-flat btn-icon disabled" href="javascript:;">
-                            <i class="i i-chevron-left"></i></a>
-                        <a class="btn btn-flat disabled" href="javascript:;">1</a> <a class="btn btn-flat"
-                                                                                      href="javascript:;">2</a>
-                        <a class="btn btn-flat" href="javascript:;">3</a> <a class="btn btn-flat"
-                                                                             href="javascript:;">4</a>
-                        <a class="btn btn-flat" href="javascript:;">5</a> <a class="btn btn-flat disabled">...</a>
-                        <a class="btn btn-flat" href="javascript:;">200</a> <a class="btn btn-flat btn-icon"
-                                                                               href="javascript:;"><i
-                            class="i i-chevron-right"></i></a></nav>
-                    <div class="go-page w-25"><label class="custom-select custom-select-sm" style="min-width: 90px"
-                                                     for="pageSize">
-                        <select id="pageSize" data-toggle="select" name="pageSize">
-                            <option value="10">10</option>
-                            <option value="20" selected>20</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                        </select>
-                        <span class="placeholder">Кол-во</span> </label>
+                <div class="row justify-content-between">
+                    <div class="col-auto">
+                        <div class="pagination">
+                            <nav aria-label="Page navigation" class="desktop">
+                                <a class="btn btn-flat btn-icon disabled" href="javascript:;"><i
+                                        class="i i-chevron-left"></i></a>
+                                <a class="btn btn-flat disabled" href="javascript:;">1</a>
+                                <a class="btn btn-flat" href="javascript:;">2</a>
+                                <a class="btn btn-flat" href="javascript:;">3</a>
+                                <a class="btn btn-flat" href="javascript:;">4</a>
+                                <a class="btn btn-flat" href="javascript:;">5</a>
+                                <a class="btn btn-flat disabled">...</a>
+                                <a class="btn btn-flat" href="javascript:;">200</a>
+                                <a class="btn btn-flat btn-icon" href="javascript:;">
+                                    <i class="i i-chevron-right"></i></a>
+                            </nav>
+                            <div class="go-page mobile w-75">
+                                <a class="btn btn-flat btn-icon" href="javascript:;">
+                                    <i class="i i-chevron-left"></i></a>
+                                <input class="w-25 text-center countElement" type="text" value="1" style="display: flex; border-radius: 4px; border: 1px solid var(--black-25, rgba(39, 43, 58, 0.25)); background: var(--white-100, #FFF);"/>
+                                <a class="btn btn-flat btn-icon" href="javascript:;">
+                                    <i class="i i-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="pagination">
+                            <div class="go-page"><label class="custom-select custom-select-sm" style="min-width: 90px"
+                                                        for="pageSize">
+                                <select id="pageSize" data-toggle="select" name="pageSize">
+                                    <option value="10">10</option>
+                                    <option value="20" selected>20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                                <span class="placeholder">Кол-во</span> </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </main>
 

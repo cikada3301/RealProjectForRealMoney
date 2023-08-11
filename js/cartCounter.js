@@ -37,26 +37,30 @@ cartButtons.forEach(function (button, index) {
 
         parentElement.className = 'col-12 col-lg-4 px-0 product';
 
+        const likeActive = parentElement.querySelector('.btn-danger');
+
         parentElement.innerHTML = `
                             <div class="card h-100">
                                 <div class="card-img">
                                     <img src="${parentElement.querySelector('.embed-responsive-item').src}" class="card-img-top embed-responsive-item" alt="product">
-                                    <a class="btn btn-icon btn-xs heart" href="javascript:;"><i class="i i-heart"></i></a>
+                                    <a class="btn btn-icon btn-xs ${likeActive === null ? '' : 'btn-danger'} heart" href="javascript:;"><i class="i i-heart"></i></a>
                                     <label class="tag fixed-tag">5637657</label>
                                     <div class="card-name">
                                         ОАО "Домочай
                                         название...
                                     </div>
                                 </div>
-                                <div class="card-body pt-2">
-                                    <p class="card-title card-description">${parentElement.querySelector('.card-title').textContent}</p>
-                                    <div class="amount amount-s">
+                                <div class="card-body mt-3 pt-2 pl-3">
+                                    <p class="card-title card-description">Пирожное "Рецепты лучших кофеен" с
+                                        наполнителем
+                                        "Клубника" на вафле 100г</p>
+                                    <div class="amount amount-l pl-0">
                                         <span class="price">42,00</span>
                                         <span class="currency">BYN</span>
                                     </div>
-                                    <div class="pt-1">
-                                        <a class="btn btn-icon btn-success btn-s d-flex justify-content-center text"
-                                           href="javascript:;"><i class="i i-check-square"></i>В корзине</a>
+                                    <div class="btn-add-to-cart">
+                                        <a class="btn btn-icon btn-success btn-icon-text btn-s d-flex justify-content-center text"
+                                           href="javascript:;" style="font-size: 13px;"><i class="i i-check-square"></i>В корзине</a>
                                     </div>
                                 </div>
                             </div>`;
