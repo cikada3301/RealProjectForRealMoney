@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
         productHList.forEach(function(productH) {
             productH.classList.remove('d-none');
         });
+
+        parallelButton.classList.add('active')
+        gridButton.classList.remove('active')
     })
 
     gridButton.addEventListener('click', function () {
@@ -24,5 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
         productHList.forEach(function(productH) {
             productH.classList.remove('d-none');
         });
+
+        parallelButton.classList.remove('active')
+        gridButton.classList.add('active')
     })
 });

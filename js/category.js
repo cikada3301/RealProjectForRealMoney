@@ -1,66 +1,43 @@
-const firstLevels = document.querySelectorAll('.category-first-level');
-const mobileCategory = document.querySelector('.mobile-category');
-const nameCategory = document.querySelector('.name-category');
+const catalogBody = document.querySelector('.catalog-body');
 
-$('.dropdown').on('click', () => {})
+const openCategory = () => {
+    const firstLevels = document.querySelectorAll('.selected-category');
 
-firstLevels.forEach(firstLevel => {
-    firstLevel.addEventListener('click', () => {
-        mobileCategory.innerHTML = `<li class="category-second-level" onclick="openSecondLevel()">
-                                            <div class="d-flex justify-content-between">
-                                                <span class="py-2" style="font-size: 14px;">Хлеб и сдоба</span>
-                                                <button type="button"
-                                                        class="btn btn-flat-primary btn-icon-text pl-0">
-                                                    <i class="i i-chevron-right"></i>
-                                                </button>
-                                            </div>
-                                        </li>
-                                        <li class="category-second-level" onclick="openSecondLevel()">
-                                            <div class="d-flex justify-content-between">
-                                                <span class="py-2 " style="font-size: 14px;">Кондитерские изделия</span>
-                                                <button type="button"
-                                                        class="btn btn-flat-primary btn-icon-text pl-0">
-                                                    <i class="i i-chevron-right"></i>
-                                                </button>
-                                            </div>
-                                        </li>
-                                        <li class="category-second-level" onclick="openSecondLevel()">
-                                            <div class="d-flex justify-content-between">
-                                                <span class="py-2 " style="font-size: 14px;">Сухари, сушки</span>
-                                                <button type="button"
-                                                        class="btn btn-flat-primary btn-icon-text pl-0">
-                                                    <i class="i i-chevron-right"></i>
-                                                </button>
-                                            </div>
-                                        </li>`;
-        nameCategory.innerHTML = ` <div class="dropdown text-nowrap">
-                <a class="btn btn-icon-text btn-flat pl-0" href="javascript:;"><i class="i i-arrow-left"></i></a>
-                <h6 style="display: inline">Label</h6></div>`
-    });
-})
-
-function openSecondLevel() {
-    const secondLevels = document.querySelectorAll('.category-second-level');
-    secondLevels.forEach(secondLevel => {
-        secondLevel.addEventListener('click', () => {
-            mobileCategory.innerHTML = `
-                                        <li>
-                                        <div class="d-flex">
-                                             <span class="py-2" style="font-size: 14px;">Label</span>
-                                        </div>
-                                        </li>
-                                        <li>
-                                        <div class="d-flex">
-                                             <span class="py-2" style="font-size: 14px;">Label</span>
-                                        </div>
-                                        </li>
-                                        <div class="d-flex">
-                                             <span class="py-2" style="font-size: 14px;">Label</span>
-                                        </div>`;
-            nameCategory.innerHTML = ` <div class="dropdown text-nowrap">
-                <a class="btn btn-icon-text btn-flat pl-0" href="javascript:;"><i class="i i-arrow-left"></i></a>
-                          <h6 style="display: inline">Хлеб и сдоба</h6></div>`
+    firstLevels.forEach(firstLevel => {
+        firstLevel.addEventListener('click', () => {
+            catalogBody.innerHTML = `<a class="btn btn-flat btn-icon-text py-3 px-3" href="javascript:;" onclick="openCategoryCatalog()">
+                                    <i class="i i-arrow-left"></i>
+                                                              <p style="margin: 0; font-weight: bold; line-height: 18px; font-size: 14px;"> Label</p>
+                                 </a>
+                                 <a class="px-3" style="font-size: 14px; padding-bottom: 6px; padding-top: 6px; color: black;" href="./catalog.html">Все товары категории</a>
+                                 <a class="btn btn-icon-text btn-flat px-3" href="javascript:;" onclick="openSubCategory(event)">Хлеб и сдоба<span class="ml-auto"><i class="i i-chevron-right"></i></span></a>
+                                 <a class="btn btn-icon-text btn-flat px-3" href="javascript:;" onclick="openSubCategory(event)">Кондитерские изделия<span class="ml-auto"><i class="i i-chevron-right"></i></span></a>
+                                 <a class="btn btn-icon-text btn-flat px-3" href="javascript:;" onclick="openSubCategory(event)">Сухари, сушки<span class="ml-auto"><i class="i i-chevron-right"></i></span></a>
+        `;
         });
     })
+}
 
+const openCategoryCatalog = () => {
+    catalogBody.innerHTML = `<h6 class="px-3 py-3">Каталог</h6>
+                                <a class="btn btn-icon-text btn-flat px-3 selected-category" href="javascript:;" onclick="openCategory()">Label<span class="ml-auto"><i class="i i-chevron-right"></i></span></a>
+                                <a class="btn btn-icon-text btn-flat px-3 selected-category" href="javascript:;" onclick="openCategory()">Label<span class="ml-auto"><i class="i i-chevron-right"></i></span></a>
+                                <a class="btn btn-icon-text btn-flat px-3 selected-category" href="javascript:;" onclick="openCategory()">Label<span class="ml-auto"><i class="i i-chevron-right"></i></span></a>
+    `;
+}
+
+const openSubCategory = (event) => {
+    catalogBody.innerHTML = `<a class="btn btn-flat btn-icon-text py-3 px-3 selected-category" href="javascript:;" onclick="openCategory()">
+                                    <i class="i i-arrow-left"></i>
+                                                              <p style="margin: 0; font-weight: bold; line-height: 18px; font-size: 14px;">${event.target.innerText}</p>
+                                 </a>
+                                 <a class="px-3" style="font-size: 14px; padding-bottom: 6px; padding-top: 6px; color: black;" href="./catalog.html">Все товары категории</a>
+                                 <a class="px-3" style="font-size: 14px; padding-bottom: 6px; padding-top: 6px; color: black;" href="./catalog.html">Label</a>
+                                 <a class="px-3" style="font-size: 14px; padding-bottom: 6px; padding-top: 6px; color: black;" href="./catalog.html">Label</a>
+                                 <a class="px-3" style="font-size: 14px; padding-bottom: 6px; padding-top: 6px; color: black;" href="./catalog.html">Label</a>
+                                 <a class="px-3" style="font-size: 14px; padding-bottom: 6px; padding-top: 6px; color: black;" href="./catalog.html">Label</a>
+                                 <a class="px-3" style="font-size: 14px; padding-bottom: 6px; padding-top: 6px; color: black;" href="./catalog.html">Label</a>
+                                 <a class="px-3" style="font-size: 14px; padding-bottom: 6px; padding-top: 6px; color: black;" href="./catalog.html">Label</a>
+                                
+        `;
 }

@@ -13,7 +13,7 @@
     <!-- <link rel="stylesheet" href="/static/css/main.css" media="all"> -->
 
     <link id="favicon" rel="shortcut icon" href="/favicon.ico"/>
-    <link rel="stylesheet" href="https://cdn.ideadrive.su/v2.2.0/css/utils/fancybox.min.css" media="all" />
+    <link rel="stylesheet" href="https://cdn.ideadrive.su/v2.2.0/css/utils/fancybox.min.css" media="all"/>
 
     <script type="text/javascript" id="app_config">
         /*<![CDATA[*/
@@ -250,7 +250,7 @@
 </div>
 <![endif]-->
 
-<header class="app-header ">
+<header class="app-header">
     <div class="top-bar-brand">
         <button class="btn btn-icon btn-flat btn-s toggle-menu" type="button" data-toggle="aside-menu"
                 aria-label="toggle aside menu">
@@ -265,7 +265,7 @@
     </div>
 
     <div class="top-bar-list">
-        <div class="container-fluid ml-0">
+        <div class="container-fluid">
             <div class="top-bar-item top-bar-item-full">
                 <button class="btn btn-icon btn-flat d-md-none" type="button" data-toggle="aside"
                         data-target="app-main-menu" aria-label="toggle menu">
@@ -582,51 +582,51 @@
                     <i class="i i-search"></i>
                 </button>
             </div>
-        </div>
-        <div class="dropdown-divider"></div>
-        <div class="top-bar-item top-bar-item-right pl-3">
-            <a class="btn btn-icon search" href="javascript:;" data-toggle="modal"
-               data-target="#searchModal">
-                <i class="i i-search"></i>
-            </a>
-            <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <div class="modal-title" id="searchModalLabel">
-                                <span class="title">Поиск товара</span>
-                            </div>
-                            <button class="close-modal btn btn-icon btn-flat btn-xs" data-dismiss="modal"
-                                    aria-label="Close">
-                                <i class="i i-cross"></i>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="custom-field-button-group inbox">
-                                <label class="custom-field">
-                                    <input type="text" placeholder="&nbsp;" class="search-input"/>
-                                    <span class="placeholder">Поиск</span>
-                                </label>
-                                <button class="btn btn-flat btn-icon" data-title="This is input tooltip">
-                                    <i class="i i-search"></i>
+            <div class="dropdown-divider"></div>
+            <div class="top-bar-item top-bar-item-right pl-3">
+                <a class="btn btn-icon search" href="javascript:;" data-toggle="modal"
+                   data-target="#searchModal">
+                    <i class="i i-search"></i>
+                </a>
+                <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="modal-title" id="searchModalLabel">
+                                    <span class="title">Поиск товара</span>
+                                </div>
+                                <button class="close-modal btn btn-icon btn-flat btn-xs" data-dismiss="modal"
+                                        aria-label="Close">
+                                    <i class="i i-cross"></i>
                                 </button>
                             </div>
-                            <div class="search-results-mb mt-3" style="background-color: white; display: none;">
+                            <div class="modal-body">
+                                <div class="custom-field-button-group inbox">
+                                    <label class="custom-field">
+                                        <input type="text" placeholder="&nbsp;" class="search-input"/>
+                                        <span class="placeholder">Поиск</span>
+                                    </label>
+                                    <button class="btn btn-flat btn-icon" data-title="This is input tooltip">
+                                        <i class="i i-search"></i>
+                                    </button>
+                                </div>
+                                <div class="search-results-mb mt-3" style="background-color: white; display: none;">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <a class="btn btn-icon btn-danger counter-likes" href="javascript:;">
+                    <i class="i i-heart"></i>1
+                </a>
+                <a class="btn btn-icon btn-primary counter-carts" href="./cart.html">
+                    <i class="i i-shopping-cart"></i>1
+                </a>
             </div>
-            <a class="btn btn-icon btn-danger counter-likes" href="javascript:;">
-                <i class="i i-heart"></i>1
-            </a>
-            <a class="btn btn-icon btn-primary counter-carts" href="./cart.html">
-                <i class="i i-shopping-cart"></i>1
-            </a>
         </div>
+        <div class="dropdown-divider"></div>
     </div>
-    <div class="dropdown-divider"></div>
 
     <div class="container-fluid">
         <div class="row">
@@ -660,13 +660,20 @@
             <div class="col-12 col-md-6 col-lg-5 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <div class="preview">    <a id="preview-wrapper"><img src="" id="preview-img" class="card-img-top embed-responsive-item" alt="product" onclick=""></a>
-                        </div><div class="scroll-menu">
-                        <a><img src="img/Rectangle3.png" width="128" alt="product"></a>    <a><img src="img/Rectangle2.png" width="128" alt="product"></a>
-                        <a><img src="img/Rectangle1.png" width="128" alt="product"></a>    <a><img src="img/Rectangle3.png" width="128" alt="product"></a>
-                        <a><img src="img/Rectangle3.png" width="128" alt="product"></a>    <a><img src="img/Rectangle3.png" width="128" alt="product"></a>
-                        <a><img src="img/Rectangle3.png" width="128" alt="product"></a>    <a><img src="img/Rectangle3.png" width="128" alt="product"></a>
-                    </div>
+                        <div class="preview"><a id="preview-wrapper"><img src="" id="preview-img"
+                                                                          class="card-img-top embed-responsive-item"
+                                                                          alt="product" onclick=""></a>
+                        </div>
+                        <div class="scroll-menu">
+                            <a><img src="img/Rectangle3.png" width="128" alt="product"></a> <a><img
+                                src="img/Rectangle2.png" width="128" alt="product"></a>
+                            <a><img src="img/Rectangle1.png" width="128" alt="product"></a> <a><img
+                                src="img/Rectangle3.png" width="128" alt="product"></a>
+                            <a><img src="img/Rectangle3.png" width="128" alt="product"></a> <a><img
+                                src="img/Rectangle3.png" width="128" alt="product"></a>
+                            <a><img src="img/Rectangle3.png" width="128" alt="product"></a> <a><img
+                                src="img/Rectangle3.png" width="128" alt="product"></a>
+                        </div>
                     </div>
                 </div>
             </div>
