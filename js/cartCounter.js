@@ -61,16 +61,26 @@ addButtons.forEach(function (button, index) {
 cartButtons.forEach(function (button, index) {
     button.addEventListener('click', function () {
 
-        const countElement = findCountElement(button, '.product');
+        let countElement = findCountElement(button, '.product');
 
-        const parentElement = findParent(countElement, '.show-hover');
+        let parentElement;
 
-        const likeActive = parentElement.querySelector('.btn-danger');
+        if (countElement === undefined) {
+            countElement = findCountElement(button, '.product-h');
+            parentElement = findParent(countElement, '.cart-button-h');
+            parentElement.innerHTML = `
+                                  <a class="btn btn-icon btn-success btn-icon-text btn-s d-flex justify-content-center text"
+                                   href="javascript:;" style="font-size: 13px; margin-right: 10px;"><i class="i i-check-square"></i>В
+                                   корзине</a>`;
+        }
 
-        parentElement.innerHTML = `
+        else {
+            parentElement = findParent(countElement, '.show-hover');
+            parentElement.innerHTML = `
                                   <a class="btn btn-icon btn-success btn-icon-text btn-s d-flex justify-content-center text"
                                    href="javascript:;" style="font-size: 13px;"><i class="i i-check-square"></i>В
                                    корзине</a>`;
+        }
 
         let productCount = parseInt(countElement.value);
         arrayIndexCount.set(index, productCount);

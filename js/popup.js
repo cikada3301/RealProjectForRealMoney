@@ -287,7 +287,24 @@ mapSubCategory.set(2, `
                                                 </a>
                                             </div>`)
 
+let current = null;
+
 categoryBtns.forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+        if(current) {
+            current.classList.remove('hovered');
+            const prevI = current.querySelector('i');
+            prevI.style.display = 'none';
+        }
+
+        btn.classList.add('hovered');
+        const i = btn.querySelector('i');
+        i.style.display = 'flex';
+        current = btn;
+    });
+});
+
+categoryBtns.forEach((btn, index) => {
     btn.addEventListener('mouseover', e => {
 
         const category = e.target.innerText;
@@ -298,12 +315,9 @@ categoryBtns.forEach(btn => {
 
         $(`.category-child:contains("${category}")`).removeClass('d-none');
 
-        const index = Math.floor(Math.random() * 3);
-
         $('.category-child').html(mapSubCategory.get(index));
     });
 });
-
 
 const button = document.getElementById('catalog');
 
