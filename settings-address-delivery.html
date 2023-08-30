@@ -133,6 +133,22 @@
             --app-logo-serice-color: var(--white-100);
         }
 
+        .dropdown-custom-menu {
+            transform: translate3d(-69px, 22px, 0px) !important;
+        }
+
+        .dropdown-custom-menu-mobile {
+            transform: translate3d(349px, 24px, 0px) !important;
+        }
+
+        .dropdown-custom-menu-last {
+            transform: translate3d(-69px, 22px, 0px) !important;
+        }
+
+        .table-responsive {
+            overflow: visible;
+        }
+
         .scroll-menu img {
             display: inline-block;
             vertical-align: middle;
@@ -490,16 +506,8 @@
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-12">
-                                        <label class="custom-select custom-select pb-3"
-                                               for="select4">
-                                            <select data-toggle="select" name="select4"
-                                                    id="select4">
-                                                <optgroup label="Выберите">
-                                                    <option value="1">Магазин №1</option>
-                                                    <option value="2">Магазин №2</option>
-                                                    <option value="3">Магазин №3</option>
-                                                </optgroup>
-                                            </select>
+                                        <label class="custom-field pb-3">
+                                            <input type="text" placeholder="&nbsp;" value="Магазин №1"/>
                                             <span class="placeholder">Название</span>
                                             <span class="error-message" aria-live="polite"></span>
                                         </label>
@@ -578,20 +586,21 @@
         <div class="row">
             <div class="col-12 pt-3 desktop">
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table table-hover">
                         <thead>
                         <tr>
                             <th class="p-2" scope="col">По умолчанию</th>
                             <th class="p-2 w-25" scope="col">Название</th>
                             <th class="p-2" scope="col">Адрес</th>
+                            <th class="p-2" scope="col"></th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
                             <td class="p-2">
                                 <div class="custom-radio">
-                                    <input type="radio" name="c1" id="c1" checked>
-                                    <label for="c1">
+                                    <input type="radio" name="group1" id="group1">
+                                    <label for="group1">
                                     </label>
                                 </div>
                             </td>
@@ -599,23 +608,24 @@
                                 <span>Магазин №1</span>
                             </td>
                             <td class="p-2">
-                                <div class="d-flex justify-content-between">
-                                    <span>Беларусь, Могилёвская область, Могилёв, ул. Пионерская, д. 1, офис 600 </span>
-                                    <div class="dropdown">
-                                        <button class="btn btn-icon-text btn-xs dropdown-toggle"
-                                                type="button"
-                                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                                data-dismiss="alert"
-                                                onclick="openDropDowns()"
-                                                aria-expanded="false">
-                                            <i class="i i-menu"></i>
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="javascript:;" data-toggle="modal"
-                                               data-target="#updateAddress">Редактировать</a>
-                                            <a class="dropdown-item" href="javascript:;" data-toggle="modal"
-                                               data-target="#deleteAddressModal">Удалить</a>
-                                        </div>
+                                <span>Беларусь, Могилёвская область, Могилёв, ул. Пионерская, д. 1, офис 600 </span>
+                            </td>
+                            <td class="p-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-icon-text btn-xs dropdown-toggle"
+                                            type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            data-dismiss="alert"
+                                            onclick="openDropDowns()"
+                                            aria-expanded="false">
+                                        <i class="i i-menu"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-primary dropdown-menu-xs dropdown-custom-menu"
+                                         aria-labelledby="dropdownMenuButton" style="width: 120px; border-radius: 0;">
+                                        <a class="dropdown-item" href="javascript:;" data-toggle="modal"
+                                           data-target="#updateAddress">Редактировать</a>
+                                        <a class="dropdown-item" href="javascript:;" data-toggle="modal"
+                                           data-target="#deleteAddressModal">Удалить</a>
                                     </div>
                                 </div>
                             </td>
@@ -623,31 +633,32 @@
                         <tr>
                             <td class="p-2">
                                 <div class="custom-radio">
-                                    <input type="radio" name="c2" id="c2">
-                                    <label for="c2"></label>
+                                    <input type="radio" name="group1" id="group2">
+                                    <label for="group2"></label>
                                 </div>
                             </td>
                             <td class="p-2">
                                 <span>Магазин №2</span>
                             </td>
                             <td class="p-2">
-                                <div class="d-flex justify-content-between">
-                                    <span>Беларусь, Могилёвская область, Могилёв, ул. Пионерская, д. 1, офис 600 </span>
-                                    <div class="dropdown">
-                                        <button class="btn btn-icon-text btn-xs dropdown-toggle"
-                                                type="button"
-                                                id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true"
-                                                data-dismiss="alert"
-                                                onclick="openDropDowns()"
-                                                aria-expanded="false">
-                                            <i class="i i-menu"></i>
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                            <a class="dropdown-item" href="javascript:;" data-toggle="modal"
-                                               data-target="#updateAddress">Редактировать</a>
-                                            <a class="dropdown-item" href="javascript:;" data-toggle="modal"
-                                               data-target="#deleteAddressModal">Удалить</a>
-                                        </div>
+                                <span>Беларусь, Могилёвская область, Могилёв, ул. Пионерская, д. 1, офис 600 </span>
+                            </td>
+                            <td class="p-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-icon-text btn-xs dropdown-toggle"
+                                            type="button"
+                                            id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true"
+                                            data-dismiss="alert"
+                                            onclick="openDropDowns()"
+                                            aria-expanded="false">
+                                        <i class="i i-menu"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-primary dropdown-menu-xs dropdown-custom-menu-last"
+                                         aria-labelledby="dropdownMenuButton2" style="width: 120px; border-radius: 0;">
+                                        <a class="dropdown-item" href="javascript:;" data-toggle="modal"
+                                           data-target="#updateAddress">Редактировать</a>
+                                        <a class="dropdown-item" href="javascript:;" data-toggle="modal"
+                                           data-target="#deleteAddressModal">Удалить</a>
                                     </div>
                                 </div>
                             </td>
@@ -692,7 +703,7 @@
                                             aria-expanded="false">
                                         <i class="i i-menu"></i>
                                     </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-menu dropdown-menu-xs dropdown-custom-menu-mobile" aria-labelledby="dropdownMenuButton" style="width: 120px; border-radius: 0;">
                                         <a class="dropdown-item" href="javascript:;" data-toggle="modal"
                                            data-target="#updateAddress">Редактировать</a>
                                         <a class="dropdown-item" href="javascript:;" data-toggle="modal"
@@ -737,7 +748,7 @@
                                             aria-expanded="false">
                                         <i class="i i-menu"></i>
                                     </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-menu dropdown-menu-xs dropdown-custom-menu-mobile" aria-labelledby="dropdownMenuButton" style="width: 120px; border-radius: 0;">
                                         <a class="dropdown-item" href="javascript:;" data-toggle="modal"
                                            data-target="#updateAddress">Редактировать</a>
                                         <a class="dropdown-item" href="javascript:;" data-toggle="modal"
@@ -792,16 +803,8 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-12">
-                            <label class="custom-select custom-select pb-3"
-                                   for="select41">
-                                <select data-toggle="select" name="select4"
-                                        id="select41">
-                                    <optgroup label="Выберите">
-                                        <option value="1">Магазин №1</option>
-                                        <option value="2">Магазин №2</option>
-                                        <option value="3">Магазин №3</option>
-                                    </optgroup>
-                                </select>
+                            <label class="custom-field pb-3">
+                                <input type="text" placeholder="&nbsp;" value="Магазин №1"/>
                                 <span class="placeholder">Название</span>
                                 <span class="error-message" aria-live="polite"></span>
                             </label>
@@ -883,12 +886,12 @@
                     <div class="col-6">
                         <a class="btn btn-icon-text btn-success btn-l" href="javascript:;"
                            onclick="clickOnButtonAlert()"
-                           style="font-size: 14px; width: 140px;">Сохранить</a>
+                           style="font-size: 14px; width: 140px; text-align: center; display: inline-block">Сохранить</a>
                     </div>
                     <div class="col-6">
                         <a class="btn btn-icon-text btn-outline btn-l" href="javascript:;"
                            onclick="clickOnButtonAlert()"
-                           style="font-size: 14px; width: 140px; color: white; border-color: grey;">Отмена</a>
+                           style="font-size: 14px; width: 140px; color: white; border-color: grey; text-align: center; display: inline-block">Отмена</a>
                     </div>
                 </div>
             </div>
@@ -906,7 +909,6 @@
 <!-- Optional: Your scripts -->
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2.full.min.js"></script>
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2/i18n/en.js"></script>
-<script type="text/javascript" src="js/scroll.js"></script>
 <script type="text/javascript" src="js/search.js"></script>
 <script type="text/javascript" src="js/notification.js"></script>
 

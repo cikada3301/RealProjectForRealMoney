@@ -164,9 +164,21 @@
             display: none;
         }
 
+        .mobile-arrow-back {
+            display: none;
+        }
+
         @media (max-width: 767.98px) {
             .top-bar-list {
                 background: #E7EDFB;
+            }
+
+            .top-bar-item-full > div {
+                display: none !important;
+            }
+
+            .mobile-arrow-back {
+                display: block;
             }
 
             .header > div {
@@ -444,7 +456,9 @@
 <main class="app-main mb-5">
     <div class="content-header">
         <div class="container-fluid">
-
+            <div class="mobile-arrow-back">
+                <a class="btn btn-icon-text btn-flat-primary" href="./orders.html"><i class="i i-arrow-left"></i><span style="color: black; font-size: 20px; padding-left: 8px;">0001</span></a>
+            </div>
             <div class="top-bar-item top-bar-item-full">
                 <div class="row">
                     <div class="col-auto align-self-center">
@@ -544,19 +558,19 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th class="col">
+                            <th class="col px-2 py-0 align-middle" style="font-size: 12px;">
                                 Фото
                             </th>
-                            <th class="col">
+                            <th class="col px-2 py-0 align-middle" style="font-size: 12px;">
                                 Товар
                             </th>
-                            <th class="col">
+                            <th class="col px-2 py-0 align-middle" style="font-size: 12px;">
                                 Цена за ед.
                             </th>
-                            <th class="col text-center">
+                            <th class="col text-center px-2 py-0 align-middle" style="font-size: 12px;">
                                 Кол-во, шт.
                             </th>
-                            <th class="col text-right">
+                            <th class="col text-right px-2 py-0 align-middle" style="font-size: 12px;">
                                 Сумма
                             </th>
                         </tr>
@@ -566,23 +580,23 @@
                             <td class="td p-0">
                                 <img src="img/Rectangle3.png" width="104" alt="product">
                             </td>
-                            <td class="td">
+                            <td class="td px-2">
                                 <div class="pb-2">Продукт творожный "Десертный" МСП с ванилином и изюмом, контейнер 400г</div>
                                 <div class="d-flex" style="gap: 16px;">
                                     <span class="fw-bold">100090757</span>
                                     <span style="color: #272B3A99">5637657</span>
                                 </div>
                             </td>
-                            <td class="td">
+                            <td class="td px-2">
                                 <div>
                                     <span style="font-weight: 500">42,00</span>
                                     <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
                                 </div>
                             </td>
-                            <td class="td text-center">
+                            <td class="td text-center px-2">
                                 12
                             </td>
-                            <td class="td text-right">
+                            <td class="td text-right px-2">
                                 <div>
                                     <span style="font-weight: 500">504,00</span>
                                     <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
@@ -593,23 +607,23 @@
                             <td class="td p-0">
                                 <img src="img/Rectangle3.png" width="104" alt="product">
                             </td>
-                            <td class="td">
+                            <td class="td px-2">
                                 <div class="pb-2">Продукт творожный "Десертный" МСП с ванилином и изюмом, контейнер 400г</div>
                                 <div class="d-flex" style="gap: 16px;">
                                     <span class="fw-bold">100090757</span>
                                     <span style="color: #272B3A99">5637657</span>
                                 </div>
                             </td>
-                            <td class="td">
+                            <td class="td px-2">
                                 <div>
                                     <span style="font-weight: 500">42,00</span>
                                     <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
                                 </div>
                             </td>
-                            <td class="td text-center">
+                            <td class="td text-center px-2">
                                 12
                             </td>
-                            <td class="td text-right">
+                            <td class="td text-right px-2">
                                 <div>
                                     <span style="font-weight: 500">504,00</span>
                                     <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
@@ -620,23 +634,23 @@
                             <td class="td p-0">
                                 <img src="img/Rectangle3.png" width="104" alt="product">
                             </td>
-                            <td class="td">
+                            <td class="td px-2">
                                 <div class="pb-2">Продукт творожный "Десертный" МСП с ванилином и изюмом, контейнер 400г</div>
                                 <div class="d-flex" style="gap: 16px;">
                                     <span class="fw-bold">100090757</span>
                                     <span style="color: #272B3A99">5637657</span>
                                 </div>
                             </td>
-                            <td class="td">
+                            <td class="td px-2">
                                 <div>
                                     <span style="font-weight: 500">42,00</span>
                                     <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
                                 </div>
                             </td>
-                            <td class="td text-center">
+                            <td class="td text-center px-2">
                                 12
                             </td>
-                            <td class="td text-right">
+                            <td class="td text-right px-2">
                                 <div>
                                     <span style="font-weight: 500">504,00</span>
                                     <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
@@ -647,23 +661,23 @@
                             <td class="td p-0">
                                 <img src="img/Rectangle3.png" width="104" alt="product">
                             </td>
-                            <td class="td">
+                            <td class="td px-2">
                                 <div class="pb-2">Продукт творожный "Десертный" МСП с ванилином и изюмом, контейнер 400г</div>
                                 <div class="d-flex" style="gap: 16px;">
                                     <span class="fw-bold">100090757</span>
                                     <span style="color: #272B3A99">5637657</span>
                                 </div>
                             </td>
-                            <td class="td">
+                            <td class="td px-2">
                                 <div>
                                     <span style="font-weight: 500">42,00</span>
                                     <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
                                 </div>
                             </td>
-                            <td class="td text-center">
+                            <td class="td text-center px-2">
                                 12
                             </td>
-                            <td class="td text-right">
+                            <td class="td text-right px-2">
                                 <div>
                                     <span style="font-weight: 500">504,00</span>
                                     <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
@@ -674,23 +688,23 @@
                             <td class="td p-0">
                                 <img src="img/Rectangle3.png" width="104" alt="product">
                             </td>
-                            <td class="td">
+                            <td class="td px-2">
                                 <div class="pb-2">Продукт творожный "Десертный" МСП с ванилином и изюмом, контейнер 400г</div>
                                 <div class="d-flex" style="gap: 16px;">
                                     <span class="fw-bold">100090757</span>
                                     <span style="color: #272B3A99">5637657</span>
                                 </div>
                             </td>
-                            <td class="td">
+                            <td class="td px-2">
                                 <div>
                                     <span style="font-weight: 500">42,00</span>
                                     <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
                                 </div>
                             </td>
-                            <td class="td text-center">
+                            <td class="td text-center px-2">
                                 12
                             </td>
-                            <td class="td text-right">
+                            <td class="td text-right px-2">
                                 <div>
                                     <span style="font-weight: 500">504,00</span>
                                     <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
@@ -701,23 +715,23 @@
                             <td class="td p-0">
                                 <img src="img/Rectangle3.png" width="104" alt="product">
                             </td>
-                            <td class="td">
+                            <td class="td px-2">
                                 <div class="pb-2">Продукт творожный "Десертный" МСП с ванилином и изюмом, контейнер 400г</div>
                                 <div class="d-flex" style="gap: 16px;">
                                     <span class="fw-bold">100090757</span>
                                     <span style="color: #272B3A99">5637657</span>
                                 </div>
                             </td>
-                            <td class="td">
+                            <td class="td px-2">
                                 <div>
                                     <span style="font-weight: 500">42,00</span>
                                     <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>
                                 </div>
                             </td>
-                            <td class="td text-center">
+                            <td class="td text-center px-2">
                                 12
                             </td>
-                            <td class="td text-right">
+                            <td class="td text-right px-2">
                                 <div>
                                     <span style="font-weight: 500">504,00</span>
                                     <span style="color: rgba(39, 43, 58, 0.40);">BYN</span>

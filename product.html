@@ -507,65 +507,175 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="dropdown text-nowrap">
-                <button class="btn btn-icon-text dropdown-toggle text-nowrap" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                <button class="btn btn-icon-text text-nowrap dropdown-toggle" type="button" data-toggle="modal"
+                        data-target="#modal-lg" id="catalog"></button>
                 <span class="ml-2">Каталог</span>
-                <div class="dropdown-menu dropdown-menu-primary dropdown-menu-xs" aria-labelledby="dropdownMenuButton">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 col-md-3 col-lg-3 category-popup">
-                                <h6 class="dropdown-header">Категории</h6>
-                                <a class="btn btn-flat-primary btn-icon-text category-child"
-                                   id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    Label
-                                    <i class="i i-arrow-right"></i>
-                                </a>
-                                <div class="subcategories">
-                                    <div class="container">
-                                        <div class="row" style="color: black">
-                                            <div class="col-4">
-                                                <h6 class="mt-3 mb-2 ml-3">Хлеб и сдоба</h6>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
+                <div class="modal fade" id="modal-lg" tabindex="-1" aria-labelledby="modal-lgLabel">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body p-0" style="height: 90vh;">
+                                <div class="row h-100 w-100"
+                                     style="font-size: 14px; font-style: normal; font-weight: 400; line-height: 18px;">
+                                    <div class="col-3 border-right py-2 pr-0 category-list">
+                                        <div class="px-3 pt-3 pb-2"
+                                             style="font-size: 14px; font-style: normal; font-weight: 700; line-height: 18px;">
+                                            Категории
+                                        </div>
+                                        <a href="#" class="px-3 py-1 w-100 d-flex justify-content-between align-items-center">
+                                            <div>Label</div>
+                                            <i class="i i-chevron-right"></i>
+                                        </a>
+                                        <a href="#" class="px-3 py-1 w-100 d-flex justify-content-between align-items-center">
+                                            <div>Label</div>
+                                            <i class="i i-chevron-right"></i>
+                                        </a>
+                                        <a href="#" class="px-3 py-1 w-100 d-flex justify-content-between align-items-center">
+                                            <div>Label</div>
+                                            <i class="i i-chevron-right"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col pr-4">
+                                        <div class="row category-title d-none">
+                                            <div class="col-12 px-2">
+                                                <a href="#" class="d-block px-3 pt-3 pb-2">Label</a>
                                             </div>
-                                            <div class="col-4">
-                                                <h6 class="mt-3 mb-2 ml-3">Кондитерские изделия</h6>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
+                                        </div>
+                                        <div class="row category-child d-none">
+                                            <div class="col-md-6 col-lg-4 p-2">
+                                                <a href="#" class="d-block subheader px-3 pt-3 pb-2">
+                                                    Хлеб и сдоба
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
                                             </div>
-
-                                            <div class="col-4">
-                                                <h6 class="mt-3 mb-2 ml-3">Сухари, сушки</h6>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
-                                                <p class="category-label">Label</p>
+                                            <div class="col-md-6 col-lg-4 p-2">
+                                                <a href="#" class="d-block subheader px-3 pt-3 pb-2">
+                                                    Кондитерские изделия
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 p-2">
+                                                <a href="#" class="d-block subheader px-3 pt-3 pb-2">
+                                                    Сухари, сушки
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 p-2">
+                                                <a href="#" class="d-block subheader px-3 pt-3 pb-2">
+                                                    Хлеб и сдоба
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 p-2">
+                                                <a href="#" class="d-block subheader px-3 pt-3 pb-2">
+                                                    Кондитерские изделия
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 p-2">
+                                                <a href="#" class="d-block subheader px-3 pt-3 pb-2">
+                                                    Сухари, сушки
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
+                                                <a href="#" class="px-3 py-1 d-block">
+                                                    <div>Label</div>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <a class="btn btn-flat-primary btn-icon-text category-child"
-                                   id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false"> Label
-                                </a>
-                                <a class="btn btn-flat-primary btn-icon-text category-child"
-                                   id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false"> Label
-                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modal-sm" tabindex="-1" aria-labelledby="modal-smLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-body px-3 pt-2" style="height: 96vh">
+                                <div class="row catalog-body">
+                                    <h6 class="px-3 py-3 m-0">Каталог</h6>
+                                    <a class="btn btn-icon-text btn-flat px-3 selected-category" href="javascript:;"
+                                       onclick="openCategory()">Label<span class="ml-auto"><i
+                                            class="i i-chevron-right"></i></span></a>
+                                    <a class="btn btn-icon-text btn-flat px-3 selected-category" href="javascript:;"
+                                       onclick="openCategory()">Label<span class="ml-auto"><i
+                                            class="i i-chevron-right"></i></span></a>
+                                    <a class="btn btn-icon-text btn-flat px-3 selected-category" href="javascript:;"
+                                       onclick="openCategory()">Label<span class="ml-auto"><i
+                                            class="i i-chevron-right"></i></span></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -914,6 +1024,7 @@
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2/i18n/en.js"></script>
 <!--<script type="text/javascript" src="js/items.js"></script>-->
 <script type="text/javascript" src="js/popup.js"></script>
+<script type="text/javascript" src="js/category.js"></script>
 <script type="text/javascript" src="js/likeCounter.js"></script>
 <script type="text/javascript" src="js/cartCounter.js"></script>
 <script type="text/javascript" src="js/scroll.js"></script>

@@ -169,6 +169,10 @@
                 background: #E7EDFB;
             }
 
+            .top-bar-item-full > div {
+                display: none !important;
+            }
+
             .header > div {
                 display: none !important;
             }
@@ -246,7 +250,7 @@
 
     <div class="top-bar-list">
         <div class="container-fluid">
-            <div class="top-bar-item top-bar-item-full header">
+            <div class="top-bar-item top-bar-item-full">
                 <button class="btn btn-icon btn-flat d-md-none" type="button" data-toggle="aside"
                         data-target="app-main-menu" aria-label="toggle menu">
                     <i class="i i-menu"></i>
@@ -273,13 +277,13 @@
                 <div class="btn-group d-none d-sm-inline-flex">
                     <ul class="nav nav-tabs ">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Marketplace</a>
+                            <a class="nav-link active" style="padding: 19px 8px" href="#">Marketplace</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">BSS</a>
+                            <a class="nav-link" style="padding: 19px 8px" href="#">BSS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Billing</a>
+                            <a class="nav-link" style="padding: 19px 8px" href="#">Billing</a>
                         </li>
                     </ul>
                 </div>
@@ -439,11 +443,7 @@
 <main class="app-main mb-5">
     <div class="content-header">
         <div class="container-fluid">
-
-            <div class="top-bar-item top-bar-item-full">
                 <div>Заказы</div>
-            </div>
-
             <div class="top-bar-item top-bar-item-right">
                 <div class="custom-field-button-group inbox custom-field-button-group-sm m-auto search-field">
                     <label class="custom-field">
@@ -498,16 +498,6 @@
 
     <div class="container-fluid">
         <div class="row">
-            <!--            Empty page-->
-
-            <!--            <div class="empty-message empty-message-success">-->
-            <!--                <div class="icon">-->
-            <!--                    <i class="i i-document-list"></i>-->
-            <!--                </div>-->
-            <!--                <div class="text">-->
-            <!--                    <span class="header" style="font-size: 18px;">У вас пока-что нет ни одного заказа</span>-->
-            <!--                </div>-->
-            <!--            </div>-->
             <div class="col-12 col-md">
                 <div class="row mx-1">
                     <div class="col-12 col-lg pb-3 px-0">
@@ -567,46 +557,48 @@
 
             <div class="col-12 px-3">
                 <div class="table table-responsive py-4">
-                    <table class="table">
+                    <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th class="active checkbox align-middle" style="width: 40px">
+                            <th class="pl-2 pr-0 py-0 align-middle" scope="col" style="width: 40px;">
                                 <div class="btn-group btn-group-checkbox no-border">
-                                    <button class="btn btn-icon btn-flat demo-btn-state btn-xs" data-state="none">
-                                        <i class="i i-square" data-icon-state="none"></i>
-                                        <i class="i i-check-square d-none" data-icon-state="active"></i>
-                                        <i class="i i-minus-square d-none" data-icon-state="indeterminate"></i>
-                                    </button>
-                                    <a id="btnGroupDrop1" type="button" class="btn btn-flat btn-icon btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-                                    <div class="dropdown-menu dropdown-menu-s" aria-labelledby="btnGroupDrop1">
+                                    <div class="custom-checkbox custom-checkbox-xs">
+                                        <input type="checkbox" name="c1" id="c1">
+                                        <label for="c1">
+                                        </label>
+                                    </div>
+                                    <a id="btnGroupDrop1" type="button"
+                                       class="btn btn-flat btn-icon btn-xs dropdown-toggle mx-0 px-0" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false"></a>
+                                    <div class="dropdown-menu dropdown-menu-xs" aria-labelledby="btnGroupDrop1">
                                         <a class="dropdown-item" href="javascript:;">Dropdown link</a>
                                         <a class="dropdown-item" href="javascript:;">Dropdown link</a>
                                     </div>
                                 </div>
                             </th>
-                            <th class="col">
+                            <th class="px-2 py-0 align-middle" scope="col" style="font-size: 12px;">
                                 Заказ
                             </th>
-                            <th class="col">
+                            <th class="px-2 py-0 align-middle" scope="col" style="font-size: 12px;">
                                 Доставка / Адрес
                             </th>
-                            <th class="col">
+                            <th class="px-2 py-0 align-middle" scope="col" style="font-size: 12px;">
                                 Комментарий к заказу
                             </th>
-                            <th class="col">
+                            <th class="px-2 py-0 align-middle" scope="col" style="font-size: 12px;">
                                 Товары
                             </th>
-                            <th class="col text-center">
+                            <th class="text-center px-2 py-0 align-middle" scope="col" style="font-size: 12px;">
                                 Статус заказа
                             </th>
-                            <th class="col text-right">
+                            <th class="text-right px-2 py-0 align-middle" scope="col" style="font-size: 12px;">
                                 Сумма
                             </th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="table-primary" onclick="window.location.href = 'order-content.html';">
-                            <td class="td status p-3">
+                        <tr class="table-primary">
+                            <td class="td status p-2">
                                 <div class="custom-checkbox custom-checkbox-xs">
                                     <input type="checkbox" name="c2" id="c2">
                                     <label for="c2">
@@ -617,29 +609,29 @@
                                     </label>
                                 </div>
                             </td>
-                            <td class="td col-lg-1">
-                                <div class="fw-bold">M-0001</div>
-                                <div class="py-2">ОАО "Домочай"</div>
+                            <td class="td col-lg-1 p-2">
+                                <div class="fw-bold pb-1" onclick="window.location.href = 'order-content.html';">0001</div>
+                                <div class="pb-1">ОАО "Домочай"</div>
                                 <div style="color: #272B3A99" class="text-nowrap">
                                     <span>12.08.2020&nbsp;</span>
                                     <span>10:45</span>
                                 </div>
                             </td>
-                            <td class="td col-lg-2">
+                            <td class="td col-lg-2 p-2">
                                 <div class="pb-2">Самовывоз</div>
-                                <div class="pb-2" style="color: #272B3A99">Пункт выдачи</div>
+                                <div style="color: #272B3A99">Пункт выдачи</div>
                                 <div>Беларусь, Могилёв, ул. Пионерская, д.1, офис 403</div>
-                                <div class="py-2" style="color: #272B3A99">Дата выдачи</div>
+                                <div class="pt-2" style="color: #272B3A99">Дата выдачи</div>
                                 <div>12.08.2020</div>
                             </td>
-                            <td class="td">
+                            <td class="td p-2">
                                 С другой стороны, постоянный количественный рост и сфера нашей активности.
                             </td>
-                            <td class="td">
-                                <div class="pb-1">12 ед.</div>
-                                <div>120 шт.</div>
+                            <td class="td p-2">
+                                <div class="pb-1" style="color: #272B3A99">12 ед.</div>
+                                <div style="color: #272B3A99">120 шт.</div>
                             </td>
-                            <td class="td text-center">
+                            <td class="td text-center p-2">
                                 <div style="color: #1149DA">Новый заказ</div>
                                 <div class="progress my-2">
                                     <div class="progress-bar progress-bar-success" style="width: 5%;" role="progressbar"
@@ -647,7 +639,7 @@
                                 </div>
                                 <div style="color: #272B3A99">Иванов И.И.</div>
                             </td>
-                            <td class="td text-right col-lg-2">
+                            <td class="td text-right col-lg-2 p-2">
                                 <div style="color: #FF1E2C">Оплата по факту</div>
                                 <div class="my-2">
                                     <span>752,00</span>
@@ -656,7 +648,7 @@
                             </td>
                         </tr>
                         <tr class="table-warning">
-                            <td class="td status p-3">
+                            <td class="td status p-2">
                                 <div class="custom-checkbox custom-checkbox-xs">
                                     <input type="checkbox" name="c3" id="c3">
                                     <label for="c3">
@@ -667,29 +659,29 @@
                                     </label>
                                 </div>
                             </td>
-                            <td class="td col-lg-1">
-                                <div class="fw-bold">M-0002</div>
-                                <div class="py-2">ОАО "Могилевская фабрика мороженого"</div>
+                            <td class="td col-lg-1 p-2">
+                                <div class="fw-bold pb-1" onclick="window.location.href = 'order-content.html';">0002</div>
+                                <div class="pb-1">ОАО "Могилевская фабрика мороженого"</div>
                                 <div style="color: #272B3A99" class="text-nowrap">
                                     <span>12.08.2020&nbsp;</span>
                                     <span>10:45</span>
                                 </div>
                             </td>
-                            <td class="td col-lg-2">
+                            <td class="td col-lg-2 p-2">
                                 <div class="pb-2">Самовывоз</div>
-                                <div class="pb-2" style="color: #272B3A99">Пункт выдачи</div>
+                                <div style="color: #272B3A99">Пункт выдачи</div>
                                 <div>Беларусь, Могилёв, ул. Пионерская, д.1, офис 403</div>
-                                <div class="py-2" style="color: #272B3A99">Дата выдачи</div>
+                                <div class="pt-2" style="color: #272B3A99">Дата выдачи</div>
                                 <div>12.08.2020</div>
                             </td>
-                            <td class="td col-lg-2">
+                            <td class="td col-lg-2 p-2">
                                 С другой стороны, постоянный количественный рост и сфера нашей активности.
                             </td>
-                            <td class="td">
-                                <div class="pb-1">12 ед.</div>
-                                <div>120 шт.</div>
+                            <td class="td p-2">
+                                <div class="pb-1" style="color: #272B3A99">12 ед.</div>
+                                <div style="color: #272B3A99">120 шт.</div>
                             </td>
-                            <td class="td text-center">
+                            <td class="td text-center p-2">
                                 <div style="color: #FF6827">Обработан</div>
                                 <div class="progress my-2">
                                     <div class="progress-bar progress-bar-success" style="width: 5%;" role="progressbar"
@@ -697,7 +689,7 @@
                                 </div>
                                 <div style="color: #272B3A99">Иванов И.И.</div>
                             </td>
-                            <td class="td text-right">
+                            <td class="td text-right p-2">
                                 <div style="color: #FF1E2C">Оплата по факту</div>
                                 <div class="my-2">
                                     <span>752,00</span>
