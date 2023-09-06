@@ -8,12 +8,12 @@
 
     <!-- Required IdeaDESIGN styles -->
     <link rel="stylesheet" href="https://cdn.ideadrive.su/v2.1.2/css/main.build.min.css">
+    <link rel="stylesheet" href="https://cdn.ideadrive.su/v2.2.0/css/utils/fancybox.min.css" media="all">
 
     <!-- Optional styles -->
     <!-- <link rel="stylesheet" href="/static/css/main.css" media="all"> -->
 
     <link id="favicon" rel="shortcut icon" href="/favicon.ico"/>
-    <link rel="stylesheet" href="https://cdn.ideadrive.su/v2.2.0/css/utils/fancybox.min.css" media="all"/>
 
     <script type="text/javascript" id="app_config">
         /*<![CDATA[*/
@@ -134,18 +134,15 @@
             --app-logo-serice-color: var(--white-100);
         }
 
-        .search-item-hover:hover {
-            background-color: #E7EDFB;
+        .amount {
+            display: flex;
+            padding: 2px 0;
+            align-items: center;
+            gap: 2px;
         }
 
-        .subcategories {
+        .search {
             display: none;
-            width: 750px;
-            height: 540px;
-            position: absolute;
-            background-color: white;
-            top: 0px;
-            left: 225px;
         }
 
         .scroll-menu {
@@ -162,33 +159,73 @@
             border: 1px solid gray;
         }
 
-        .card-v:hover .show-hover {
-            position: absolute;
-            z-index: 1;
-            display: block;
-        }
-
-        .category-label {
-            text-align: left;
-            margin-left: 16px;
-            margin-right: 16px;
-        }
-
-        .amount {
-            padding-left: 8px;
-            gap: 2px;
-            padding-bottom: 14px;
-        }
-
-        .characteristic-2 {
+        .sm {
             display: none;
         }
 
-        .mobile-top-bar {
+        .header-nav-dropdown {
+            display: none;
+        }
+
+        .category-child a, .category-list a {
+            color: var(--black-100, var(--black-100, #272B3A));
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px;
+        }
+
+        .category-title a {
+            color: var(--black-100, var(--black-100, #272B3A));
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 24px;
+        }
+
+        a.subheader {
+            color: var(--black-100, var(--black-100, #272B3A));
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 18px;
+        }
+
+        .category-child > div div, .category-list a div {
+            padding: 3px 0;
+        }
+
+        .category-child a:not(:first-child):hover {
+            background-color: #E7EDFB;
+            color: #477BFF !important;
+        }
+
+        .hover {
+            background-color: #E7EDFB;
+            color: #477BFF !important;
+        }
+
+        .category-list a i {
+            display: none;
+        }
+
+        .category-title a:hover, a.subheader:hover {
+            color: #477BFF !important;
+        }
+
+        .search-item-hover:hover {
+            background-color: #E7EDFB;
+        }
+
+        .subscription-md {
             display: none;
         }
 
         @media (max-width: 767.98px) {
+            .breadcrumb {
+                display: none;
+            }
+
             .search-field {
                 display: none;
             }
@@ -197,38 +234,34 @@
                 display: block;
             }
 
-            .characteristic-2 {
+            .subscription-lg {
+                display: none;
+            }
+
+            .subscription-md {
                 display: block;
-            }
-
-            .characteristic-1 {
-                display: none;
-            }
-
-            .group-1 {
-                display: none;
-            }
-
-            .group-2 {
-                display: none;
             }
         }
 
         @media (max-width: 991.98px) {
-            .card {
-                margin-left: 5px;
+            .sm {
+                display: block;
             }
 
-            .top-bar-list {
-                background-color: #e7edfb;
+            .lg {
+                display: none;
             }
 
             .top-bar-item-full > div {
                 display: none !important;
             }
 
-            .mobile-top-bar {
+            .header-nav-dropdown {
                 display: block;
+            }
+
+            .top-bar-list {
+                background: #E7EDFB;
             }
         }
     </style>
@@ -271,58 +304,76 @@
                         data-target="app-main-menu" aria-label="toggle menu">
                     <i class="i i-menu"></i>
                 </button>
-                <div class="data">
-                     <span class="primary">
-                         <span class="caption" style="font-size: 14px; color: rgba(39, 43, 58, 0.6);">№ кабинета:</span>
-                         <span class="id" style="font-size: 14px; font-weight: 700;">12345</span>
-                     </span>
+                <div class="d-sm-inline-flex pr-4 text-nowrap">
+                    <span class="caption">№ кабинета:</span>
+                    <span class="id">12345</span>
                 </div>
-                <div class="btn-group d-none d-sm-inline-flex ml-4">
+                <div class="btn-group d-none d-sm-inline-flex pr-4">
                     <a href="javascript:;" class="btn btn-icon btn-flat has-notified" data-title="Чат тех. поддержки"
                        data-toggle="tooltip" data-placement="bottom">
                         <i class="i i-support-chat"></i>
                     </a>
-                    <a href="javascript:;" class="btn btn-icon btn-flat" data-title="Сообщения" data-toggle="tooltip"
+                    <a href="javascript:;" class="btn btn-icon btn-flat" data-title="Вопрос - ответ"
+                       data-toggle="tooltip"
                        data-placement="bottom">
-                        <i class="i i-question-circle"></i>
+                        <i class="i i-service-faq"></i>
                     </a>
                     <a href="javascript:;" class="btn btn-icon btn-flat" data-title="Уведомления" data-toggle="tooltip"
                        data-placement="bottom">
                         <i class="i i-notification"></i>
                     </a>
                 </div>
-                <div style="width: 191px; height: 56px;" class="ml-4">
-                    <ul class="nav nav-tabs nav-tabs-s">
+                <div class="btn-group d-none d-sm-inline-flex">
+                    <ul class="nav nav-tabs ">
                         <li class="nav-item">
-                            <a class="nav-link active"
-                               style="border-bottom: 2px solid #272B3A; padding: 19px 8px; font-size: 14px" href="#">Marketplace</a>
+                            <a class="nav-link active" style="padding: 19px 8px" href="#">Marketplace</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary-blue1" style="padding: 19px 8px; font-size: 14px" href="#">BSS</a>
+                            <a class="nav-link" style="padding: 19px 8px" href="#">BSS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary-blue1" style="padding: 19px 8px; font-size: 14px" href="#">Billing</a>
+                            <a class="nav-link" style="padding: 19px 8px" href="#">Billing</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="top-bar-item top-bar-item-right px-0 d-flex">
-                <a href="javascript:;" class="btn btn-icon btn-flat d-flex justify-content-end mobile-top-bar"
-                   data-title="Чат тех. поддержки"
-                   data-toggle="tooltip" data-placement="bottom">
-                    <i class="i i-grid"></i>
-                </a>
+                <div class="dropdown header-nav-dropdown">
+                    <a class="btn btn-flat btn-icon btn-flat" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="i i-grid"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-services">
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">Marketplace</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">BSS</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">Billing</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                    </div>
+                </div>
                 <div class="dropdown">
                     <button class="btn-account d-flex d-md-none" type="button" data-toggle="aside"
                             data-target="user-menu" aria-label="toggle user menu">
                                 <span class="user-avatar user-avatar-s">
-                                    <span>И</span>
+                                    <span>K</span>
                                 </span>
                     </button>
                     <button class="btn-account d-none d-md-flex dropdown-toggle" type="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                                 <span class="user-avatar user-avatar-s">
-                                    <span>И</span>
+                                    <span>K</span>
                                 </span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-user-menu">
@@ -330,7 +381,7 @@
                             <div class="account-type">Личный аккаунт</div>
                             <div class="info-card">
                                         <span class="user-avatar user-avatar-m">
-                                            <span>И</span>
+                                            <span>K</span>
                                         </span>
                                 <div class="data">
                                             <span class="primary">
@@ -341,21 +392,28 @@
                                 </div>
                             </div>
                             <div class="data">
-                                <span class="slave">Фамилия Имя Отчество</span>
+                                <span class="primary">Фамилия Имя Отчество</span>
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#"><i class="i i-support-chat"></i>Чат техподдержки</a>
-                        <a class="dropdown-item" href="#"><i class="i i-question-circle"></i>Вопрос-ответ</a>
+                        <a class="dropdown-item" href="#"><i class="i i-service-faq"></i>Вопрос - ответ</a>
                         <a class="dropdown-item" href="#"><i class="i i-notification"></i>Уведомления</a>
                         <div class="dropdown-divider"></div>
-                        <p class="dropdown-item-text d-flex align-items-center">Баланс<a href="javascript:;"
-                                                                                         class="btn btn-icon-text btn-s ml-auto">
-                            <i class="i i-dollar"></i>42.20</a></p>
+                        <div class="d-flex justify-content-between">
+                            <div class="dropdown-item">Баланс</div>
+                            <a href="javascript:;" class="btn btn-icon-text d-none d-sm-inline-flex mr-3">
+                                <i class="i i-dollar left"></i>
+                                <div class="amount amount-s">
+                                    <span class="price">42,00</span>
+                                    <span class="currency">BYN</span>
+                                </div>
+                            </a>
+                        </div>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
-                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
-                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
+                        <a class="dropdown-item" href="#">Label</a>
+                        <a class="dropdown-item" href="#">Label</a>
+                        <a class="dropdown-item" href="#">Label</a>
                     </div>
                 </div>
             </div>
@@ -365,18 +423,18 @@
 
 <aside id="app-main-menu" class="app-aside app-aside-left allow-compact">
     <div class="aside-container">
-        <div class="aside-menu">
+        <div class="aside-menu" show-scroll-hover>
             <div class="top-bar-brand d-block d-md-none">
                 <a class="logo-link" href="catalog.html">
                     <div class="logo">
                         <span class="company">IWL</span>
-                        <span class="service">design</span>
+                        <span class="service">Marketplace</span>
                     </div>
                 </a>
             </div>
             <nav class="stacked-menu">
                 <ul class="menu">
-                    <li class="menu-item active ">
+                    <li class="menu-item active">
                         <a class="menu-link" href="./catalog.html">
                             <i class="i i-folder"></i> <span class="caption">Каталог</span>
                         </a>
@@ -410,95 +468,50 @@
     <div class="aside-container">
         <div class="dropdown-menu dropdown-user-menu">
             <div class="user-info">
-                <div class="account-type">Личный аккаунт</div>
+                <div class="account-type">Бизнес аккаунт</div>
                 <div class="info-card">
-                                        <span class="user-avatar user-avatar-m">
-                                            <span>И</span>
-                                        </span>
+                            <span class="user-avatar user-avatar-m">
+                                <span>K</span>
+                            </span>
                     <div class="data">
-                                            <span class="primary">
-                                                <span class="caption">№ кабинета:</span>
-                                                <span class="id">12345</span>
-                                            </span>
-                        <span class="slave">email@mail.com</span>
+                                <span class="primary">
+                                    <span class="caption">№ кабинета: </span>
+                                    <span class="id">12345</span>
+                                </span>
+                        <span class="slave">this.is.very.long.user.email.address@example.com</span>
                     </div>
                 </div>
                 <div class="data">
+                    <span class="primary">ООО Название компании может быть несколько строк </span>
                     <span class="slave">Фамилия Имя Отчество</span>
+                    <span class="slave">+375291112233</span>
                 </div>
             </div>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"><i class="i i-support-chat"></i>Чат техподдержки</a>
-            <a class="dropdown-item" href="#"><i class="i i-question-circle"></i>Вопрос-ответ</a>
-            <a class="dropdown-item" href="#"><i class="i i-notification"></i>Уведомления</a>
+            <a class="dropdown-item" href="javascript:;">
+                <i class="i i-support-chat"></i> Чат техподдержки
+                <span class="ml-auto badge badge-colorful badge-colorful-red badge-s">1</span>
+            </a>
+            <a class="dropdown-item" href="javascript:;">
+                <i class="i i-question-circle"></i> Вопрос - ответ
+            </a>
+            <a class="dropdown-item" href="javascript:;">
+                <i class="i i-notification"></i> Уведомления
+                <span class="ml-auto badge badge-colorful badge-colorful-red badge-s">1</span>
+            </a>
             <div class="dropdown-divider"></div>
             <p class="dropdown-item-text d-flex align-items-center">Баланс<a href="javascript:;"
-                                                                             class="btn btn-icon-text btn-s ml-auto">
-                <i class="i i-dollar"></i>42.20</a></p>
+                                                                             class="btn btn-icon-text btn-s ml-auto"><i
+                    class="i i-dollar"></i>42.20</a></p>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
-            <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
-            <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
-        </div>
-    </div>
-</aside>
-
-<aside id="app-settings-aside" class="app-aside app-aside-right" data-scroll-top="true">
-    <div class="aside-container">
-        <div class="aside-content">
-            <label class="custom-select custom-select-sm" for="language-select">
-                <select data-toggle="select" name="lang" id="language-select">
-                    <option value="ru">Русский</option>
-                    <option value="en" selected>English</option>
-                </select>
-                <span class="placeholder">Language</span>
-                <span class="error-message" aria-live="polite"></span>
-            </label>
+            <a class="dropdown-item" href="javascript:;"><i class="i i-home"></i>Главная страница сервисов</a>
+            <a class="dropdown-item" href="javascript:;"><i class="i i-setting"></i>Настройки профиля владельца аккаунта</a>
+            <a class="dropdown-item" href="javascript:;"><i class="i i-log-out"></i>Выход из системы</a>
             <div class="dropdown-divider"></div>
-            <div class="custom-switch">
-                <input type="checkbox" name="toggle-sidebar-dark" id="toggle-sidebar-dark">
-                <label for="toggle-sidebar-dark">
-                    <div class="text">
-                        <span class="caption">Dark sidebar</span>
-                        <span class="message"></span>
-                    </div>
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="dropdown-divider"></div>
-            <div class="btn-group">
-                <a class="btn btn-icon-text btn-flat" href="javascript:;" data-toggle="theme" data-theme="dark"><i
-                        class="i i-moon"></i>Темная тема</a>
-                <a class="btn btn-icon-text btn-flat" href="javascript:;" data-toggle="theme" data-theme="light"><i
-                        class="i i-sun"></i>Светлая тема</a>
-            </div>
-            <div class="dropdown-divider"></div>
-            <div>
-                <button class="btn btn-flat btn-block" id="enable-desktop-notification">Desktop notification</button>
-                <script type="text/javascript">
-                    (function () {
-                        let btn = document.getElementById('enable-desktop-notification');
-                        let allowNotification = !("Notification" in window);
-                        let perm = Notification.permission === "granted";
-
-                        if (!window.isSecureContext || allowNotification || perm) {
-                            btn.disabled = true;
-                            let span = document.createElement('span');
-                            span.classList.add('d-block');
-                            if (perm || allowNotification) {
-                                span.textContent = 'Уже включено';
-                            } else {
-                                span.textContent = 'Недоступно для текущего контекста';
-                            }
-                            btn.parentNode.insertBefore(span, btn.nextSibling);
-                        } else {
-                            btn.addEventListener('click', function () {
-                                DRIVE.desktopNotification.notify('Test');
-                            });
-                        }
-                    })();
-                </script>
-            </div>
+            <a class="dropdown-item" href="javascript:;" data-toggle="theme" data-theme="dark"><i class="i i-moon"></i>Темная
+                тема</a>
+            <a class="dropdown-item" href="javascript:;" data-toggle="theme" data-theme="light"><i class="i i-sun"></i>Светлая
+                тема</a>
         </div>
     </div>
 </aside>
@@ -514,22 +527,25 @@
                     <div class="modal-dialog modal-xl modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-body p-0" style="height: 90vh;">
-                                <div class="row h-100 w-100"
+                                <div class="row h-100"
                                      style="font-size: 14px; font-style: normal; font-weight: 400; line-height: 18px;">
                                     <div class="col-3 border-right py-2 pr-0 category-list">
                                         <div class="px-3 pt-3 pb-2"
                                              style="font-size: 14px; font-style: normal; font-weight: 700; line-height: 18px;">
                                             Категории
                                         </div>
-                                        <a href="#" class="px-3 py-1 w-100 d-flex justify-content-between align-items-center">
+                                        <a href="#"
+                                           class="px-3 py-1 w-100 d-flex justify-content-between align-items-center">
                                             <div>Label</div>
                                             <i class="i i-chevron-right"></i>
                                         </a>
-                                        <a href="#" class="px-3 py-1 w-100 d-flex justify-content-between align-items-center">
+                                        <a href="#"
+                                           class="px-3 py-1 w-100 d-flex justify-content-between align-items-center">
                                             <div>Label</div>
                                             <i class="i i-chevron-right"></i>
                                         </a>
-                                        <a href="#" class="px-3 py-1 w-100 d-flex justify-content-between align-items-center">
+                                        <a href="#"
+                                           class="px-3 py-1 w-100 d-flex justify-content-between align-items-center">
                                             <div>Label</div>
                                             <i class="i i-chevron-right"></i>
                                         </a>
@@ -541,7 +557,7 @@
                                             </div>
                                         </div>
                                         <div class="row category-child d-none">
-                                            <div class="col-md-6 col-lg-4 p-2">
+                                            <div class="col-4 p-2">
                                                 <a href="#" class="d-block subheader px-3 pt-3 pb-2">
                                                     Хлеб и сдоба
                                                 </a>
@@ -564,7 +580,7 @@
                                                     <div>Label</div>
                                                 </a>
                                             </div>
-                                            <div class="col-md-6 col-lg-4 p-2">
+                                            <div class="col-4 p-2">
                                                 <a href="#" class="d-block subheader px-3 pt-3 pb-2">
                                                     Кондитерские изделия
                                                 </a>
@@ -587,7 +603,7 @@
                                                     <div>Label</div>
                                                 </a>
                                             </div>
-                                            <div class="col-md-6 col-lg-4 p-2">
+                                            <div class="col-4 p-2">
                                                 <a href="#" class="d-block subheader px-3 pt-3 pb-2">
                                                     Сухари, сушки
                                                 </a>
@@ -610,7 +626,7 @@
                                                     <div>Label</div>
                                                 </a>
                                             </div>
-                                            <div class="col-md-6 col-lg-4 p-2">
+                                            <div class="col-4 p-2">
                                                 <a href="#" class="d-block subheader px-3 pt-3 pb-2">
                                                     Хлеб и сдоба
                                                 </a>
@@ -624,7 +640,7 @@
                                                     <div>Label</div>
                                                 </a>
                                             </div>
-                                            <div class="col-md-6 col-lg-4 p-2">
+                                            <div class="col-4 p-2">
                                                 <a href="#" class="d-block subheader px-3 pt-3 pb-2">
                                                     Кондитерские изделия
                                                 </a>
@@ -638,7 +654,7 @@
                                                     <div>Label</div>
                                                 </a>
                                             </div>
-                                            <div class="col-md-6 col-lg-4 p-2">
+                                            <div class="col-4 p-2">
                                                 <a href="#" class="d-block subheader px-3 pt-3 pb-2">
                                                     Сухари, сушки
                                                 </a>
@@ -681,19 +697,22 @@
                     </div>
                 </div>
             </div>
-            <div class="custom-field-button-group inbox custom-field-button-group-sm w-50 m-auto search-field">
+
+            <div class="custom-field-button-group inbox custom-field-button-group-sm m-auto w-50 search-field">
                 <label class="custom-field">
                     <input type="text" placeholder="&nbsp;" class="search-input"/>
                     <span class="placeholder">Поиск</span>
+                    <span class="error-message" aria-live="polite"></span>
+                    <div class="search-results mt-5" style="background-color: white; display: none;">
+                    </div>
                 </label>
-                <div class="search-results mt-5" style="background-color: white; display: none;">
-                </div>
+
                 <button class="btn btn-flat btn-icon" data-title="This is input tooltip">
                     <i class="i i-search"></i>
                 </button>
             </div>
-            <div class="dropdown-divider"></div>
-            <div class="top-bar-item top-bar-item-right pl-3">
+
+            <div class="top-bar-item top-bar-item-right pl-4">
                 <a class="btn btn-icon search" href="javascript:;" data-toggle="modal"
                    data-target="#searchModal">
                     <i class="i i-search"></i>
@@ -712,14 +731,15 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <div class="custom-field-button-group inbox">
-                                    <label class="custom-field">
-                                        <input type="text" placeholder="&nbsp;" class="search-input"/>
-                                        <span class="placeholder">Поиск</span>
-                                    </label>
-                                    <button class="btn btn-flat btn-icon" data-title="This is input tooltip">
-                                        <i class="i i-search"></i>
-                                    </button>
+                                <div class="custom-field-button-group custom-field-button-group-sm inbox">
+                                    <div class="custom-field-button-group inbox">
+                                        <label class="custom-field">
+                                            <input type="text" placeholder="&nbsp;" class="search-input"/>
+                                            <span class="placeholder">Поиск</span>
+                                            <span class="error-message" aria-live="polite"></span>
+                                        </label>
+                                        <button class="btn btn-flat btn-icon"><i class="i i-search"></i></button>
+                                    </div>
                                 </div>
                                 <div class="search-results-mb mt-3" style="background-color: white; display: none;">
                                 </div>
@@ -727,15 +747,15 @@
                         </div>
                     </div>
                 </div>
-                <a class="btn btn-icon btn-danger counter-likes" href="javascript:;">
+                <a class="btn btn-icon-text btn-danger counter-likes" href="javascript:;">
                     <i class="i i-heart"></i>1
                 </a>
-                <a class="btn btn-icon btn-primary counter-carts" href="./cart.html">
+                <a class="btn btn-icon-text btn-primary counter-carts" href="javascript:;"
+                   onclick="window.location.href = 'cart.html';">
                     <i class="i i-shopping-cart"></i>1
                 </a>
             </div>
         </div>
-        <div class="dropdown-divider"></div>
     </div>
 
     <div class="container-fluid">
@@ -743,57 +763,104 @@
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb" show-scroll-hover>
-                        <li class="breadcrumb-item"><a href="./catalog.html">Каталог</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:;">Каталог</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Страница</li>
                     </ol>
                 </nav>
             </div>
         </div>
         <div class="row pb-3">
-            <div class="col-2 pr-2">
-                <a class="btn btn-icon" href="./catalog.html">
-                    <i class="i i-arrow-left"></i>
-                </a>
-            </div>
-            <div class="col-10 d-flex justify-content-between">
-                <div class="fw-bold">
-                    Продукт творожный "Десертный" МСП с ванилином и изюмом, контейнер 400г
-                </div>
-                <div>
-                    <a class="btn btn-icon" href="javascript:;">
+            <div class="col-12">
+                <div class="d-flex" style="gap: 16px">
+                    <a class="btn btn-icon align-self-center" href="catalog.html">
+                        <i class="i i-arrow-left"></i>
+                    </a>
+                    <div class="align-self-center w-100 flex-wrap subscription-lg"
+                         style="font-size: 20px;font-style: normal;font-weight: 700;line-height: 28px;">
+                        Продукт творожный "Десертный" МСП с ванилином и изюмом, контейнер 400г
+                    </div>
+                    <a class="btn btn-icon ml-auto align-self-center" href="javascript:;">
                         <i class="i i-heart"></i>
                     </a>
                 </div>
             </div>
+            <div class="col-12 mt-2 mb-3 subscription-md"
+                 style="font-size: 20px;font-style: normal;font-weight: 700;line-height: 28px;">
+                Продукт творожный "Десертный" МСП с ванилином и изюмом, контейнер 400г
+            </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-5 mb-3">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-5 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <div class="preview"><a id="preview-wrapper"><img src="" id="preview-img"
-                                                                          class="card-img-top embed-responsive-item"
-                                                                          alt="product" onclick=""></a>
+                        <div class="embed-responsive embed-responsive-1by1">
+                            <a id="preview-wrapper" class="embed-responsive-item" href="#" data-fancybox-trigger="gallery" data-fancybox-index="0">
+                                <img src="img/Rectangle3.png" id="preview-img" class="card-img-top embed-responsive-item" alt="product"
+                                     onclick="">
+                            </a>
+                        </div>
+                        <div class="d-none">
+                            <a data-fancybox="gallery" data-src="img/Rectangle3.png"><img src="img/Rectangle3.png"
+                                                                                          width="128" alt="product"
+                                                                                          data-index="0"></a>
+                            <a data-fancybox="gallery" data-src="img/Rectangle2.png"><img src="img/Rectangle2.png"
+                                                                                          width="128" alt="product"
+                                                                                          data-index="1"></a>
+                            <a data-fancybox="gallery" data-src="img/Rectangle1.png"><img src="img/Rectangle1.png"
+                                                                                          width="128" alt="product"
+                                                                                          data-index="2"></a>
+                            <a data-fancybox="gallery" data-src="img/Rectangle3.png"><img src="img/Rectangle3.png"
+                                                                                          width="128" alt="product"
+                                                                                          data-index="3"></a>
+                            <a data-fancybox="gallery" data-src="img/Rectangle3.png"><img src="img/Rectangle3.png"
+                                                                                          width="128" alt="product"
+                                                                                          data-index="4"></a>
+                            <a data-fancybox="gallery" data-src="img/Rectangle3.png"><img src="img/Rectangle3.png"
+                                                                                          width="128" alt="product"
+                                                                                          data-index="5"></a>
+                            <a data-fancybox="gallery" data-src="img/Rectangle3.png"><img src="img/Rectangle3.png"
+                                                                                          width="128" alt="product"
+                                                                                          data-index="6"></a>
+                            <a data-fancybox="gallery" data-src="img/Rectangle3.png"><img src="img/Rectangle3.png"
+                                                                                          width="128" alt="product"
+                                                                                          data-index="7"></a>
                         </div>
                         <div class="scroll-menu">
-                            <a><img src="img/Rectangle3.png" width="128" alt="product"></a> <a><img
-                                src="img/Rectangle2.png" width="128" alt="product"></a>
-                            <a><img src="img/Rectangle1.png" width="128" alt="product"></a> <a><img
-                                src="img/Rectangle3.png" width="128" alt="product"></a>
-                            <a><img src="img/Rectangle3.png" width="128" alt="product"></a> <a><img
-                                src="img/Rectangle3.png" width="128" alt="product"></a>
-                            <a><img src="img/Rectangle3.png" width="128" alt="product"></a> <a><img
-                                src="img/Rectangle3.png" width="128" alt="product"></a>
+                            <a><img src="img/Rectangle3.png"
+                                    width="128" alt="product"
+                                    data-index="0"></a>
+                            <a><img src="img/Rectangle2.png"
+                                    width="128" alt="product"
+                                    data-index="1"></a>
+                            <a><img src="img/Rectangle1.png"
+                                    width="128" alt="product"
+                                    data-index="2"></a>
+                            <a><img src="img/Rectangle3.png"
+                                    width="128" alt="product"
+                                    data-index="3"></a>
+                            <a><img src="img/Rectangle3.png"
+                                    width="128" alt="product"
+                                    data-index="4"></a>
+                            <a><img src="img/Rectangle3.png"
+                                    width="128" alt="product"
+                                    data-index="5"></a>
+                            <a><img src="img/Rectangle3.png"
+                                    width="128" alt="product"
+                                    data-index="6"></a>
+                            <a><img src="img/Rectangle3.png"
+                                    width="128" alt="product"
+                                    data-index="7"></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-7 px-4">
-                <div class="row mb-4 price-container">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row no-gutters">
-                                <div class="col-12 col-lg-6 col-xl-6 d-flex flex-column px-0">
-                                    <div class="amount amount-l">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-7 px-4">
+                <div class="row mb-3">
+                    <div class="card px-0">
+                        <div class="card-body product-h">
+                            <div class="row">
+                                <div class="col d-flex flex-column">
+                                    <div class="amount amount-l mb-2">
                                         <span class="price">42,00</span>
                                         <span class="currency">BYN</span>
                                     </div>
@@ -802,24 +869,30 @@
                                             <span class="price">42,00</span>
                                             <span class="currency">BYN </span>
                                         </div>
-                                        <span>&nbsp;&nbsp; за 1 кг</span>
+                                        <span class="text-nowrap">&nbsp; за 1 кг</span>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-12 col-xl-6 px-0">
-                                    <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
-                                            class="i i-minus"></i></a>
-                                    <input class="w-25 text-center countElement" type="text" value="1"/>
-                                    <a class="btn btn-icon btn-s add-btn" href="javascript:;">
-                                        <i class="i i-plus"></i>
-                                    </a>
-                                    <a class="btn btn-primary btn-s btn-icon-text" href="javascript:;"><i
-                                            class="i i-shopping-cart"></i>В корзину</a>
+                                <div class="col-auto d-flex cart-button-h align-items-start" style="gap: 8px">
+                                    <div class="flex-nowrap" style="max-width: 200px">
+                                        <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
+                                                class="i i-minus"></i></a>
+                                        <input class="w-50 text-center countElement btn btn-s" type="text" value="1"
+                                               style="border-radius: 4px; border: 1px solid var(--black-25, rgba(39, 43, 58, 0.25)); background: var(--white-100, #FFF);"/>
+                                        <a class="btn btn-icon btn-s" href="javascript:;"><i
+                                                class="i i-plus add-btn"></i></a>
+
+                                    </div>
+                                    <div>
+                                        <a class="btn btn-primary btn-s btn-icon-text text-nowrap add-to-cart-btn"
+                                           href="javascript:;"><i
+                                                class="i i-shopping-cart"></i>В корзину</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row table-container">
+                <div class="row" style="font-size: 13px;">
                     <div class="col-12 card">
                         <div class="table-responsive">
                             <table class="table">
@@ -875,12 +948,15 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-3">
-            <div class="col-12 pr-2" style="font-size: 13px;">
-                <div class="card compound-container">
-                    <div class="row no-gutters">
-                        <div class="col-12 col-lg-5 fw-bold pl-4 pt-4">Описание / Состав</div>
-                        <div class="col-12 col-lg-7 pl-4">Приятно, граждане, наблюдать, как элементы политического
+        <div class="row mt-3" style="font-size: 13px;">
+            <div class="col-12">
+                <div class="card p-3">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5 fw-bold mb-2">
+                            <div class="lg">Описание / Состав</div>
+                            <div class="sm">Описание</div>
+                        </div>
+                        <div class="col-md-12 col-lg-7">Приятно, граждане, наблюдать, как элементы политического
                             процесса, вне
                             зависимости от их уровня, должны быть преданы социально-демократической анафеме. Приятно,
                             граждане, наблюдать, как стремящиеся вытеснить традиционное производство, нанотехнологии
@@ -891,78 +967,69 @@
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-12 pr-2" style="font-size: 13px;">
-                <div class="card">
+            <div class="col-12" style="font-size: 13px;">
+                <div class="card p-3">
                     <div class="row">
-                        <div class="col-12 col-lg-5 fw-bold pl-4 pt-4 characteristic-1">
-                            Название категории
+                        <div class="col-12 col-lg-5 fw-bold">
+                            <div class="fw-bold lg">Название категории</div>
+                            <div class="fw-bold sm pb-3">Характеристики</div>
                         </div>
-                        <div class="col-12 col-lg-5 fw-bold pl-4 pt-4 characteristic-2">
-                            Характеристики
+                        <div class="col-lg-7">
+                            <div class="fw-bold mb-4 lg">Название группы</div>
                         </div>
                     </div>
-                    <div class="card-body mt-2">
-                        <div class="row">
-                            <div class="col-12 col-lg-5"></div>
-                            <div class="col-12 col-lg-7 pl-2">
-                                <div class="fw-bold mb-2 group-1">Название группы</div>
-                                <div class="row">
-                                    <div class="col-5">
-                                        Пищевая ценность
-                                    </div>
-                                    <div class="col-7">
-                                        белок 9,4 г, жир 14,0 г, углеводы 21,3 г, энергетическая ценность
-                                        (калорийность): 1039,9
-                                        кДж/248,8 ккал
-                                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-5"></div>
+                        <div class="col-12 col-lg-7">
+                            <div class="row">
+                                <div class="col-5"> Пищевая ценность
                                 </div>
-                                <div class="row">
-                                    <div class="col-5 border-top">
-                                        Условия хранения
-                                    </div>
-                                    <div class="col-7 border-top">
-                                        хранить при температуре воздуха (4±2) °С. Срок годности 10 суток.
-                                    </div>
+                                <div class="col-7">
+                                    белок 9,4 г, жир 14,0 г, углеводы 21,3 г, энергетическая ценность
+                                    (калорийность): 1039,9
+                                    кДж/248,8 ккал
                                 </div>
-                                <div class="row">
-                                    <div class="col-5 border-top">
-                                        Срок годности
-                                    </div>
-                                    <div class="col-7 border-top">
-                                        Значение
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 border-top"> Условия хранения
+                                </div>
+                                <div class="col-7 border-top">
+                                    хранить при температуре воздуха (4±2) °С. Срок годности 10 суток.
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 border-top"> Срок годности
+                                </div>
+                                <div class="col-7 border-top">
+                                    Значение
                                 </div>
                             </div>
                         </div>
-                        <div class="row mt-5">
-                            <div class="col-12 col-lg-5"></div>
-                            <div class="col-12 col-lg-7 pl-2">
-                                <div class="fw-bold mb-2 group-2">Название группы</div>
-                                <div class="row">
-                                    <div class="col-5">
-                                        Пищевая ценность
-                                    </div>
-                                    <div class="col-7">
-                                        белок 9,4 г, жир 14,0 г, углеводы 21,3 г, энергетическая ценность
-                                        (калорийность): 1039,9
-                                        кДж/248,8 ккал
-                                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-5"></div>
+                        <div class="col-12 col-lg-7">
+                            <div class="fw-bold my-4 lg">Название группы</div>
+                            <div class="row">
+                                <div class="col-5"> Пищевая ценность
                                 </div>
-                                <div class="row">
-                                    <div class="col-5 border-top">
-                                        Условия хранения
-                                    </div>
-                                    <div class="col-7 border-top">
-                                        хранить при температуре воздуха (4±2) °С. Срок годности 10 суток.
-                                    </div>
+                                <div class="col-7">
+                                    белок 9,4 г, жир 14,0 г, углеводы 21,3 г, энергетическая ценность
+                                    (калорийность): 1039,9
+                                    кДж/248,8 ккал
                                 </div>
-                                <div class="row">
-                                    <div class="col-5 border-top">
-                                        Срок годности
-                                    </div>
-                                    <div class="col-7 border-top">
-                                        Значение
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 border-top"> Условия хранения
+                                </div>
+                                <div class="col-7 border-top">
+                                    хранить при температуре воздуха (4±2) °С. Срок годности 10 суток.
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 border-top"> Срок годности
+                                </div>
+                                <div class="col-7 border-top"> Значение
                                 </div>
                             </div>
                         </div>
@@ -970,38 +1037,35 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-3">
-            <div class="col-12 pr-2" style="font-size: 13px;">
-                <div class="card">
-                    <div class="row pl-3">
-                        <div class="col-12 col-lg-5 fw-bold pt-4">
-                            Информация о продавце
-                            <div class="mb-3 mr-3" style="background: #C4C4C4; height: 100px;"></div>
+        <div class="row mt-3" style="font-size: 13px;">
+            <div class="col-12">
+                <div class="card p-3">
+                    <div class="row mb-5">
+                        <div class="col-12 col-lg-5 pb-5">
+                            <div class="fw-bold">Информация о продавце</div>
+                            <div style="background: #C4C4C4;" class="h-100 mt-2">&nbsp;</div>
                         </div>
-                        <div class="col-12 col-lg-7 pt-4">
-                            <div class="row">
-                                <div class="col-5">
-                                    Название
+                        <div class="col-12 col-lg-7">
+                            <div class="card-body pt-0">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div>Название</div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div>Домочай</div>
+                                    </div>
                                 </div>
-                                <div class="col-7">
-                                    Домочай
+                                <div class="row">
+                                    <div class="col-5 border-top">Адрес</div>
+                                    <div class="col-7 border-top">Беларусь, Могилёвская область, г.Могилёв, ул. Ленина,
+                                        д.1
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-5 border-top">
-                                    Адрес
-                                </div>
-                                <div class="col-5 border-top">
-                                    Беларусь, Могилёвская область...
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-5 border-top">
-                                    Контакты
-                                </div>
-                                <div class="col-7 border-top">
-                                    +375 29 111 22 33<br>
-                                    business@mail.com
+                                <div class="row">
+                                    <div class="col-5 border-top">Контакты</div>
+                                    <div class="col-7 border-top">+375 29 111 22 33 <br>
+                                        business@mail.com
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1010,6 +1074,7 @@
             </div>
         </div>
     </div>
+
 </main>
 
 <!-- Required: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -1018,20 +1083,19 @@
 <!-- Required: IdeaDESIGN -->
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/prototypes.js"></script>
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/main.js"></script>
-<script src="https://cdn.ideadrive.su/v2.2.0/js/jquery.fancybox.min.js"></script>
+
 <!-- Optional: Your scripts -->
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2.full.min.js"></script>
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2/i18n/en.js"></script>
-<!--<script type="text/javascript" src="js/items.js"></script>-->
-<script type="text/javascript" src="js/popup.js"></script>
-<script type="text/javascript" src="js/category.js"></script>
-<script type="text/javascript" src="js/likeCounter.js"></script>
+<!-- <script type="text/javascript" src="/static/js/main.js?v=1.0.0"></script> -->
 <script type="text/javascript" src="js/cartCounter.js"></script>
+<script type="text/javascript" src="js/likeCounter.js"></script>
+<script type="text/javascript" src="js/popup.js"></script>
 <script type="text/javascript" src="js/scroll.js"></script>
 <script type="text/javascript" src="js/search.js"></script>
-
-<!-- <script type="text/javascript" src="/static/js/main.js?v=1.0.0"></script> -->
-
+<script type="text/javascript" src="js/category.js"></script>
+<script type="text/javascript" src="js/cartCounter.js"></script>
+<script src="https://cdn.ideadrive.su/v2.2.0/js/jquery.fancybox.min.js"></script>
 
 <!-- Required -->
 <script type="text/javascript">

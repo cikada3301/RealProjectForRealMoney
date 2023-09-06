@@ -140,7 +140,7 @@
             gap: 2px;
         }
 
-        .grid-header {
+        .header-nav-dropdown {
             display: none;
         }
 
@@ -160,7 +160,15 @@
             display: none !important;
         }
 
-        @media (max-width: 767.98px) {
+        .mobile-arrow-back {
+            display: none;
+        }
+
+        @media (max-width: 991.98px) {
+            .header-nav-dropdown {
+                display: block;
+            }
+
             .top-bar-list {
                 background: #E7EDFB;
             }
@@ -168,13 +176,11 @@
             .top-bar-item-full > div {
                 display: none !important;
             }
+        }
 
+        @media (max-width: 767.98px) {
             .header > div {
                 display: none !important;
-            }
-
-            .grid-header {
-                display: block;
             }
 
             .subheader-lg {
@@ -182,10 +188,6 @@
             }
 
             .subheader-md {
-                display: block;
-            }
-
-            .order-name {
                 display: block;
             }
 
@@ -203,6 +205,22 @@
 
             .mobile {
                 display: flex !important;
+            }
+
+            .mobile-arrow-back {
+                display: block;
+            }
+
+            .top-bar-list {
+                background: #E7EDFB;
+            }
+
+            .currency {
+                padding-top: 0;
+            }
+
+            .order-name {
+                display: block;
             }
         }
     </style>
@@ -240,7 +258,7 @@
 
     <div class="top-bar-list">
         <div class="container-fluid">
-            <div class="top-bar-item top-bar-item-full header">
+            <div class="top-bar-item top-bar-item-full">
                 <button class="btn btn-icon btn-flat d-md-none" type="button" data-toggle="aside"
                         data-target="app-main-menu" aria-label="toggle menu">
                     <i class="i i-menu"></i>
@@ -267,21 +285,43 @@
                 <div class="btn-group d-none d-sm-inline-flex">
                     <ul class="nav nav-tabs ">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Marketplace</a>
+                            <a class="nav-link active" style="padding: 19px 8px" href="#">Marketplace</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">BSS</a>
+                            <a class="nav-link" style="padding: 19px 8px" href="#">BSS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Billing</a>
+                            <a class="nav-link" style="padding: 19px 8px" href="#">Billing</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="top-bar-item top-bar-item-right px-0 d-flex">
-                <a class="btn btn-icon btn-flat btn-s grid-header" href="javascript:;"><i
-                        class="i i-grid"></i>
-                </a>
+                <div class="dropdown header-nav-dropdown">
+                    <a class="btn btn-flat btn-icon btn-flat" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="i i-grid"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-services">
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">Marketplace</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">BSS</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">Billing</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                    </div>
+                </div>
                 <div class="dropdown">
                     <button class="btn-account d-flex d-md-none" type="button" data-toggle="aside"
                             data-target="user-menu" aria-label="toggle user menu">
@@ -433,11 +473,15 @@
 <main class="app-main mb-5">
     <div class="content-header">
         <div class="container-fluid">
-
-            <div class="top-bar-item top-bar-item-full">
+            <div class="mobile-arrow-back">
+                <a class="btn btn-icon-text btn-flat-primary" href="./orders.html"><i class="i i-arrow-left"></i><span
+                        style="color: black; font-size: 20px; padding-left: 8px;">0001</span></a>
+            </div>
+            <div class="top-bar-item">
                 <div class="row">
                     <div class="col-auto align-self-center">
-                        <a class="btn btn-icon-text btn-flat-primary" href="./orders.html"><i class="i i-arrow-left"></i></a>
+                        <a class="btn btn-icon-text btn-flat-primary" href="./orders.html"><i
+                                class="i i-arrow-left"></i></a>
                     </div>
                     <div class="col-auto align-self-center subheader-lg">
                         <div style="width: 232px; height: 80px; padding-top: 16px; padding-bottom: 16px; flex-direction: column; justify-content: center; align-items: flex-start; gap: 8px; display: inline-flex">
@@ -642,7 +686,6 @@
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2/i18n/en.js"></script>
 <!-- <script type="text/javascript" src="/static/js/main.js?v=1.0.0"></script> -->
 <script type="text/javascript" src="js/search.js"></script>
-<script type="text/javascript" src="js/orders-show-filter.js"></script>
 <!-- Required -->
 <script type="text/javascript">
     $(document).ready(function () {

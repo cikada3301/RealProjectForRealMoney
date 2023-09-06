@@ -8,6 +8,7 @@
 
     <!-- Required IdeaDESIGN styles -->
     <link rel="stylesheet" href="https://cdn.ideadrive.su/v2.1.2/css/main.build.min.css">
+    <link rel="stylesheet" href="https://cdn.ideadrive.su/v2.2.0/css/utils/daterangepicker.min.css" media="all">
 
     <!-- Optional styles -->
     <!-- <link rel="stylesheet" href="/static/css/main.css" media="all"> -->
@@ -147,10 +148,11 @@
         .subcategories {
             display: none;
             width: 750px;
+            height: 540px;
             position: absolute;
             background-color: white;
-            top: 0px;
-            left: 230px;
+            top: 0;
+            left: 225px;
         }
 
         .search {
@@ -166,15 +168,65 @@
             border: 1px solid gray;
         }
 
-        .category-mobile {
-            display: none;
-        }
-
-        .grid-header {
+        .header-nav-dropdown {
             display: none;
         }
 
         .product-h {
+            display: none;
+        }
+
+        .category-child a, .category-list a {
+            color: var(--black-100, var(--black-100, #272B3A));
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px;
+        }
+
+        .category-title a {
+            color: var(--black-100, var(--black-100, #272B3A));
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 24px;
+        }
+
+        a.subheader {
+            color: var(--black-100, var(--black-100, #272B3A));
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 18px;
+        }
+
+        .category-child>div div, .category-list a div {
+            padding: 3px 0;
+        }
+
+        .category-child a:not(:first-child):hover {
+            background-color: #E7EDFB;
+            color: #477BFF !important;
+        }
+
+        .hover {
+            background-color: #E7EDFB;
+            color: #477BFF !important;
+        }
+
+        .category-list a i {
+            display: none;
+        }
+
+        .category-title a:hover, a.subheader:hover {
+            color: #477BFF !important;
+        }
+
+        .search-item-hover:hover {
+            background-color: #E7EDFB;
+        }
+
+        .top-pagination {
             display: none;
         }
 
@@ -183,7 +235,7 @@
                 display: none !important;
             }
 
-            .grid-header {
+            .header-nav-dropdown {
                 display: block;
             }
 
@@ -211,14 +263,6 @@
 
             .product-h {
                 display: block;
-            }
-
-            .category-mobile {
-                display: block;
-            }
-
-            .category-desktop {
-                display: none;
             }
         }
 
@@ -311,9 +355,31 @@
                 </div>
             </div>
             <div class="top-bar-item top-bar-item-right px-0 d-flex">
-                <a class="btn btn-icon btn-flat btn-s grid-header" href="javascript:;"><i
-                        class="i i-grid"></i>
-                </a>
+                <div class="dropdown header-nav-dropdown">
+                    <a class="btn btn-flat btn-icon btn-flat" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="i i-grid"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-services">
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">Marketplace</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">BSS</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">Billing</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                    </div>
+                </div>
                 <div class="dropdown">
                     <button class="btn-account d-flex d-md-none" type="button" data-toggle="aside"
                             data-target="user-menu" aria-label="toggle user menu">
@@ -471,7 +537,7 @@
                 <div class="modal fade" id="modal-lg" tabindex="-1" aria-labelledby="modal-lgLabel">
                     <div class="modal-dialog modal-xl modal-dialog-centered">
                         <div class="modal-content">
-                            <div class="modal-body p-0" style="height: 90vh;">
+                            <div class="modal-body p-0" style="height: 90vh;overflow:scroll;">
                                 <div class="row h-100 w-100"
                                      style="font-size: 14px; font-style: normal; font-weight: 400; line-height: 18px;">
                                     <div class="col-3 border-right py-2 pr-0 category-list">
@@ -689,11 +755,12 @@
                         </div>
                     </div>
                 </div>
-                <a class="btn btn-icon btn-danger counter-likes" href="javascript:;">
+                <a class="btn btn-icon-text btn-danger counter-likes" href="javascript:;">
                     <i class="i i-heart"></i>1
                 </a>
-                <a class="btn btn-icon counter-carts" href="javascript:;" onclick="window.location.href = 'basket.html';">
-                    <i class="i i-shopping-cart"></i>0
+                <a class="btn btn-icon-text btn-primary counter-carts" href="javascript:;"
+                   onclick="window.location.href = 'cart.html';">
+                    <i class="i i-shopping-cart"></i>1
                 </a>
             </div>
         </div>
@@ -734,7 +801,7 @@
                                                         <i class="i i-cross"></i>
                                                     </button>
                                                 </div>
-                                                <div class="modal-body">
+                                                <div class="modal-body text-left">
                                                     Вы собираетесь удалить все товары из корзины. Это действие нельзя будет отменить.
                                                 </div>
                                                 <div class="modal-footer">
@@ -750,27 +817,31 @@
                         <div class="col-12 border-bottom p-3">
                             <div class="pb-3 fw-bold">Товары в корзине</div>
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table table-hover">
                                     <thead>
                                     <tr>
                                         <th scope="col">Фото</th>
                                         <th scope="col">Товар</th>
-                                        <th scope="col" class="px-1">Цена за ед.</th>
+                                        <th scope="col" class="text-nowrap">Цена за ед.</th>
                                         <th scope="col">Кол-во, шт.</th>
                                         <th scope="col">Сумма</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td class="p-0">
-                                            <img src="img/Rectangle3.png" alt="product" class="w-50 img-fluid">
+                                        <td class="p-2">
+                                            <a href="product.html">
+                                                <img src="img/Rectangle3.png" alt="product" class="w-50 img-fluid">
+                                            </a>
                                         </td>
                                         <td>
-                                            <div class="pb-3">Продукт творожный "Десертный" МСП с ванилином и изюмом,
-                                                контейнер 400г
-                                            </div>
-                                            <span class="fw-bold">100090757&nbsp;</span>
-                                            <span>5637657</span>
+                                            <a href="product.html" style="color: inherit">
+                                                <div class="pb-3">Продукт творожный "Десертный" МСП с ванилином и изюмом,
+                                                    контейнер 400г
+                                                </div>
+                                                <span class="fw-bold">100090757&nbsp;</span>
+                                                <span>5637657</span>
+                                            </a>
                                         </td>
                                         <td>
                                             <div class="amount amount-xs">
@@ -779,10 +850,10 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="d-flex">
+                                            <div class="d-flex" style="gap: 4px">
                                                 <a class="btn btn-icon btn-xs subtract-btn" href="javascript:;"><i
                                                         class="i i-minus"></i></a>
-                                                <input class="text-center countElement" style="width: 40px;" type="text"
+                                                <input class="text-center countElement" style="border-radius: 4px; border: 1px solid var(--black-25, rgba(39, 43, 58, 0.25)); background: var(--white-100, #FFF); max-width: 50px" type="text"
                                                        value="12"/>
                                                 <a class="btn btn-icon btn-xs add-btn" href="javascript:;">
                                                     <i class="i i-plus"></i>
@@ -804,15 +875,19 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="p-0">
-                                            <img src="img/Rectangle3.png" alt="product" class="w-50 img-fluid">
+                                        <td class="p-2">
+                                            <a href="product.html">
+                                                <img src="img/Rectangle3.png" alt="product" class="w-50 img-fluid">
+                                            </a>
                                         </td>
                                         <td>
-                                            <div class="pb-3">Продукт творожный "Десертный" МСП с ванилином и изюмом,
-                                                контейнер 400г
-                                            </div>
-                                            <span class="fw-bold">100090757&nbsp;</span>
-                                            <span>5637657</span>
+                                            <a href="product.html" style="color: inherit">
+                                                <div class="pb-3">Продукт творожный "Десертный" МСП с ванилином и изюмом,
+                                                    контейнер 400г
+                                                </div>
+                                                <span class="fw-bold">100090757&nbsp;</span>
+                                                <span>5637657</span>
+                                            </a>
                                         </td>
                                         <td>
                                             <div class="amount amount-xs">
@@ -821,10 +896,10 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="d-flex">
+                                            <div class="d-flex" style="gap: 4px">
                                                 <a class="btn btn-icon btn-xs subtract-btn" href="javascript:;"><i
                                                         class="i i-minus"></i></a>
-                                                <input class="text-center countElement" style="width: 40px;" type="text"
+                                                <input class="text-center countElement" style="border-radius: 4px; border: 1px solid var(--black-25, rgba(39, 43, 58, 0.25)); background: var(--white-100, #FFF); max-width: 50px" type="text"
                                                        value="12"/>
                                                 <a class="btn btn-icon btn-xs add-btn" href="javascript:;">
                                                     <i class="i i-plus"></i>
@@ -846,15 +921,19 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="p-0">
-                                            <img src="img/Rectangle3.png" alt="product" class="w-50 img-fluid">
+                                        <td class="p-2">
+                                            <a href="product.html">
+                                                <img src="img/Rectangle3.png" alt="product" class="w-50 img-fluid">
+                                            </a>
                                         </td>
                                         <td>
-                                            <div class="pb-3">Продукт творожный "Десертный" МСП с ванилином и изюмом,
-                                                контейнер 400г
-                                            </div>
-                                            <span class="fw-bold">100090757&nbsp;</span>
-                                            <span>5637657</span>
+                                            <a href="product.html" style="color: inherit">
+                                                <div class="pb-3">Продукт творожный "Десертный" МСП с ванилином и изюмом,
+                                                    контейнер 400г
+                                                </div>
+                                                <span class="fw-bold">100090757&nbsp;</span>
+                                                <span>5637657</span>
+                                            </a>
                                         </td>
                                         <td>
                                             <div class="amount amount-xs">
@@ -863,10 +942,10 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="d-flex">
+                                            <div class="d-flex" style="gap: 4px">
                                                 <a class="btn btn-icon btn-xs subtract-btn" href="javascript:;"><i
                                                         class="i i-minus"></i></a>
-                                                <input class="text-center countElement" style="width: 40px;" type="text"
+                                                <input class="text-center countElement" style="border-radius: 4px; border: 1px solid var(--black-25, rgba(39, 43, 58, 0.25)); background: var(--white-100, #FFF); max-width: 50px" type="text"
                                                        value="12"/>
                                                 <a class="btn btn-icon btn-xs add-btn" href="javascript:;">
                                                     <i class="i i-plus"></i>
@@ -893,7 +972,7 @@
                             <div class="col-12 product-h border-bottom py-3">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="card-img position-relative">
+                                        <div class="position-relative position-relative">
                                             <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
                                         </div>
                                     </div>
@@ -902,10 +981,10 @@
                                             ванилином и изюмом, контейнер 400г</p>
                                         <span class="fw-bold">100090757</span><span>&nbsp; 5637657</span>
                                         <div class="row">
-                                            <div class="col-12 counter text-nowrap py-3">
+                                            <div class="col-12 counter text-nowrap py-3 d-flex align-items-start" style="gap: 4px;">
                                                 <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
                                                         class="i i-minus"></i></a>
-                                                <input class="w-25 text-center countElement" type="text" value="1"/>
+                                                <input class="text-center countElement" style="border-radius: 4px; border: 1px solid var(--black-25, rgba(39, 43, 58, 0.25)); background: var(--white-100, #FFF); max-width: 50px; min-height: 32px;" type="text" value="1"/>
                                                 <a class="btn btn-icon btn-s" href="javascript:;"><i
                                                         class="i i-plus add-btn"></i></a>
                                             </div>
@@ -925,7 +1004,7 @@
                             <div class="col-12 product-h border-bottom py-3">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="card-img position-relative">
+                                        <div class="position-relative position-relative">
                                             <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
                                         </div>
                                     </div>
@@ -934,10 +1013,10 @@
                                             ванилином и изюмом, контейнер 400г</p>
                                         <span class="fw-bold">100090757</span><span>&nbsp; 5637657</span>
                                         <div class="row">
-                                            <div class="col-12 counter text-nowrap py-3">
+                                            <div class="col-12 counter text-nowrap py-3 d-flex align-items-start" style="gap: 4px;">
                                                 <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
                                                         class="i i-minus"></i></a>
-                                                <input class="w-25 text-center countElement" type="text" value="1"/>
+                                                <input class="text-center countElement" style="border-radius: 4px; border: 1px solid var(--black-25, rgba(39, 43, 58, 0.25)); background: var(--white-100, #FFF); max-width: 50px; min-height: 32px;" type="text" value="1"/>
                                                 <a class="btn btn-icon btn-s" href="javascript:;"><i
                                                         class="i i-plus add-btn"></i></a>
                                             </div>
@@ -957,7 +1036,7 @@
                             <div class="col-12 product-h border-bottom py-3">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="card-img position-relative">
+                                        <div class="position-relative position-relative">
                                             <img src="img/Rectangle3.png" class="img-fluid rounded-start" alt="product">
                                         </div>
                                     </div>
@@ -966,10 +1045,10 @@
                                             ванилином и изюмом, контейнер 400г</p>
                                         <span class="fw-bold">100090757</span><span>&nbsp; 5637657</span>
                                         <div class="row">
-                                            <div class="col-12 counter text-nowrap py-3">
+                                            <div class="col-12 counter text-nowrap py-3 d-flex align-items-start" style="gap: 4px;">
                                                 <a class="btn btn-icon btn-s subtract-btn" href="javascript:;"><i
                                                         class="i i-minus"></i></a>
-                                                <input class="w-25 text-center countElement" type="text" value="1"/>
+                                                <input class="text-center countElement" style="border-radius: 4px; border: 1px solid var(--black-25, rgba(39, 43, 58, 0.25)); background: var(--white-100, #FFF); max-width: 50px; min-height: 32px;" type="text" value="1"/>
                                                 <a class="btn btn-icon btn-s" href="javascript:;"><i
                                                         class="i i-plus add-btn"></i></a>
                                             </div>
@@ -1174,14 +1253,14 @@
                                 </table>
                             </div>
                             <div class="row">
-                                <div class="col-12 col-sm-9 col-md-8 col-lg-9">
+                                <div class="col">
                                     <label class="custom-field mr-4">
                                         <textarea placeholder="&nbsp;"></textarea>
                                         <span class="placeholder">Комментарий</span>
                                         <span class="error-message" aria-live="polite"></span>
                                     </label>
                                 </div>
-                                <div class="col-12 col-sm-3 col-md-4 col-lg-3 mobile">
+                                <div class="col-auto">
                                     <button class="btn btn-icon btn-l btn-primary disabled align-self-start" data-toggle="modal" data-target="#acceptOrder">
                                         <i class="i i-send"></i>
                                         <span style="font-size: 14px;">Отправить</span>
@@ -1271,6 +1350,8 @@
 <!-- Optional: Your scripts -->
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2.full.min.js"></script>
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2/i18n/en.js"></script>
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.2.0/js/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.2.0/js/daterangepicker.min.js"></script>
 <!-- <script type="text/javascript" src="/static/js/main.js?v=1.0.0"></script> -->
 <script type="text/javascript" src="js/cartCounter.js"></script>
 <script type="text/javascript" src="js/likeCounter.js"></script>
@@ -1278,7 +1359,6 @@
 <script type="text/javascript" src="js/delivery.js"></script>
 <script type="text/javascript" src="js/search.js"></script>
 <script type="text/javascript" src="js/category.js"></script>
-<script type="text/javascript" src="js/popup.js"></script>
 <!-- Required -->
 <script type="text/javascript">
     $(document).ready(function () {

@@ -1,5 +1,5 @@
 const data = [
-    {src: 'img/Rectangle3.png', name: 'Продукт творожный  "Десертный" МСП с ванилином и изюмом, контейнер 400г'},
+    {src: 'img/Rectangle3.png', name: 'Продукт творожный  "Десертный" МСП с ванилином и изюмом, контейнер 404г'},
     {src: 'img/Rectangle3.png', name: 'Продукт творожный  "Десертный" МСП с ванилином и изюмом, контейнер 400г'},
     {src: 'img/Rectangle3.png', name: 'Продукт творожный  "Десертный" МСП с ванилином и изюмом, контейнер 400г'},
 ];
@@ -27,7 +27,7 @@ searchInput.forEach((input, index) => {
                     itemElement.classList.add('container', 'search-item-hover')
                     itemElement.innerHTML = `<div class="row">
                                     <div class="col-3 px-0">
-                                        <img class="p-2" src="${item.src}"/>
+                                        <img class="p-2" width="80px" height="80px" src="${item.src}"/>
                                     </div> 
                                     <div class="col-9 px-0">
                                         <p class="p-2" style="font-size: 13px; line-height: 16px;">${item.name}</p>
@@ -35,6 +35,11 @@ searchInput.forEach((input, index) => {
                                 </div>`
                     searchResultsMobile.appendChild(itemElement);
                 });
+
+                let buttonAllSee = document.createElement('div');
+                buttonAllSee.classList.add('container');
+                buttonAllSee.innerHTML = `<div class="d-flex"><a class="btn btn-s mx-auto" href="javascript:;">Смотреть все</a></div>`;
+                searchResultsMobile.appendChild(buttonAllSee);
             }
 
             else {
@@ -57,15 +62,21 @@ searchInput.forEach((input, index) => {
                     let itemElement = document.createElement('div');
                     itemElement.classList.add('container', 'search-item-hover')
                     itemElement.innerHTML = `<div class="row">
-                                    <div class="col-3 px-0">
-                                        <img class="p-2" src="${item.src}"/>
+                                    <div class="col-2 px-0">
+                                        <img class="p-2" width="80px" height="80px" src="${item.src}"/>
                                     </div> 
-                                    <div class="col-9 px-0">
+                                    <div class="col-10 px-0">
                                         <p class="p-2" style="font-size: 13px; line-height: 16px;">${item.name}</p>
                                     </div>
                                 </div>`
                     searchResults.appendChild(itemElement);
                 });
+
+                let buttonAllSee = document.createElement('div');
+                buttonAllSee.classList.add('container');
+                buttonAllSee.innerHTML = `<div class="d-flex p-3"><a class="btn btn-s mx-auto" href="javascript:;">Смотреть все</a></div>`;
+
+                searchResults.appendChild(buttonAllSee);
             } else {
                 searchResults.style.display = 'none';
                 searchResults.style.zIndex = 0;

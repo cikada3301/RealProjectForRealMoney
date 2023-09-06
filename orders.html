@@ -8,6 +8,7 @@
 
     <!-- Required IdeaDESIGN styles -->
     <link rel="stylesheet" href="https://cdn.ideadrive.su/v2.1.2/css/main.build.min.css">
+    <link rel="stylesheet" href="https://cdn.ideadrive.su/v2.2.0/css/utils/daterangepicker.min.css" media="all">
 
     <!-- Optional styles -->
     <!-- <link rel="stylesheet" href="/static/css/main.css" media="all"> -->
@@ -144,16 +145,30 @@
             display: none;
         }
 
-        .grid-header {
-            display: none;
-        }
-
         .mobile {
             display: none !important;
         }
 
         .cards {
             display: none;
+        }
+
+        .header-nav-dropdown {
+            display: none;
+        }
+
+        @media (max-width: 991.98px) {
+            .header-nav-dropdown {
+                display: block;
+            }
+
+            .top-bar-list {
+                background: #E7EDFB;
+            }
+
+            .top-bar-item-full > div {
+                display: none !important;
+            }
         }
 
         @media (max-width: 767.98px) {
@@ -165,20 +180,8 @@
                 display: block;
             }
 
-            .top-bar-list {
-                background: #E7EDFB;
-            }
-
-            .top-bar-item-full > div {
-                display: none !important;
-            }
-
             .header > div {
                 display: none !important;
-            }
-
-            .grid-header {
-                display: block;
             }
 
             .desktop {
@@ -289,9 +292,31 @@
                 </div>
             </div>
             <div class="top-bar-item top-bar-item-right px-0 d-flex">
-                <a class="btn btn-icon btn-flat btn-s grid-header" href="javascript:;"><i
-                        class="i i-grid"></i>
-                </a>
+                <div class="dropdown header-nav-dropdown">
+                    <a class="btn btn-flat btn-icon btn-flat" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="i i-grid"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-services">
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">Marketplace</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">BSS</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">Billing</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                    </div>
+                </div>
                 <div class="dropdown">
                     <button class="btn-account d-flex d-md-none" type="button" data-toggle="aside"
                             data-target="user-menu" aria-label="toggle user menu">
@@ -443,7 +468,7 @@
 <main class="app-main mb-5">
     <div class="content-header">
         <div class="container-fluid">
-                <div>Заказы</div>
+            <div>Заказы</div>
             <div class="top-bar-item top-bar-item-right">
                 <div class="custom-field-button-group inbox custom-field-button-group-sm m-auto search-field">
                     <label class="custom-field">
@@ -903,7 +928,6 @@
             </div>
         </div>
     </div>
-
 </main>
 
 <!-- Required: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -914,6 +938,8 @@
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/main.js"></script>
 
 <!-- Optional: Your scripts -->
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.2.0/js/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.ideadrive.su/v2.2.0/js/daterangepicker.min.js"></script>
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2.full.min.js"></script>
 <script type="text/javascript" src="https://cdn.ideadrive.su/v2.1.2/js/select2/i18n/en.js"></script>
 <!-- <script type="text/javascript" src="/static/js/main.js?v=1.0.0"></script> -->

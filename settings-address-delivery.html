@@ -172,15 +172,11 @@
             display: none;
         }
 
+        .header-nav-dropdown {
+            display: none;
+        }
+
         @media (max-width: 767.98px) {
-            .top-bar-list {
-                background-color: #e7edfb;
-            }
-
-            .top-bar-item-full > div {
-                display: none !important;
-            }
-
             .mobile-top-bar {
                 display: block;
             }
@@ -195,6 +191,20 @@
 
             .btn-add-address {
                 margin-top: 8px;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .header-nav-dropdown {
+                display: block;
+            }
+
+            .top-bar-list {
+                background: #E7EDFB;
+            }
+
+            .top-bar-item-full > div {
+                display: none !important;
             }
         }
     </style>
@@ -216,7 +226,7 @@
 </div>
 <![endif]-->
 
-<header class="app-header ">
+<header class="app-header">
     <div class="top-bar-brand">
         <button class="btn btn-icon btn-flat btn-s toggle-menu" type="button" data-toggle="aside-menu"
                 aria-label="toggle aside menu">
@@ -237,58 +247,76 @@
                         data-target="app-main-menu" aria-label="toggle menu">
                     <i class="i i-menu"></i>
                 </button>
-                <div class="data">
-                     <span class="primary">
-                         <span class="caption" style="font-size: 14px; color: rgba(39, 43, 58, 0.6);">№ кабинета:</span>
-                         <span class="id" style="font-size: 14px; font-weight: 700;">12345</span>
-                     </span>
+                <div class="d-sm-inline-flex pr-4 text-nowrap">
+                    <span class="caption">№ кабинета:</span>
+                    <span class="id">12345</span>
                 </div>
-                <div class="btn-group d-none d-sm-inline-flex ml-4">
+                <div class="btn-group d-none d-sm-inline-flex pr-4">
                     <a href="javascript:;" class="btn btn-icon btn-flat has-notified" data-title="Чат тех. поддержки"
                        data-toggle="tooltip" data-placement="bottom">
                         <i class="i i-support-chat"></i>
                     </a>
-                    <a href="javascript:;" class="btn btn-icon btn-flat" data-title="Сообщения" data-toggle="tooltip"
+                    <a href="javascript:;" class="btn btn-icon btn-flat" data-title="Вопрос - ответ"
+                       data-toggle="tooltip"
                        data-placement="bottom">
-                        <i class="i i-question-circle"></i>
+                        <i class="i i-service-faq"></i>
                     </a>
                     <a href="javascript:;" class="btn btn-icon btn-flat" data-title="Уведомления" data-toggle="tooltip"
                        data-placement="bottom">
                         <i class="i i-notification"></i>
                     </a>
                 </div>
-                <div style="width: 191px; height: 56px;" class="ml-4">
-                    <ul class="nav nav-tabs nav-tabs-s">
+                <div class="btn-group d-none d-sm-inline-flex">
+                    <ul class="nav nav-tabs ">
                         <li class="nav-item">
-                            <a class="nav-link active"
-                               style="border-bottom: 2px solid #272B3A; padding: 19px 8px; font-size: 14px" href="#">Marketplace</a>
+                            <a class="nav-link active" style="padding: 19px 8px" href="#">Marketplace</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary-blue1" style="padding: 19px 8px; font-size: 14px" href="#">BSS</a>
+                            <a class="nav-link" style="padding: 19px 8px" href="#">BSS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary-blue1" style="padding: 19px 8px; font-size: 14px" href="#">Billing</a>
+                            <a class="nav-link" style="padding: 19px 8px" href="#">Billing</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="top-bar-item top-bar-item-right px-0 d-flex">
-                <a href="javascript:;" class="btn btn-icon btn-flat d-flex justify-content-end mobile-top-bar"
-                   data-title="Чат тех. поддержки"
-                   data-toggle="tooltip" data-placement="bottom">
-                    <i class="i i-grid"></i>
-                </a>
+                <div class="dropdown header-nav-dropdown">
+                    <a class="btn btn-flat btn-icon btn-flat" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="i i-grid"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-services">
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">Marketplace</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">BSS</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="text">
+                            <span class="title">Billing</span>
+                            <span class="description"></span>
+                        </span>
+                        </a>
+                    </div>
+                </div>
                 <div class="dropdown">
                     <button class="btn-account d-flex d-md-none" type="button" data-toggle="aside"
                             data-target="user-menu" aria-label="toggle user menu">
                                 <span class="user-avatar user-avatar-s">
-                                    <span>И</span>
+                                    <span>K</span>
                                 </span>
                     </button>
                     <button class="btn-account d-none d-md-flex dropdown-toggle" type="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                                 <span class="user-avatar user-avatar-s">
-                                    <span>И</span>
+                                    <span>K</span>
                                 </span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-user-menu">
@@ -296,7 +324,7 @@
                             <div class="account-type">Личный аккаунт</div>
                             <div class="info-card">
                                         <span class="user-avatar user-avatar-m">
-                                            <span>И</span>
+                                            <span>K</span>
                                         </span>
                                 <div class="data">
                                             <span class="primary">
@@ -307,21 +335,28 @@
                                 </div>
                             </div>
                             <div class="data">
-                                <span class="slave">Фамилия Имя Отчество</span>
+                                <span class="primary">Фамилия Имя Отчество</span>
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#"><i class="i i-support-chat"></i>Чат техподдержки</a>
-                        <a class="dropdown-item" href="#"><i class="i i-question-circle"></i>Вопрос-ответ</a>
+                        <a class="dropdown-item" href="#"><i class="i i-service-faq"></i>Вопрос - ответ</a>
                         <a class="dropdown-item" href="#"><i class="i i-notification"></i>Уведомления</a>
                         <div class="dropdown-divider"></div>
-                        <p class="dropdown-item-text d-flex align-items-center">Баланс<a href="javascript:;"
-                                                                                         class="btn btn-icon-text btn-s ml-auto">
-                            <i class="i i-dollar"></i>42.20</a></p>
+                        <div class="d-flex justify-content-between">
+                            <div class="dropdown-item">Баланс</div>
+                            <a href="javascript:;" class="btn btn-icon-text d-none d-sm-inline-flex mr-3">
+                                <i class="i i-dollar left"></i>
+                                <div class="amount amount-s">
+                                    <span class="price">42,00</span>
+                                    <span class="currency">BYN</span>
+                                </div>
+                            </a>
+                        </div>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
-                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
-                        <a class="dropdown-item" href="javascript:;"><i></i>Label</a>
+                        <a class="dropdown-item" href="#">Label</a>
+                        <a class="dropdown-item" href="#">Label</a>
+                        <a class="dropdown-item" href="#">Label</a>
                     </div>
                 </div>
             </div>
